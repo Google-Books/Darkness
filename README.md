@@ -221,7 +221,7 @@
 
             { name: "Jinn", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/download%20(8).jpg", desc: "Beings made of smokeless fire in Islamic tradition, capable of changing shape and influencing humans." },
 
-            { name: "Demons", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/download%20(7).jpg", desc: "Malevolent spirits believed to corrupt or possess humans." },
+            { name: "Demons", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/%D8%AC%D9%86.jpg", desc: "Malevolent spirits believed to corrupt or possess humans." },
 
             { name: "Lilith", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/%D9%84%DB%8C%D9%84%DB%8C%D8%AB.jpg", desc: "A female night spirit from Jewish mythology." },
 
