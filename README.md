@@ -263,61 +263,61 @@
 
             { name: "Pontianak", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Pontianak.jpg", desc: "A female ghost from Malaysian folklore." },
 
-            { name: "Aswang", img: "URL_HERE", desc: "A shape-shifting creature from the Philippines." },
+            { name: "Aswang", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Aswang.jpg", desc: "A shape-shifting creature from the Philippines." },
 
-            { name: "Jorōgumo", img: "URL_HERE", desc: "A spider-woman spirit from Japanese folklore." },
+            { name: "Jorōgumo", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Jor%C5%8Dgumo.jpg", desc: "A spider-woman spirit from Japanese folklore." },
 
-            { name: "Vetala", img: "URL_HERE", desc: "A spirit that inhabits and controls corpses." },
+            { name: "Vetala", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Vetala.jpg", desc: "A spirit that inhabits and controls corpses." },
 
-            { name: "Baayayin", img: "URL_HERE", desc: "A dark witch-like figure from Philippine folklore." },
+            { name: "Baayayin", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Baayayin.jpg", desc: "A dark witch-like figure from Philippine folklore." },
 
-            { name: "Hung Hei", img: "URL_HERE", desc: "A vengeful spirit from Chinese legends." },
+            { name: "Hung Hei", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Hung%20Hei.jpg", desc: "A vengeful spirit from Chinese legends." },
 
-            { name: "Oni", img: "URL_HERE", desc: "A horned demon from Japanese mythology." },
+            { name: "Oni", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Oni.jpg", desc: "A horned demon from Japanese mythology." },
 
-            { name: "Baku", img: "URL_HERE", desc: "A creature said to devour nightmares." },
+            { name: "Baku", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Baku.jpg", desc: "A creature said to devour nightmares." },
 
-            { name: "Kishi", img: "URL_HERE", desc: "A two-faced demon from African folklore." },
+            { name: "Kishi", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Kishi.jpg", desc: "A two-faced demon from African folklore." },
 
-            { name: "Slenderman", img: "URL_HERE", desc: "A tall, faceless figure from modern internet folklore." },
+            { name: "Slenderman", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Slenderman.jpg", desc: "A tall, faceless figure from modern internet folklore." },
 
-            { name: "Jeff the Killer", img: "URL_HERE", desc: "A smiling killer character from online horror stories." },
+            { name: "Jeff the Killer", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Jeff%20the%20Killer.jpg", desc: "A smiling killer character from online horror stories." },
 
-            { name: "Siren Head", img: "URL_HERE", desc: "A giant creature with sirens instead of a head." },
+            { name: "Siren Head", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Siren%20Head.jpg", desc: "A giant creature with sirens instead of a head." },
 
-            { name: "Samara", img: "URL_HERE", desc: "The ghostly girl from The Ring." },
+            { name: "Samara", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Samara.jpg", desc: "The ghostly girl from The Ring." },
 
-            { name: "Candyman", img: "URL_HERE", desc: "A vengeful spirit summoned by saying his name." },
+            { name: "Candyman", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Candyman.webp", desc: "A vengeful spirit summoned by saying his name." },
 
-            { name: "Black-Eyed Children", img: "URL_HERE", desc: "Mysterious children with completely black eyes." },
+            { name: "Black-Eyed Children", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/(Black-Eyed%20Children).jpg", desc: "Mysterious children with completely black eyes." },
 
-            { name: "Hat Man", img: "URL_HERE", desc: "A shadowy figure often reported in dreams and sleep paralysis." },
+            { name: "Hat Man", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Hat%20Man.jpg", desc: "A shadowy figure often reported in dreams and sleep paralysis." },
 
-            { name: "Mother Brain", img: "URL_HERE", desc: "An evil collective intelligence from science fiction." },
+            { name: "Mother Brain", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Mother%20Brain.jpg", desc: "An evil collective intelligence from science fiction." },
 
-            { name: "Zombie", img: "URL_HERE", desc: "A reanimated corpse that feeds on human flesh." },
+            { name: "Zombie", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Zombie.jpg", desc: "A reanimated corpse that feeds on human flesh." },
 
-            { name: "Specter", img: "URL_HERE", desc: "A ghostly apparition associated with death." },
+            { name: "Specter", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Specter.jpg", desc: "A ghostly apparition associated with death." },
 
-            { name: "Marid", img: "URL_HERE", desc: "A powerful and proud type of jinn from Arab folklore." },
+            { name: "Marid", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Marid.jpg", desc: "A powerful and proud type of jinn from Arab folklore." },
 
-            { name: "Ifrit", img: "URL_HERE", desc: "A mighty fire spirit from Middle Eastern mythology." },
+            { name: "Ifrit", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Ifrit.jpg", desc: "A mighty fire spirit from Middle Eastern mythology." },
 
-            { name: "Qareen", img: "URL_HERE", desc: "A spiritual companion associated with temptation." },
+            { name: "Qareen", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Qareen.jpg", desc: "A spiritual companion associated with temptation." },
 
-            { name: "Nassnas", img: "URL_HERE", desc: "A half-human creature from Arab legends." },
+            { name: "Nassnas", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Nassnas.jpg", desc: "A half-human creature from Arab legends." },
 
-            { name: "Ghoul al-Layl", img: "URL_HERE", desc: "A night-roaming spirit of darkness." },
+            { name: "Ghoul al-Layl", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Ghoul%20al-Layl.jpg", desc: "A night-roaming spirit of darkness." },
 
-            { name: "Lost Soul", img: "URL_HERE", desc: "A restless spirit trapped between worlds." },
+            { name: "Lost Soul", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Lost%20Soul.jpg", desc: "A restless spirit trapped between worlds." },
 
-            { name: "Bloody Ghost", img: "URL_HERE", desc: "A ghost believed to gain power through blood." },
+            { name: "Bloody Ghost", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Bloody%20Ghost.jpg", desc: "A ghost believed to gain power through blood." },
 
-            { name: "Red Demon", img: "URL_HERE", desc: "A symbol of rage and fire in various traditions." },
+            { name: "Red Demon", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Red%20Demon.jpg", desc: "A symbol of rage and fire in various traditions." },
 
-            { name: "Shadow People", img: "URL_HERE", desc: "Dark human-like shadows reportedly seen at night." },
+            { name: "Shadow People", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Shadow%20People.jpg", desc: "Dark human-like shadows reportedly seen at night." },
 
-            { name: "Iblis", img: "URL_HERE", desc: "The rebellious supernatural being associated with pride and temptation in Islamic tradition." }
+            { name: "Iblis", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Iblis.jpg", desc: "The rebellious supernatural being associated with pride and temptation in Islamic tradition." }
 
         ];
 
