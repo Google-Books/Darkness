@@ -1,146 +1,1903 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Shadow Archive | Forbidden Entities</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>The Shadow Archive | Supernatural Entities</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --bg: #050207; 
-            --card-bg: #0f0a14; 
-            --text-main: #e8e6ed; 
-            --text-dim: #a09da8; 
-            --accent: #8e44ad; /* بنفش عمیق و مرموز */
-            --accent-glow: rgba(142, 68, 173, 0.3);
+        :root {
+            --bg: #030303;
+            --card-bg: #09090d;
+            --text-main: #e2e2e8;
+            --text-dim: #888894;
+            --accent: #6a0dad; /* بنفش ترسناک غلیظ */
+            --accent-glow: rgba(106, 13, 173, 0.4);
+            --purple-light: #c084fc;
         }
-        body { background-color: var(--bg); color: var(--text-main); font-family: 'Montserrat', sans-serif; margin: 0; padding: 40px 20px; }
-        
-        /* Grid */
-        .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
-        .entity-card { background: var(--card-bg); border-radius: 20px; cursor: pointer; border: 1px solid #2d2633; transition: all 0.4s ease; overflow: hidden; position: relative; }
-        .entity-card:hover { border-color: var(--accent); box-shadow: 0 0 30px var(--accent-glow); transform: translateY(-5px); }
-        .img-container { width: 100%; aspect-ratio: 4/5; overflow: hidden; }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
-        .entity-card:hover img { transform: scale(1.05); }
-        
-        /* Mobile Accordion Style */
-        .mobile-detail { display: none; padding: 20px; background: #000; border-top: 2px solid var(--accent); color: #ccc; font-size: 0.95rem; line-height: 1.6; }
-        
-        /* Desktop Modal */
-        #detail-view { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 2, 7, 0.98); z-index: 1000; overflow-y: auto; padding: 40px; }
-        .detail-container { max-width: 800px; margin: 0 auto; }
-        .back-btn { color: var(--accent); cursor: pointer; font-weight: 600; margin-bottom: 30px; display: inline-block; padding: 10px 20px; border: 1px solid var(--accent); transition: 0.3s; }
-        .back-btn:hover { background: var(--accent); color: #fff; }
-        
-        #detail-content h1 { font-family: 'Cinzel', serif; color: #fff; font-size: 3.5rem; margin-bottom: 40px; text-transform: uppercase; border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
-        #detail-content h3 { color: var(--accent); font-family: 'Cinzel', serif; font-size: 1.5rem; margin-top: 35px; margin-bottom: 15px; letter-spacing: 1px; }
-        #detail-content p { line-height: 1.9; color: #d1cfd6; margin-bottom: 10px; }
-        
-        header { text-align: center; margin-bottom: 80px; }
-        h1.main-title { font-family: 'Cinzel', serif; color: #fff; font-size: 3.5rem; letter-spacing: 8px; margin-bottom: 10px; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .entity-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #14141f;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .entity-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px var(--accent-glow);
+        }
+
+        .img-container {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            transition: transform 0.6s ease;
+        }
+
+        .entity-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: #fff;
+            margin: 0 0 12px 0;
+            border-bottom: 1px solid #1a1a26;
+            padding-bottom: 12px;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .entity-card:hover .content h2 {
+            color: var(--purple-light);
+        }
+
+        .content p {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* دکمه‌ها و انیمیشن‌های مخصوص موبایل */
+        .mobile-arrow-container {
+            display: none; /* پیش‌فرض مخفی در دسکتاپ */
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background: linear-gradient(to top, rgba(106, 13, 173, 0.1), transparent);
+            border-top: 1px solid #14141f;
+        }
+
+        .mobile-arrow {
+            width: 30px;
+            height: 30px;
+            fill: var(--purple-light);
+            cursor: pointer;
+        }
+
+        .bounce-down {
+            animation: waveDown 2s infinite ease-in-out;
+        }
+
+        .bounce-up {
+            animation: waveUp 2s infinite ease-in-out;
+        }
+
+        @keyframes waveDown {
+            0%, 100% { transform: translateY(0); opacity: 0.6; }
+            50% { transform: translateY(6px); opacity: 1; }
+        }
+
+        @keyframes waveUp {
+            0%, 100% { transform: translateY(0); opacity: 0.6; }
+            50% { transform: translateY(-6px); opacity: 1; }
+        }
+
+        .mobile-panel {
+            display: none;
+            background: #050508;
+            border-top: 1px solid var(--accent);
+            padding: 25px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        /* ساختار متون تفصیلی درون صفحات و پنل‌ها */
+        .detail-header {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            color: #fff;
+            margin-top: 25px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-left: 3px solid var(--accent);
+            padding-left: 12px;
+        }
+
+        .detail-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            white-space: pre-line;
+        }
+
+        /* استایل حالت دسکتاپ (فول اسکرین واقعی سفارشی) */
+        .desktop-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(3, 3, 5, 0.98);
+            z-index: 9999;
+            overflow-y: auto;
+            padding: 60px 20px;
+            box-sizing: border-box;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .overlay-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #0b0b12;
+            border: 1px solid #1f1f33;
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 40px var(--accent-glow);
+        }
+
+        .overlay-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            text-align: center;
+            letter-spacing: 4px;
+            color: #fff;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 20px;
+        }
+
+        /* دکمه خروج شناور شیشه‌ای دسکتاپ */
+        .glass-exit-btn {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(106, 13, 173, 0.4);
+            color: var(--purple-light);
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10000;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-exit-btn:hover {
+            background: rgba(106, 13, 173, 0.2);
+            border-color: var(--accent);
+            color: #fff;
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: 0 0 25px var(--accent);
+        }
+
+        /* واکنش‌گرایی برای موبایل */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; letter-spacing: 4px; }
+            .archive-grid { gap: 25px; }
+            .mobile-arrow-container { display: flex; }
+        }
     </style>
 </head>
+
 <body>
 
-    <div id="main-view">
-        <header>
-            <h1 class="main-title">SHADOW ARCHIVE</h1>
-            <p style="color: var(--text-dim); letter-spacing: 5px; text-transform: uppercase;">Encyclopaedia of the Unseen</p>
-        </header>
-        <div class="archive-grid" id="grid"></div>
-    </div>
+    <header>
+        <h1>The Shadow Archive</h1>
+        <p style="color: var(--text-dim); letter-spacing: 3px; font-weight: 600;">50 ENTITIES OF DARKNESS</p>
+    </header>
 
-    <div id="detail-view">
-        <div class="detail-container">
-            <div class="back-btn" onclick="hideDetail()">← Close Tome</div>
-            <div id="detail-content"></div>
-        </div>
+    <div class="archive-grid" id="grid"></div>
+
+    <!-- ساختار صفحه جدید/فول‌اسکرین دسکتاپ -->
+    <div id="desktopOverlay" class="desktop-overlay">
+        <div class="overlay-content" id="overlayContent"></div>
+        <div class="glass-exit-btn" onclick="closeArchiveDetail()" title="Close Archive">☠</div>
     </div>
 
     <script>
         const entities = [
-            {
-                name: "Jinn",
-                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/download%20(8).jpg",
-                desc: "Beings of smokeless fire that inhabit the unseen realms.",
-                details: {
-                    "Original Name": "Jinn",
-                    "Other Names or Titles": "Known as Jinni, Shayatin, Ifrit, Marid, Ghoul, Genie, and Demon.",
-                    "Origin or Source": "Originates from pre Islamic Arab and Mesopotamian traditions. The Arabic root Janna means to hide or to be invisible.",
-                    "Historical or Religious Source": "Mentioned throughout the Qur'an in chapters such as Al Jinn, Ar Rahman, Al Hijr, Saba, and Al Kahf, as well as in Hadith literature. Pre Islamic Arab traditions also describe unseen spirits inhabiting deserts and ruins.",
-                    "Nature and Substance": "Created from smokeless fire according to Islamic teachings, unlike humans who were created from clay.",
-                    "Appearance": "Invisible in their natural form but capable of taking the shape of humans, animals, shadows, or smoke. Some descriptions portray them with glowing red eyes, elongated bodies, and whispering voices.",
-                    "Powers and Abilities": "Shape shifting, invisibility, extraordinary speed, telepathy, possession, flight, and the ability to influence human thoughts and dreams.",
-                    "Weaknesses or Fears": "Recitation of Bismillah, Ayat al Kursi, Surah Al Baqarah, the Adhan, and in some traditions pure water or salt are believed to repel them.",
-                    "Personality or Behavior": "Like humans, they possess free will. Some are righteous and obedient to God, while others are rebellious and evil. Iblis was a Jinn who became known for his pride and disobedience.",
-                    "Habitat or Domain": "Often associated with deserts, abandoned places, caves, wells, dark locations, old bathhouses, seas, and windy regions.",
-                    "Relationship with Humans": "Some Jinn are believed to mislead or tempt humans, while others may assist righteous people. Islamic tradition also describes Jinn serving Prophet Solomon.",
-                    "Motives or Goals": "Evil Jinn seek to deceive, dominate, or take revenge. Good Jinn pursue worship, knowledge, peace, and obedience to God.",
-                    "Signs of Presence": "Sudden chills, unusual smells such as burning or sulfur, strange sounds, fleeting shadows, and recurring nightmares are commonly associated with their presence in folklore.",
-                    "Famous Stories": "Appearing in the stories of Prophet Solomon, the tales of One Thousand and One Nights, and the legend of Aladdin's Genie.",
-                    "Protection Methods": "Reciting Ayat al Kursi, Surah Al Falaq, Surah An Nas, regular prayer, remembrance of God, cleanliness, and maintaining strong faith.",
-                    "Rituals of Summoning": "Legends describe summoning Jinn through magical verses, talismans, or enchanted lamps, although such practices are forbidden in Islam.",
-                    "Symbolic or Philosophical Meaning": "Often symbolizes pride, temptation, hidden power, mystery, and the untamed aspects of human nature.",
-                    "Similar Beings in Other Cultures": "Demons in Western traditions, Deevs in Persian mythology, Oni in Japanese folklore, and Rakshasa in Indian mythology share comparable characteristics.",
-                    "Influence in Modern Culture": "Featured in films such as Aladdin, television series, novels, and video games including Assassin's Creed and Prince of Persia, where they are often portrayed as mystical or dangerous beings.",
-                    "Interesting Facts": "According to some Islamic traditions, Jinn marry, have families, and live in communities. Certain animals such as black cats and snakes are sometimes associated with them in folklore. Islamic teachings also state that Jinn existed on Earth before humankind."
-                }
+            { 
+                name: "Jinn", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/download%20(8).jpg", 
+                desc: "Beings made of smokeless fire in Islamic tradition, capable of changing shape and influencing humans.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Jinn</div>
+                    <div class="detail-text">Jinn</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Jinn</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Known as Jinni, Shayatin, Ifrit, Marid, Ghoul, and in Western traditions as Genie or Demon.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">The Jinn originate from ancient Arabian and Mesopotamian traditions and later became an important part of Islamic belief. The Arabic word Jinn comes from the root meaning “to hide” or “to remain unseen.”</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Jinn are mentioned extensively in the Qur’an and Hadith, including references in Surah Al-Jinn, Ar-Rahman, Al-Hijr, Saba, and Al-Kahf. Belief in unseen spirits also existed among pre-Islamic Arab cultures.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">According to Islamic tradition, Jinn were created from smokeless fire, unlike humans who were created from clay. They are invisible beings with free will and independent existence.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Jinn are normally invisible to humans but are often said to possess the ability to appear as humans, animals, shadows, or smoke. Folklore sometimes describes them with glowing eyes, elongated forms, or strange voices.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Shape shifting\nInvisibility\nExtraordinary speed\nInfluencing thoughts and dreams\nFlight\nSupernatural perception\nInteraction with the physical world</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Many traditions state that remembrance of God, sacred prayers, recitation of holy verses, the call to prayer, and strong faith offer protection against harmful Jinn. Some folk beliefs also associate pure water or salt with protection.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Like humans, Jinn possess free will. Some are righteous and obedient to God, while others are rebellious or harmful. Islamic tradition identifies Iblis as a Jinn who became known for his pride and disobedience.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Jinn are commonly associated with deserts, ruins, caves, wells, isolated places, abandoned buildings, and remote natural environments. Folklore also places some among seas, rivers, or winds.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Stories portray Jinn as capable of both positive and negative interactions with humans. Some traditions describe them as deceivers or tempters, while others depict them serving prophets or helping people.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Motivations vary widely depending on the tradition. Some Jinn seek knowledge, worship, or peaceful existence, while others are portrayed as pursuing power, revenge, influence, or mischief.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden chills\nStrange sounds\nUnusual shadows\nSulfur-like odors\nDisturbing dreams\nUnexplained sensations\nThese signs belong primarily to folklore and popular belief rather than established religious doctrine.</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">The Jinn who served Prophet Solomon\nStories from One Thousand and One Nights\nThe Genie of Aladdin\nNumerous Middle Eastern legends involving hidden worlds and supernatural encounters</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Prayer\nRemembrance of God\nRecitation of sacred scripture\nPersonal cleanliness\nStrong faith and moral conduct\nAvoiding superstitious or harmful practices</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Legends and folklore describe magical rituals, talismans, and enchanted objects used to summon Jinn. Such stories belong to mythology and folklore, and many religious traditions discourage or forbid attempts to contact supernatural beings.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Jinn often symbolize hidden power, temptation, mystery, the unseen world, and aspects of human nature that are difficult to understand or control. In mystical interpretations, they may represent untamed desires or inner spiritual struggles.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Demons in Western traditions\nDeevs in Persian mythology\nOni in Japanese folklore\nRakshasas in Indian mythology\nVarious spirits and supernatural beings found throughout world cultures</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Jinn appear in films, television series, novels, comics, folklore collections, and video games. Popular examples include Aladdin, Assassin’s Creed, Prince of Persia, and numerous fantasy and horror stories inspired by Middle Eastern mythology.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Many traditions describe Jinn as living in communities, tribes, and families.\nSome legends associate certain animals with Jinn.\nIslamic tradition teaches that Jinn existed before humankind.\nA complete chapter of the Qur’an, Surah Al-Jinn, is dedicated to them.\nBelief in Jinn remains widespread across many regions of the Middle East, North Africa, and South Asia.</div>
+                `
             },
-            {
-                name: "Red Demon",
-                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Red%20Demon.jpg",
-                desc: "A being of pure fire and wrath, bound by rage and eternal guilt.",
-                details: {
-                    "Original Name": "Red Demon",
-                    "Other Names or Titles": "Known as Fire Demon, Demon of Wrath, Red Fiend, Rakshas Lal, and Divo Atashin.",
-                    "Origin": "Originates from Persian and Indian mythology, representing uncontrolled fire, rage, destruction, and infernal fury. In Indian traditions, it is associated with karma and punishment for grave sins.",
-                    "Historical or Religious Source": "Although not directly mentioned in the Avesta, legends of red skinned demons appear in the Persian epic Shahnameh. Similar fire born beings are also found in Hindu Puranas and Sanskrit mythology.",
-                    "Nature and Essence": "A being born from fire and smoke with a semi spiritual and semi physical nature. It can manifest as living flame or hide within shadows.",
-                    "Appearance": "A gigantic figure with blazing red skin, molten lava like eyes, curved horns, and a mouth that releases fire when enraged. Often depicted carrying chains of burning metal or an iron mace.",
-                    "Powers and Abilities": "Control over fire, creation of heat storms, incineration of living beings, and manipulation of anger, hatred, revenge, and destructive emotions. Legends claim it can enter dreams and awaken violent impulses.",
-                    "Weaknesses": "Sacred water, sunlight, holy prayers, divine words, and symbols of purity weaken its power. It is often portrayed as vulnerable to spiritual light and blessed objects.",
-                    "Personality": "Proud, furious, merciless, and restless. Despite its cruelty, it is said to be consumed by eternal guilt and rage, having suffered betrayal among its own kind.",
-                    "Habitat": "Volcanoes, scorched deserts, fiery mountains, ruins of massacres, and places marked by violence and suffering. It is often said to wander during hot stormy nights.",
-                    "Relationship with Humans": "Generally hostile toward humanity. Some legends describe sorcerers seeking its power through forbidden rituals, while others claim it possesses people consumed by anger.",
-                    "Goals or Motivations": "To spread chaos, destruction, hatred, and conflict, turning people against one another and extinguishing peace and spiritual harmony.",
-                    "Signs of Presence": "Sudden waves of heat, the smell of sulfur and smoke, red shadows on walls, roaring sounds, unexplained fires, and dreams filled with endless flames.",
-                    "Famous Legends": "Khorasani folklore tells of the Red Demon being chained beneath fiery mountains between Iran and India, struggling to break free once every century.",
-                    "Protection Methods": "Reciting Ayat al Kursi, Surah Al Falaq, Surah An Nas, offering prayers, maintaining purity, and sprinkling clean water or white salt around a place.",
-                    "Summoning Rituals": "According to myth, a circle of fire is drawn and its name is called three times at midnight. Legends warn that anyone unable to control it will be consumed by flames.",
-                    "Symbolic Meaning": "Represents wrath, destruction, vengeance, obsession with power, and the dangerous inner fire of human nature when left unchecked.",
-                    "Similar Beings in Other Cultures": "Comparable to the Balrog from Tolkien's mythology, the Ifrit of Arabic folklore, and the Red Oni of Japanese legends.",
-                    "Cultural Impact": "Its imagery has inspired fiery demonic creatures in fantasy films, anime, and games such as Diablo and Doom, where it often appears as a lord of fire or guardian of infernal realms.",
-                    "Interesting Facts": "Legends say that thunder in the desert accompanied by the smell of smoke signals the Red Demon passing nearby. Some traditions symbolically describe active volcanoes as the breath of the Red Demon rising from beneath the Earth."
-                }
+            { 
+                name: "Demons", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/%D8%AC%D9%86.jpg", 
+                desc: "Malevolent spirits believed to corrupt or possess humans.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Satan</div>
+                    <div class="detail-text">Satan</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Satan</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Known as Iblis, Azazil, Lucifer, Beelzebub, Mephistopheles, Devil, Fallen Angel, Evil Spirit, and Dark One.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Satan originates from Abrahamic religions, including Islam, Christianity, and Judaism. In Islamic tradition, Iblis was a Jinn who refused God's command to bow before Adam. In Christian tradition, Satan is often identified as a fallen angel who rebelled against God and was cast out of Heaven.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Satan is mentioned throughout the Qur’an, Bible, and Torah. References appear in numerous religious texts, including Surah Al-Baqarah, Al-A'raf, Al-Hijr, An-Nas, and As-Saffat. Similar concepts of evil spirits and dark beings also appear in ancient Persian, Greek, and other mythological traditions.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">In Islamic belief, Satan and many demons are from the Jinn and were created from smokeless fire. In Christian and Jewish traditions, demons are commonly described as fallen spiritual beings or rebellious angels.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Satan is generally considered invisible, but folklore and art often portray him with horns, dark wings, glowing red eyes, black or gray skin, claws, and a terrifying appearance. Some legends claim he can also appear as a beautiful human to deceive people.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Temptation\nDeception\nPossession\nFear manipulation\nShape shifting\nDream influence\nIllusion creation\nSpiritual corruption\nInfluence over human thoughts</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Many religious traditions teach that prayer, faith, and sacred words offer protection against Satan.\n\nIn Islam:\nBismillah\nAyat al-Kursi\nSurah Al-Falaq\nSurah An-Nas\nAdhan\nStrong faith\n\nIn Christianity:\nThe Cross\nHoly Water\nPrayer\nThe name of Jesus Christ</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Satan is commonly portrayed as proud, deceitful, manipulative, patient, intelligent, and hostile toward humanity. He is often described as preferring subtle temptation and corruption over direct confrontation.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Religious and folkloric traditions associate Satan and demons with dark places, ruins, graveyards, abandoned locations, and spiritually corrupted environments. In Christian belief, their ultimate realm is Hell or the Underworld.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Satan is traditionally viewed as an enemy of humankind whose goal is to mislead, tempt, and corrupt people. Folklore and occult traditions sometimes describe attempts to summon or communicate with demonic entities, though such practices are generally condemned by major religions.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Spreading sin\nCorrupting faith\nMisleading humanity\nEncouraging evil actions\nSeeking revenge against humankind\nExpanding darkness and corruption</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden fear\nUnexplained anxiety\nDark shadows\nDisturbing whispers\nRecurring nightmares\nStrange sensations\nUnusual environmental disturbances\nThese signs are largely based on folklore, legends, and cultural beliefs rather than verified evidence.</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">The temptation of Adam and Eve\nThe fall of Lucifer from Heaven\nJesus casting out demons\nThe legend of Faust and Mephistopheles\nAncient Persian stories involving battles against evil spirits</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Prayer\nFaith\nRepentance\nRecitation of sacred scripture\nRemembrance of God\nMoral conduct\nSpiritual discipline\nAvoiding harmful or occult practices</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Legends and occult traditions describe rituals involving symbols, magical texts, sacrifices, or invocations intended to summon demonic entities. Such practices belong to folklore and occult traditions and are generally forbidden in Islam, Christianity, and Judaism.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Satan often symbolizes pride, rebellion, temptation, corruption, moral darkness, and the destructive side of free will. Philosophical interpretations sometimes view him as a symbol of defiance, disobedience, or the struggle between authority and personal choice.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Deevs in Persian mythology\nOni in Japanese folklore\nAsuras in Hindu mythology\nMo Gui in Chinese folklore\nFallen Angels in Western traditions\nVarious evil spirits found throughout world mythology</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Satan and demons appear in countless films, novels, television series, comics, video games, and folklore collections. Popular examples include The Exorcist, Diablo, Doom, Devil May Cry, Blue Exorcist, and Paradise Lost by John Milton.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Islamic tradition mentions a companion spirit known as a Qareen.\nMany mythologies organize demons into hierarchies and ranks.\nSome legends claim demons manipulate truth rather than tell direct lies.\nThe concept of Satan has influenced religious, philosophical, literary, and artistic traditions for centuries.\nBelief in demonic beings remains widespread across many cultures around the world.</div>
+                `
             },
-            {
-                name: "Lilith",
-                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/%D9%84%DB%8C%D9%84%DB%8C%D8%AB.jpg",
-                desc: "The dark night spirit, mother of demons, and seeker of ultimate freedom.",
-                details: {
-                    "Original Name": "Lilith",
-                    "Other Names": "Known as Lilītu in Sumerian tradition, Lilitu in Babylonian mythology, and Lilit in Hebrew texts. She is also called the Lady of the Night, Dark Wind Spirit, and Adam's First Wife.",
-                    "Origin": "Lilith originated in ancient Sumerian and Babylonian mythology as a female spirit associated with the night, wind, and wilderness. Her legend later became intertwined with Jewish folklore and mystical traditions, where she evolved into a more complex and symbolic figure.",
-                    "Historical Sources": "The earliest references to Lilith appear in Sumerian tablets and Babylonian magical texts. Her most famous appearance is in The Alphabet of Ben Sira, where she is described as Adam's first wife who refused submission and left Eden.",
-                    "Nature": "A supernatural being existing between spirit and flesh, associated with air, darkness, freedom, and rebellion. She is neither fully human nor entirely demonic.",
-                    "Physical Appearance": "Usually portrayed as a mysterious and beautiful woman with pale skin, glowing eyes, and long black hair. Some depictions give her dark wings, birdlike feet, serpent features, or eagle talons, reflecting both beauty and danger.",
-                    "Powers and Abilities": "Flight, shape shifting, dream manipulation, seduction, hypnotic influence, and control over lesser female spirits. In folklore she is sometimes said to feed on spiritual energy and appear within dreams.",
-                    "Weaknesses": "Sacred names of God and holy angels are believed to repel her. Traditional protective names include Sanvi, Sansanvi, and Semangelaf. Amulets bearing these names were historically used for protection.",
-                    "Personality": "Proud, intelligent, independent, seductive, and rebellious. She rejects domination and values freedom above obedience. Many stories portray her as both dangerous and charismatic.",
-                    "Habitat": "Deserts, ruins, wastelands, lonely places, and the winds of the night. Some traditions associate her with remote wilderness regions and barren landscapes.",
-                    "Relationship with Humans": "Often portrayed as a tempter or adversary. Folklore describes her appearing in dreams or wandering near vulnerable individuals, especially during the night.",
-                    "Motives": "Driven by a desire for freedom, independence, revenge, and resistance against authority. In some interpretations she seeks justice for perceived wrongs rather than representing pure evil.",
-                    "Signs of Presence": "A sudden cold breeze, the scent of dead flowers or burnt incense, feminine shadows in darkness, vivid dreams, and unexplained feelings of unease.",
-                    "Famous Stories": "According to The Alphabet of Ben Sira, Lilith and Adam were created from the same earth. When Adam demanded authority over her, she refused, declared herself his equal, spoke the secret name of God, and departed from Eden forever.",
-                    "Protection": "Protective prayers, sacred names, guardian angel inscriptions, Psalm 91, and keeping lights burning through the night were traditionally believed to ward off her influence.",
-                    "Summoning Rituals": "Medieval occult texts describe symbolic rituals involving candles, incense, and sacred words. These accounts belong to folklore and legend rather than established religious practice.",
-                    "Symbolism": "Lilith symbolizes independence, rebellion, feminine power, forbidden knowledge, sensuality, and resistance to control. Modern interpretations often view her as a symbol of personal freedom and self determination.",
-                    "Similar Entities": "Comparable figures include Lamia from Greek mythology, Qareenah from Arabic folklore, Lilitu from Mesopotamian tradition, and Ereshkigal, the Mesopotamian queen of the underworld.",
-                    "Cultural Influence": "Lilith appears in many modern works including Supernatural, Lucifer, Diablo IV, Castlevania, novels, artwork, and fantasy games. She has become one of the most recognizable female figures in dark mythology.",
-                    "Interesting Facts": "Often called the Mother of Demons in later folklore. In modern culture she has been reinterpreted as a symbol of female empowerment and independence. Legends claim she still wanders the night winds, her presence marked by mystery, darkness, and whispered voices."
-                }
-            }
+            { 
+                name: "Lilith", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/%D9%84%DB%8C%D9%84%DB%8C%D8%AB.jpg", 
+                desc: "A female night spirit from Jewish mythology.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Lilith</div>
+                    <div class="detail-text">Lilith</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Lilith</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Known as Lilītu, Lilitu, Lilit, Lady of the Night, Dark Wind Spirit, and in some traditions as Adam’s First Wife.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Lilith originated in ancient Sumerian and Babylonian mythology as a female spirit associated with the night, wind, and wilderness. Her legend later became part of Jewish folklore and mysticism, where she evolved into one of the most famous supernatural female figures.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">The earliest references to Lilith appear in Sumerian tablets and Babylonian magical texts. Her most famous appearance is found in The Alphabet of Ben Sira, a medieval Jewish work that describes her as the first wife of Adam who refused submission and left the Garden of Eden.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Lilith is portrayed as a supernatural female spirit existing between the human and demonic realms. She is associated with darkness, freedom, mystery, and rebellion.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">A beautiful woman with long black hair\nPale skin\nGlowing or mysterious eyes\nDark wings\nElegant but intimidating presence\nIn some legends, serpent-like features or bird-like talons</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Flight\nShape shifting\nDream manipulation\nSeduction\nMind influence\nSupernatural beauty\nControl over lesser spirits\nAppearing and disappearing at will</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Sacred names of God\nHoly prayers\nProtective angelic names\nReligious blessings\nProtective amulets in folklore\nTraditional legends often mention the names Sanvi, Sansanvi, and Semangelaf as protective symbols against Lilith.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Proud\nIntelligent\nIndependent\nRebellious\nCharismatic\nSeductive\nStrong willed\nMysterious\nShe is often portrayed as rejecting authority and refusing submission, making her both feared and admired in different traditions.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Deserts\nRuins\nWastelands\nNight winds\nRemote wilderness\nDark and isolated places\nSome traditions associate her with the region of the Red Sea.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Lilith is commonly portrayed as a tempter and supernatural visitor who appears in dreams and legends. Folklore often describes her interactions with lonely travelers, sleeping individuals, pregnant women, and newborn children.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Freedom\nIndependence\nRevenge against Adam's descendants in some legends\nSpreading temptation\nRejecting authority\nPreserving her own power and autonomy</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden cold air\nUnusual silence\nThe scent of burnt incense\nThe smell of dead flowers\nA feminine shadow in darkness\nDisturbing or vivid dreams\nStrange whispers during the night\nThese signs belong mainly to folklore and legendary traditions.</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">The story of Adam's first wife in The Alphabet of Ben Sira\nHer escape from Eden after refusing submission\nHer transformation into a legendary night spirit\nStories describing her as the Mother of Demons\nVarious medieval Jewish mystical traditions</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Prayer\nSacred texts\nProtective angelic names\nReligious blessings\nPsalm 91 in Jewish tradition\nProtective symbols placed near infants\nKeeping lights burning during the night in folklore</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Medieval occult texts sometimes describe symbolic rituals involving candles, incense, and magical invocations associated with Lilith. These stories belong to folklore, mythology, and occult literature rather than established religious practice.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Female independence\nRebellion against authority\nFreedom\nSensuality\nMystery\nForbidden knowledge\nThe untamed aspects of human nature\nModern interpretations often view Lilith as a symbol of empowerment and self-determination.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Lamia in Greek mythology\nQareenah in Arabic folklore\nLilitu in Mesopotamian mythology\nEreshkigal in certain mythological comparisons\nVarious female spirits and night entities throughout world folklore</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Lilith appears in numerous novels, films, television series, comics, video games, and fantasy works. Popular examples include Supernatural, Lucifer, Diablo IV, Castlevania, and many modern dark fantasy stories. She has also become an influential figure in literature, art, and feminist interpretations.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Often called the Mother of Demons in folklore.\nOne of the most famous female supernatural figures in world mythology.\nFrequently reinterpreted as a symbol of female empowerment and independence.\nHer legend has survived for thousands of years across multiple cultures.\nMany modern portrayals present her as a complex antihero rather than a purely evil being.</div>
+                `
+            },
+            { 
+                name: "Lamia", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Limia.jpg", 
+                desc: "A half-woman, half-serpent monster from Greek mythology.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Lamia</div>
+                    <div class="detail-text">Lamia</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Lamia</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Known as Lamiae, Laminia, Lady of the Night, Cave Demon, and in some medieval traditions, the Vampire Witch.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Lamia originates from ancient Greek mythology and is one of the most famous female monsters of classical legend. Her story dates back to pre-Christian Greece, where myths of gods, curses, and vengeful spirits played a central role in religious and cultural beliefs.</div>
+                    <div class="detail-header">Historical Sources</div>
+                    <div class="detail-text">Lamia appears in the writings of Herodotus, Diodorus Siculus, and Philostratus. References to her also appear in Greek literature and folklore, where she became a symbol of beauty transformed into horror through tragedy and divine punishment.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Originally a mortal queen and lover of Zeus, Lamia was transformed into a monstrous being after being cursed by Hera. She exists as a creature of vengeance, sorrow, jealousy, and supernatural darkness.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Beautiful female upper body\nSerpentine lower body\nPale skin\nGolden or yellow glowing eyes\nSharp fangs\nSplit tongue\nMesmerizing beauty mixed with terrifying features\nIn some depictions, she appears as a completely human woman capable of concealing her monstrous form.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Shape shifting\nSeduction\nHypnosis\nNight vision\nSuperhuman agility\nEnhanced strength\nDream manipulation\nLife force draining\nStealth and deception</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Sunlight\nSilver\nSacred symbols\nHoly blessings\nMirrors and reflections in some legends\nCertain myths claim that seeing her own reflection causes distress or madness.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Intelligent\nManipulative\nSeductive\nVengeful\nSorrowful\nJealous\nEmotionally tormented\nAlthough often portrayed as a monster, many stories emphasize her grief and suffering rather than pure evil.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Dark caves\nRemote deserts\nRocky coastlines\nRuins\nAbandoned places\nNighttime wilderness\nLegends often describe her wandering near villages and isolated settlements after sunset.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Lamia is usually portrayed as both predator and deceiver. She uses beauty and charm to attract victims, particularly young men, while many legends also associate her with attacks against children and infants.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Revenge\nJealousy\nReplacing what she lost\nSpreading suffering\nSeeking companionship through deception\nExpressing grief through destruction\nMany myths portray her actions as driven by heartbreak and loss rather than simple malice.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">A cold breeze\nThe scent of blood\nA sulfur-like odor\nSerpentine sounds in darkness\nUnsettling dreams\nA mysterious woman with golden eyes appearing in visions\nThese signs belong primarily to mythology and folklore.</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Lamia's relationship with Zeus\nThe wrath of Hera\nThe loss of Lamia's children\nHer transformation into a monster\nLegends describing her hunting travelers and children\nStories claiming Zeus granted her the ability to remove her eyes to rest from eternal wakefulness</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Silver amulets\nMirrors\nProtective charms\nFire\nIncense\nNight lamps\nSacred blessings\nAncient Greek traditions often used symbolic protective objects to ward off harmful spirits and monsters.</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Certain medieval occult texts describe symbolic rituals involving animal blood, incense, and music intended to invoke Lamia. These accounts belong to mythology, folklore, and fictional magical traditions rather than real historical practices.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Jealousy\nHeartbreak\nCorrupted love\nRevenge\nSeduction\nThe destructive consequences of grief\nIn modern interpretations, Lamia often represents emotional trauma transformed into obsession and vengeance.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Empusa in Greek mythology\nQareenah in Arabic folklore\nMorana in Slavic mythology\nNure-onna in Japanese folklore\nVarious serpent women and night spirits found throughout world mythology</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Lamia appears in novels, films, television series, fantasy artwork, and video games. She has inspired characters and creatures in Castlevania, The Witcher, Drag Me to Hell, Pan's Labyrinth, and numerous dark fantasy stories. John Keats' famous poem Lamia remains one of the best-known literary interpretations of her legend.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Often considered one of the earliest female vampire-like figures in mythology.\nOriginally portrayed as a tragic victim before becoming a monster.\nHer story combines themes of beauty, motherhood, loss, and vengeance.\nMany modern adaptations portray Lamia as an antihero rather than a purely evil creature.\nShe remains one of the most recognizable female monsters in Greek mythology.</div>
+                `
+            },
+            { 
+                name: "Wendigo", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Wendigo.jpg", 
+                desc: "A spirit of endless hunger from Native American folklore.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Wendigo</div>
+                    <div class="detail-text">Wendigo</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Wendigo</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Known as Wiindigoo, Windigo, Witiko, Spirit of Endless Hunger, and Winter Demon.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">The Wendigo originates from the folklore of Indigenous peoples of North America, particularly the Anishinaabe, Cree, and Ojibwe nations. It is one of the most feared creatures in northern woodland mythology and is strongly associated with winter, starvation, and moral corruption.</div>
+                    <div class="detail-header">Historical Sources</div>
+                    <div class="detail-text">Stories of the Wendigo were preserved through oral traditions for centuries before being recorded by European explorers, missionaries, and historians during the eighteenth and nineteenth centuries.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">The Wendigo is a supernatural being associated with insatiable hunger, greed, cold, and spiritual corruption. In many traditions, it is not merely a monster but a curse that transforms humans who commit terrible acts such as extreme greed or cannibalism.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Extremely tall and thin body\nSkeletal or emaciated appearance\nGray or decaying skin\nGlowing yellow eyes\nLong claws and sharp teeth\nAnimalistic features in some legends\nSometimes depicted with deer-like antlers\nAn appearance reflecting endless starvation</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Superhuman strength\nExtraordinary speed\nEnhanced senses\nMasterful tracking abilities\nResistance to injury\nFear induction\nPsychological manipulation\nSupernatural endurance</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Fire\nBright light in some traditions\nProtective tribal rituals\nSacred charms\nStrong mental resilience\nResistance to fear and temptation\nDifferent Indigenous traditions describe different methods of protection and defense.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Savage\nViolent\nPredatory\nGreedy\nMerciless\nObsessive\nDriven entirely by hunger\nMany stories portray the Wendigo as a tragic figure created through spiritual corruption rather than born as a monster.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Northern forests\nSnow-covered wilderness\nRemote mountains\nFrozen regions\nDark isolated areas\nHarsh winter environments</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">The Wendigo is usually portrayed as an enemy of humanity. Legends often describe it hunting travelers, isolated individuals, or people stranded during harsh winters. In some traditions, humans can become Wendigos after committing acts of extreme moral transgression.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Satisfying endless hunger\nConsuming human flesh\nSpreading fear\nCorrupting others\nPunishing greed and moral decay\nRepresenting the consequences of selfish behavior</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Strange sounds in the forest\nUnnatural silence\nThe smell of decay\nSudden freezing temperatures\nFeelings of dread\nUnexplained fear\nShadowy figures moving through trees\nThese signs belong primarily to folklore and traditional storytelling.</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Legends of starving individuals transformed into Wendigos\nStories of hunters encountering the creature in winter forests\nTraditional cautionary tales warning against greed and cannibalism\nAccounts passed down through generations among Indigenous communities</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Keeping fires burning\nTraditional prayers\nProtective rituals\nSacred charms\nCommunity cooperation\nMaintaining moral behavior\nAvoiding greed and selfishness\nMany stories emphasize spiritual and moral strength as the greatest defense.</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Folklore occasionally associates the Wendigo with forbidden acts, starvation, or spiritual corruption. Stories about intentionally calling or creating a Wendigo belong to mythology and legend rather than real-world practices.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Endless greed\nInsatiable hunger\nMoral corruption\nSelf-destruction\nIsolation\nThe dangers of selfishness\nThe consequences of violating social and natural laws\nMany scholars view the Wendigo as a cultural warning against excessive greed and destructive behavior.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Jikininki in Japanese folklore\nHungry Ghosts in East Asian traditions\nVampires in European folklore\nVarious cannibalistic spirits found throughout world mythology\nWinter demons and wilderness monsters from northern legends</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">The Wendigo has appeared in numerous horror novels, films, television series, comics, and video games. Notable appearances include Until Dawn, Bloodborne, Skyrim, Pet Sematary, and many modern supernatural horror stories inspired by Indigenous folklore.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">The Wendigo is one of the most famous creatures in North American folklore.\nMany traditions describe it as growing larger each time it feeds.\nIts hunger can never be satisfied regardless of how much it consumes.\nThe creature is often used as a moral lesson about greed, selfishness, and the dangers of abandoning human values.\nSome legends portray the Wendigo not as a monster, but as a warning about what humans can become when consumed by desperation and excess.</div>
+                `
+            },
+            { 
+                name: "Banshee", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Banshee.jpg", 
+                desc: "An Irish spirit whose scream foretells death.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Banshee</div>
+                    <div class="detail-text">Banshee</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Banshee</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Known as Bean Sí, Bean Sidhe, Ban Sith, Fairy Woman of Death, and Woman of the Fairy Mounds.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">The Banshee originates from Irish and Scottish Celtic folklore. She is one of the most iconic supernatural beings in Celtic mythology and has been associated with death omens and family lineages for centuries.</div>
+                    <div class="detail-header">Historical Sources</div>
+                    <div class="detail-text">References to the Banshee appear throughout medieval Irish legends, folklore collections, ancient poetry, and noble family traditions. Many stories describe her as a spirit connected to ancient Irish bloodlines and ancestral heritage.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">The Banshee is a supernatural female spirit associated with death, mourning, and the transition between life and the afterlife. Rather than being a malevolent entity, she is often portrayed as a messenger or herald of approaching death.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Beautiful woman with long silver or white hair\nWhite, gray, or green robes\nPale complexion\nEyes reddened from endless weeping\nSometimes appears as an elderly woman with a sorrowful face\nA ghostly and ethereal presence\nHer appearance often changes depending on the legend and the message she carries.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Foretelling death\nSupernatural wailing\nAppearing and disappearing instantly\nSpiritual manifestation\nShapeshifting in some legends\nConnection to family bloodlines\nCommunication through omens and signs</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Sacred prayers\nHoly symbols\nSilver objects in some traditions\nRespectful treatment\nUnlike many supernatural beings, the Banshee is rarely portrayed as something that can be fought or destroyed.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Sorrowful\nCompassionate\nMysterious\nLoyal\nMelancholic\nWatchful\nProtective toward certain families\nMost traditions describe her as grieving rather than malicious, carrying out a duty rather than seeking harm.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Irish countryside\nAncient hills\nRiverbanks\nCastle grounds\nCemeteries\nFog-covered landscapes\nRemote locations associated with old family estates</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">The Banshee is not usually hostile toward humans. Instead, she is traditionally connected to specific Irish families and appears when a death is approaching. Her presence is often considered a warning rather than a threat.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Announcing approaching death\nGuiding souls toward the afterlife\nWarning family members\nHonoring ancient family bonds\nFulfilling a supernatural duty</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">A haunting cry or wail\nSudden cold air\nDense mist\nThe scent of funeral flowers\nThe smell of candle wax\nA distant female figure dressed in white\nThese signs belong primarily to folklore and traditional storytelling.</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">The Banshee who cried for three nights before the death of an Irish king\nLegends of a woman combing her silver hair beside the River Shannon\nStories of noble families hearing her mournful cry before a relative passed away\nAncient Celtic tales describing her as a guardian spirit of powerful bloodlines</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Prayer\nReligious blessings\nSacred symbols\nSilver charms\nRemaining indoors after hearing her cry in folklore traditions\nMany stories suggest that the Banshee does not need protection against because she is often a messenger rather than a harmful spirit.</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some legends claim that calling her name into the wind during certain nights may attract her attention. These stories belong to folklore and mythology, and there are no established traditions involving the deliberate summoning of a Banshee.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Death\nMourning\nFate\nAncestral memory\nThe passage between life and death\nThe inevitability of mortality\nThe Banshee often symbolizes the emotional and spiritual reality that every life eventually comes to an end.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Yūrei in Japanese folklore\nLa Llorona in Latin American folklore\nBean Nighe in Scottish mythology\nVarious mourning spirits and death messengers found throughout world traditions</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">The Banshee appears in films, novels, television series, comics, fantasy games, and Celtic-inspired stories. Notable examples include The Banshees of Inisherin, Darby O'Gill and the Little People, Mass Effect, Assassin’s Creed Valhalla, and numerous fantasy and horror works.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">The Banshee is one of the oldest supernatural figures in Irish folklore.\nSome traditions claim that only ancient noble families possess a family Banshee.\nHer cry is considered an omen rather than an attack.\nCertain legends describe multiple Banshees appearing together before the death of a king or great leader.\nDespite her frightening reputation, many stories portray her as a sorrowful guardian rather than an evil spirit.</div>
+                `
+            },
+            { 
+                name: "Kuyuki", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Koyuki.jpg", 
+                desc: "A nine-tailed fox spirit from Japanese folklore.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Kyūbi no Kitsune</div>
+                    <div class="detail-text">Kyūbi no Kitsune</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Kyūbi no Kitsune</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Known as Kitsune, Nine-Tailed Fox, Tamamo-no-Mae, Huli Jing, and Gumiho.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">The Kyūbi no Kitsune originates from Japanese mythology and Shinto folklore, with deeper roots in ancient East Asian traditions shared across China, Korea, and Japan. It is one of the most famous fox spirits in Asian mythology.</div>
+                    <div class="detail-header">Historical Sources</div>
+                    <div class="detail-text">The Nine-Tailed Fox appears in classical Japanese works such as Konjaku Monogatari and numerous medieval legends. Related fox spirit traditions can also be found in Chinese folklore from the Tang Dynasty and ancient Korean mythology.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">The Kyūbi no Kitsune is a powerful spiritual and magical fox spirit. It exists between the physical and supernatural worlds and is often associated with mystical energy, wisdom, transformation, and illusion.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Large white fox with nine tails\nGolden or glowing eyes\nGraceful and majestic appearance\nCan transform into a beautiful human woman\nOften surrounded by mystical blue fox fire\nEach tail symbolizes age, wisdom, and spiritual power</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Shape-shifting\nIllusion creation\nMind influence\nTelepathy\nFox fire manipulation\nEnhanced intelligence\nFuture prediction in some legends\nSupernatural longevity\nNear immortality\nMagical transformation</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Ofuda talismans\nSacred Shinto rituals\nTemple bells\nBuddhist prayers\nLoss of tails reducing power\nCertain spiritual protections in folklore\nDifferent stories describe different vulnerabilities depending on the tradition.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Intelligent\nCunning\nMysterious\nCharismatic\nSeductive\nIndependent\nSometimes benevolent\nSometimes dangerous\nThe Kyūbi no Kitsune is often portrayed as morally complex rather than purely good or evil.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Mountain forests\nAncient woodlands\nRemote shrines\nMisty valleys\nRural landscapes\nSacred natural locations throughout Japan</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Fox spirits frequently interact with humans in folklore. Some stories describe them as tricksters and deceivers, while others portray them as loyal companions, protectors, teachers, or even lovers.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Seeking knowledge\nIncreasing spiritual power\nProtecting sacred places\nTesting human character\nPursuing immortality\nRevenge in certain legends\nPersonal freedom and independence</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden gusts of wind\nMysterious laughter\nBlue flames in darkness\nDreams involving white foxes\nUnusual lights in forests\nA feeling of being watched\nThese signs belong primarily to folklore and traditional storytelling.</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">The legend of Tamamo-no-Mae\nAncient fox spirit tales of Japan\nStories of shape-shifting foxes living among humans\nLegends connecting the Nine-Tailed Fox to imperial courts and supernatural intrigue\nFolklore involving magical foxes serving or opposing powerful rulers</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Ofuda charms\nSacred prayers\nTemple rituals\nProtective talismans\nPrayer beads\nSeeking blessings at shrines associated with fox spirits\nTraditional folklore often emphasizes spiritual protection and wisdom rather than physical defense.</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Legends describe mystical ceremonies involving candles, prayers, and sacred locations. These stories belong to mythology and folklore and are not part of real-world religious practice.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Intelligence\nTemptation\nTransformation\nDuality\nMystery\nWisdom\nHidden power\nThe balance between beauty and danger\nThe Kyūbi no Kitsune often represents the unpredictable and transformative forces of nature and the human spirit.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Huli Jing in Chinese folklore\nGumiho in Korean folklore\nSuccubus in European folklore\nLeshy in Slavic mythology\nVarious fox spirits and trickster beings throughout world mythology</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">The Nine-Tailed Fox is one of the most influential creatures in modern fantasy. It appears in anime, manga, novels, films, television series, and video games. Famous examples include Kurama from Naruto, Ahri from League of Legends, Pokémon's Ninetales, and countless Japanese fantasy stories.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Many legends state that a fox gains additional tails as it grows older and wiser.\nA Nine-Tailed Fox is often considered the most powerful form a fox spirit can achieve.\nThe famous legend of Tamamo-no-Mae remains one of Japan's best-known supernatural stories.\nFox spirits are sometimes viewed as both divine messengers and dangerous tricksters depending on the tradition.\nThe Nine-Tailed Fox remains one of the most recognizable creatures in East Asian mythology.</div>
+                `
+            },
+            { 
+                name: "Anubis", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Anubis.jpg", 
+                desc: "The guardian of the dead in Ancient Egyptian mythology.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Anubis</div>
+                    <div class="detail-text">Anubis (Greek form of the Egyptian name Inpu or Anpu)</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Inpu / Anpu</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Imy-ut (He who is in the wrappings)\nKhenti-Amentiu (Lord of the Western Lands)\nHerm-Anubis (Greco-Roman fusion of Hermes and Anubis)</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Anubis originates from Ancient Egyptian mythology and is one of the oldest and most important deities associated with death, burial, and the afterlife.</div>
+                    <div class="detail-header">Historical Sources</div>
+                    <div class="detail-text">Anubis appears in some of the earliest Egyptian religious texts, including the Pyramid Texts, the Book of the Dead, and numerous tomb inscriptions and funerary papyri from ancient Egypt.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Anubis is a divine and spiritual being symbolized by a black jackal. He represents death, mummification, protection of the dead, and rebirth. His black color symbolizes regeneration and the fertile soil of the Nile rather than decay.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Man with the head of a black jackal\nSometimes depicted as a full black jackal\nGolden ceremonial garments\nSacred staff and funerary tools\nOften shown beside tombs or scales of judgment</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Guides souls to the afterlife\nWeighs hearts against the feather of truth\nProtects tombs and burial sites\nPerforms spiritual judgment of the dead\nPossesses deep knowledge of death and embalming\nCan interact with spirits of the afterlife</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Anubis is not portrayed as a being with fear or weakness in mythology. However, disrespect toward burial rituals and injustice against the dead is considered offensive to him and disrupts cosmic order.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Wise\nCalm\nNeutral\nFair\nEmotionless in judgment\nStrict toward dishonesty and impurity\nAnubis is neither good nor evil; he functions as a divine judge maintaining balance between life and death.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Duat (the Egyptian underworld)\nTombs and burial chambers\nDesert necropolises\nSacred funerary sites\nHe is also spiritually associated with places of death and transition.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Anubis is a protector and guide of the dead rather than an enemy of humans. He assists righteous souls in reaching the afterlife but punishes grave robbers and those who disrespect the dead.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Maintain cosmic balance\nEnsure fair judgment of souls\nProtect the dead\nPreserve the sacred order of burial and transition into the afterlife</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Jackal howling near graves\nSudden cold or heavy atmosphere\nSmell of embalming oils or earth\nDreams involving black jackals or scales of judgment\nThese signs belong to ancient mythology and symbolic tradition.</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Anubis embalmed Osiris, creating the first mummy in Egyptian mythology\nHe serves as the guardian of the weighing of the heart ceremony\nHe helps determine whether souls are worthy of entering the afterlife or being devoured by Ammit</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Funerary amulets depicting Anubis\nRecitation of sacred burial spells such as Spell 125 from the Book of the Dead\nProper burial rituals and offerings\nIn Egyptian belief, Anubis was invoked for protection rather than feared.</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some ancient funerary texts describe invoking the name Inpu at night with ritual candles and offerings. These practices were intended for guiding the dead and ensuring safe passage, not for commanding the deity. They belong strictly to mythological tradition.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Death\nJudgment\nTransition\nTruth\nCosmic balance\nProtection of the dead\nRebirth and transformation\nAnubis represents the idea that death is not an end but a passage into another state of existence.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Hermes (Greek mythology) – guide of souls\nCharon (Greek mythology) – ferryman of the dead\nAzrael (Islamic tradition) – angel of death\nHel (Norse mythology) – ruler of the underworld</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Anubis appears widely in modern media, including The Mummy, Gods of Egypt, Assassin’s Creed Origins, SMITE, Tomb Raider, and many books, comics, and games as a symbol of death and mystery.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Anubis was one of the earliest Egyptian gods associated with death before Osiris became the ruler of the underworld\nHe is often considered the inventor of embalming and mummification\nHis image protected tombs for thousands of years\nThe black color of Anubis symbolizes fertility, rebirth, and the rich soil of the Nile rather than darkness or evil</div>
+                `
+            },
+            { 
+                name: "Chupacabra", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Chupacabra.jpg", 
+                desc: "A legendary blood-drinking creature from Latin America.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Chupacabra</div>
+                    <div class="detail-text">Chupacabra</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Chupacabra</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Goat Sucker or El Vampiro de Moca meaning The Vampire of Moca.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">The Chupacabra originates from Latin American folklore, especially Puerto Rico, Mexico, and Chile.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">The Chupacabra is not mentioned in any religious texts. It first appeared in news reports from Puerto Rico in the 1990s and is based on eyewitness accounts and local folklore.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">The Chupacabra is described as a semi-physical and semi-mythical creature. Some theories suggest it is an alien being, while others describe it as the result of a genetic experiment gone wrong.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">It is commonly described as a reptile-like or dog-like creature with hairless or scaly skin, glowing red eyes, sharp fangs, and spines along its back. It is usually about one to one point five meters tall.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">High speed movement\nAbility to leap long distances\nStrong sense of smell for blood\nDraining blood from animals without tearing flesh\nStealth movement in darkness\nPossible invisibility or vanishing in shadows</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">According to folklore, it avoids sunlight, loud noises, salt, and iron. Some legends also mention that church bells or holy water can repel it.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">It is described as a mysterious and predatory creature driven by instinct. It attacks mainly for survival rather than revenge or malice.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">It is associated with rural areas, farms, mountains, and deserts in Latin America, especially places with livestock.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">It is considered hostile due to attacks on livestock, although there are no confirmed cases of direct attacks on humans.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Its primary motivation is feeding on blood. Some stories claim it is the result of a curse or scientific experimentation.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Dead livestock drained of blood\nSmall puncture wounds on the neck\nStrong metallic or sulfur-like smell\nStrange noises or fast-moving shadows at night</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">The first major reports came from Puerto Rico in 1995, followed by similar sightings in Mexico, Chile, and parts of the United States. No verified physical evidence has ever been confirmed.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Bright lights at night\nSalt or iron placed around farms\nCrosses and prayers according to local beliefs</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">No real or confirmed rituals exist. Folklore mentions fictional practices involving sacrifices or midnight rituals, but these are purely mythological and not based on reality.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">The Chupacabra symbolizes fear of the unknown, mistrust of science, and anxiety about unseen threats.</div>
+                    <div class="detail-header">Similar Creatures</div>
+                    <div class="detail-text">Wendigo in Native American folklore\nSlenderman in modern internet mythology\nVampires such as Dracula in global folklore</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">The Chupacabra appears in films, television, and video games such as Red Dead Redemption Undead Nightmare, Scooby Doo and the Monster of Mexico, The X Files, and Grimm.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Some researchers believe sightings may have been misidentified animals such as mangy dogs.\nIn some regions, people still organize hunts to search for the creature.\nThe name Chupacabra is now widely used to describe any mysterious blood drinking creature in popular culture.</div>
+                `
+            },
+            { 
+                name: "Kappa", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Kappa.jpeg", 
+                desc: "A water creature from Japanese folklore that lures people into water.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Kappa</div>
+                    <div class="detail-text">Kappa</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Kappa</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Gawatarō or Kawatarō, meaning river child or water spirit.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Kappa originates from Japanese folklore and belongs to the class of supernatural beings known as Yokai.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Kappa is not directly mentioned in ancient Japanese chronicles such as Nihon Shoki or Kojiki, but appears widely in Buddhist temple folklore, medieval stories, and local legends as a water spirit associated with rivers and nature.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Kappa is a water-based supernatural being with both human and turtle-like characteristics. Its life force depends on the water contained in the bowl-shaped depression on its head.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">It is typically described as having green or yellowish skin, a slimy texture, a turtle-like shell, webbed hands and feet, a beak-like mouth, and a water-filled cavity on its head. If the water spills, it loses its power.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Excellent swimming ability\nAbility to drag humans or animals underwater\nSuperhuman strength in water\nAbility to speak human language\nShapeshifting in some legends\nKnowledge of medicine and minor magic\nEmission of foul or toxic gases for defense</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">If it bows, the water spills from its head, causing it to lose strength. It is also said to fear fire and intense heat.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Kappa is often portrayed as mischievous, curious, and sometimes dangerous. It may harm humans as a prank or out of curiosity, but it can also become friendly and helpful if treated with respect.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">It lives in rivers, ponds, swamps, and other freshwater environments in Japan, often appearing during summer near water sources.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Kappa has a dual relationship with humans. It may attack children or animals, but in some stories, it helps kind humans by sharing knowledge of medicine or healing techniques.</div>
+                    <div class="detail-header">Motivation</div>
+                    <div class="detail-text">Its actions are usually driven by curiosity or playfulness rather than hatred. In some traditions, it is also seen as a guardian spirit of rivers.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Childlike laughter near water\nBubbles or ripples on the water surface\nSmell of cucumbers or algae\nWet footprints resembling turtle or bird tracks</div>
+                    <div class="detail-header">Famous Legends</div>
+                    <div class="detail-text">In one story, a farmer shows kindness to a Kappa, which later teaches him a healing herb. In another, a samurai defeats a Kappa, and it promises never to harm humans again.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Bowing to it, which causes it to return the bow and spill the water from its head\nOffering cucumbers into rivers\nAvoiding rivers at night, especially during summer</div>
+                    <div class="detail-header">Rituals of Summoning</div>
+                    <div class="detail-text">Folklore says that writing one’s name on a cucumber and placing it in a river may attract a Kappa. This is purely mythical and has no real basis.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Kappa symbolizes the dual nature of water as both life-giving and dangerous. It also represents the importance of respecting nature and its hidden forces.</div>
+                    <div class="detail-header">Similar Creatures</div>
+                    <div class="detail-text">Nixie from German folklore\nSelkie from Scottish mythology\nRusalka from Slavic legends</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Kappa appears in various modern media including Pokémon, Naruto, GeGeGe no Kitaro, My Neighbor Totoro, and Ponyo. It has also influenced Japanese food culture, such as Kappa Maki cucumber sushi rolls.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Kappa is often used in folklore to warn children against playing near rivers. It is said to enjoy sumo wrestling challenges with humans. Some legends also describe it as a creature that strictly keeps its promises once a pact is made.</div>
+                `
+            },
+            { 
+                name: "Dracula", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Dracula.jpg", 
+                desc: "A legendary vampire who feeds on human blood.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Dracula</div>
+                    <div class="detail-text">Dracula derived from the Romanian word Dracul meaning dragon or son of the dragon.</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Dracula</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Count Dracula, Vlad the Impaler, Nosferatu, Prince of Darkness, Undead Lord.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Western origin, especially Romanian and Eastern European folklore, later popularized by English literature.</div>
+                    <div class="detail-header">Historical and Literary Source</div>
+                    <div class="detail-text">First introduced in Bram Stoker’s 1897 novel Dracula, inspired by Vlad III, a 15th century Wallachian ruler known for extreme cruelty.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">An undead immortal being, a cursed hybrid of physical and spiritual existence, sustained by drinking human blood.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">A tall pale man with sharp fangs, red eyes, black cloak, and aristocratic presence. Often described as both elegant and terrifying.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Immortality\nShape shifting into bat, wolf, or mist\nHypnotic mind control\nSuperhuman strength\nRapid regeneration\nAbility to create vampires through biting</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Sunlight, garlic, holy symbols such as crosses and holy water, silver, wooden stakes through the heart, and decapitation. He cannot enter a home without invitation.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Intelligent, manipulative, proud, and cold blooded. Often calm and refined in appearance but deeply cruel in nature.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Dark castles, crypts, and remote regions, especially Transylvania, though he travels in the original story.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">A predator and manipulator of humans, feeding on blood while sometimes being portrayed as a tragic or romantic figure.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Eternal life, domination over humanity, expansion of vampirism, and in some interpretations revenge or lost love.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden cold air, absence in mirrors, presence of bats or wolves, puncture wounds on the neck, and drained bodies.</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Bram Stoker’s Dracula, Nosferatu, Dracula 1931, Bram Stoker’s Dracula 1992, and many modern adaptations in film, anime, and games.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Garlic, crosses, holy water, sunlight, silver, wooden stakes, and sealing entrances to prevent entry.</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some fictional legends mention blood rituals or necromancy, but these are symbolic and not real.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Dracula represents fear of death, desire for immortality, temptation, corruption, and the struggle between faith and darkness.</div>
+                    <div class="detail-header">Similar Creatures</div>
+                    <div class="detail-text">Jiangshi in Chinese folklore\nAswang in Filipino folklore\nStrigoi in Romanian mythology\nUpir in Slavic folklore</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Dracula is one of the most influential horror figures, inspiring works such as Castlevania, Twilight, Hotel Transylvania, Van Helsing, and countless other films and games.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">The name Dracula comes from the Order of the Dragon.\nVlad the Impaler inspired the brutality of the vampire myth.\nSome theories link vampire legends to diseases like tuberculosis or plague.\nBran Castle in Transylvania is widely associated with Dracula and is now a major tourist attraction.</div>
+                `
+            },
+            { 
+                name: "Vampire", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Vampire.jpg", 
+                desc: "A nocturnal being that survives on blood or life energy.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Vampire</div>
+                    <div class="detail-text">Vampire comes from the Slavic word Upir or Vampir, first appearing in Eastern European folklore around the 11th century.</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Vampire</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Nosferatu, The Undead, Bloodsucker, Night Walker, The Immortal, Strigoi, Upir, Jiangshi, Asanbosam.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Primarily Eastern European folklore, especially Slavic and Romanian traditions, later expanded into global mythology. Similar beings appear in Asian, African, and South American cultures.</div>
+                    <div class="detail-header">Historical and Mythical Source</div>
+                    <div class="detail-text">Described in medieval European folklore as corpses that rise from graves to feed on blood. It is purely mythological with no basis in religious scriptures.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">A semi-physical, semi-spiritual undead being that exists between life and death, sustained by drinking human blood or life force.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">Pale skin, sharp fangs, glowing red eyes, dark elegant clothing. Older folklore versions describe them as decayed and monstrous rather than beautiful.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Immortality\nRegeneration\nShape shifting into bat, wolf, or mist\nHypnosis and mind control\nSuperhuman strength and speed\nCreation of new vampires through biting</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Sunlight, garlic, holy symbols, silver, fire, decapitation, and wooden stakes through the heart. They cannot enter a home without invitation.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Seductive, intelligent, and manipulative. Some are cruel predators, while others are portrayed as lonely or philosophical beings. They represent both charm and darkness.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Graveyards, castles, crypts, forests, and ruins. They rest in coffins during the day and hunt at night.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Predatory but sometimes emotionally complex. Some stories portray them as capable of love, empathy, or inner conflict between humanity and monstrosity.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Survival through blood consumption, eternal life, creation of vampire lineages, and sometimes revenge or redemption.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Cold air\nUnusual animal behavior\nBite marks on the neck\nAbsence of reflection\nPresence of bats or wolves</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Dracula, Nosferatu, Interview with the Vampire, Twilight, Underworld, Castlevania, Vampire Diaries, Blade, and many others.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Garlic, sunlight, crosses, holy water, silver, mirrors, salt, and wooden stakes. Some legends say scattering grains like rice or seeds can delay them because they must count each one.</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Dark folklore mentions blood rituals and necromancy, but these are purely symbolic and fictional.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Vampires represent fear of death, desire for immortality, temptation, emotional dependency, and eternal loneliness. They symbolize the idea that immortality without humanity leads to suffering.</div>
+                    <div class="detail-header">Similar Creatures</div>
+                    <div class="detail-text">Jiangshi in Chinese folklore\nAswang in Filipino mythology\nStrigoi in Romanian folklore\nLamia in Greek mythology\nObayifo in West African beliefs</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Vampires dominate gothic horror, fantasy, romance, films, and games, including Twilight, Castlevania, Vampire Diaries, Hotel Transylvania, and Vampire The Masquerade.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">The word Vampire first appeared in English in 1734.\nSlavic traditions sometimes buried suspected vampires with stones in their mouths.\nSome theories connect vampire myths to diseases such as porphyria.\nModern psychology interprets vampires as symbols of emotional parasitism, describing people who drain others emotionally.</div>
+                `
+            },
+            { 
+                name: "Werewolf", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Werewolf.jpg", 
+                desc: "A human who transforms into a wolf during the full moon.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Werewolf</div>
+                    <div class="detail-text">Werewolf, also known as Wolf Man or Lycanthrope.</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Werewolf</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Loup Garou in French, Werwulf in German, Lycanthrope in Greek and Eastern European traditions, sometimes called the Cursed of the Moon.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Werewolf mythology originates from European folklore, especially Northern and Eastern Europe such as Germany and Romania, where stories of humans transforming into wolves during the full moon became widespread during the Middle Ages.</div>
+                    <div class="detail-header">Historical and Mythical Source</div>
+                    <div class="detail-text">There is no direct mention of werewolves in sacred texts like the Bible or the Quran. However, Greek mythology tells the story of King Lycaon, who was transformed into a wolf by Zeus. Later European folklore expanded the concept into the idea of a lunar curse.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">A werewolf is a hybrid creature, part human and part wolf. The human form is controlled during normal times, but under the full moon, the beastly wolf nature takes over.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">In human form, they appear strong and ordinary but often with intense eyes or unusual behavior. In wolf form, they become large, muscular creatures covered in thick fur, with sharp claws, fangs, and glowing yellow or red eyes.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Superhuman strength\nEnhanced speed\nHeightened senses of smell and hearing\nRapid healing abilities\nAbility to sense the full moon\nIn some legends, a mental connection with real wolves</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Silver is the most common weakness and can injure or kill them. Sacred symbols and holy prayers may weaken them. Some myths suggest they fear mirrors or their own reflection.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Werewolves often represent a dual nature. In human form they may be calm or kind, while in transformed state they become violent and uncontrollable. They are often portrayed as tormented beings struggling with inner conflict.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">They usually live in forests, mountains, or remote rural areas. In modern stories, they may hide within cities while trying to control their curse.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Mostly hostile due to their violent transformations, but modern interpretations often show them as cursed humans trying to protect others or control their instincts.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Survival, breaking the curse, controlling their transformation, or seeking revenge against those who caused their condition.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Howling at night\nStrong sense of fear or cold air\nStrange animal behavior\nDreams involving wolf like figures</div>
+                    <div class="detail-header">Famous Legends</div>
+                    <div class="detail-text">The myth of King Lycaon in Greek mythology and medieval European stories of cursed men transforming under the full moon are among the earliest accounts.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Silver weapons\nPrayers or sacred symbols\nAvoiding forests during full moon nights\nIron restraints in folklore traditions</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Myths describe transformation through cursed blood, wolf skin, or exposure to the full moon. These are symbolic and not real practices.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">The werewolf represents the internal struggle between human reason and animal instinct, order and chaos, civilization and wild nature.</div>
+                    <div class="detail-header">Similar Creatures</div>
+                    <div class="detail-text">Gorgineh in Persian folklore\nHuli Jing in Chinese mythology\nVolkodlak in Slavic traditions\nAdze in African mythology</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Werewolves are popular in films, books, and games such as Underworld, Twilight, The Witcher, and many fantasy horror universes. They are often portrayed as powerful but cursed beings.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">According to folklore, a werewolf bite can transmit the curse.\nWerewolves are often depicted as enemies of vampires.\nIn Norse traditions, becoming a wolf symbolized strength and warrior spirit rather than pure evil.</div>
+                `
+            },
+            { 
+                name: "Poltergeist", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Poltergeist.jpg", 
+                desc: "A restless spirit known for moving objects and haunting homes.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Poltergeist</div>
+                    <div class="detail-text">Poltergeist</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Poltergeist</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Derived from German words Poltern meaning to make noise and Geist meaning spirit. Also known as Restless Spirit, Haunting Ghost, and in Japanese folklore as Zashiki warashi.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Poltergeist originates from Western folklore, especially 16th century Germany. Similar beliefs exist in many cultures, including the concept of a house spirit in Islamic traditions.</div>
+                    <div class="detail-header">Historical and Religious Source</div>
+                    <div class="detail-text">There is no direct mention of poltergeists in the Bible or Quran. The concept developed through European folklore and later became associated with Christian exorcism cases and haunted house reports.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Poltergeists are often considered manifestations of unstable psychic or spiritual energy. Some theories suggest they are created by strong emotional stress from living individuals, especially adolescents, while others describe them as restless spirits of the dead.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">They are usually invisible. When perceived, they may appear as shadows, mist, flickering shapes, or brief humanoid figures. Most activity is experienced without visual form.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Moving or throwing objects\nCreating loud knocking sounds\nTurning lights on and off\nCausing physical vibrations in walls and objects\nMimicking human voices\nProducing sudden temperature changes\nIn some cases, causing minor physical sensations such as pressure or scratches</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Prayers, sacred texts, and spiritual cleansing rituals\nUse of incense, salt, or holy water in some traditions\nRemoving fear and maintaining emotional calm, as fear is believed to strengthen the phenomenon</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Poltergeists are often described as chaotic, mischievous, and loud. They are not always purely evil but tend to act on strong emotional energy, especially fear, anger, or distress.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Commonly associated with houses, schools, hospitals, and locations where traumatic or emotional events have occurred.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Generally disruptive but not usually lethal. They disturb humans by creating fear, stress, and sleep disruption. In some cases, activity is focused on a specific individual or family.</div>
+                    <div class="detail-header">Motivation</div>
+                    <div class="detail-text">Seeking attention\nEmotional release\nExpression of unresolved trauma or death\nReaction to strong psychological energy in the environment</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Knocking or banging sounds\nObjects moving without explanation\nLights flickering\nSudden cold spots\nSleep disturbances and pressure sensations\nPets reacting with fear or anxiety</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">The Bell Witch case in the United States\nThe Enfield Poltergeist incident in England in 1977, widely investigated and later adapted into films</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Spiritual prayers and rituals\nBurning incense or cleansing materials\nTemporary relocation from the affected space\nMaintaining emotional stability and reducing fear responses</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some folklore references Ouija boards and spirit communication rituals, but these are considered fictional and have no scientific basis.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Poltergeists symbolize psychological chaos, suppressed emotions, trauma, and unresolved mental stress. In modern interpretations, they are often linked to human subconscious energy rather than independent spirits.</div>
+                    <div class="detail-header">Similar Entities</div>
+                    <div class="detail-text">House Jinn in Islamic tradition\nYūrei in Japanese folklore\nBoggart in Scottish mythology\nDuende in Latin American folklore</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">The concept became globally famous through the film Poltergeist released in 1982. It has since appeared in horror games such as Phasmophobia and films like The Conjuring series, becoming a central figure in modern paranormal horror.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Most reported activity occurs between 2 AM and 4 AM\nSome researchers propose it may be psychokinetic energy generated by living people\nMany reported cases end abruptly without clear explanation</div>
+                `
+            },
+            { 
+                name: "Succubus", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Succubus.jpg", 
+                desc: "A female spirit that seduces men in their sleep.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Succubus</div>
+                    <div class="detail-text">Succubus</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Succubus</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Lilith, Lamia, Ondine, Night Demon, or the female counterpart of the Incubus. The term “Succubus” comes from Latin meaning “she who lies beneath.”</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">The concept of the Succubus originates from medieval European folklore, with deeper roots in Babylonian, Hebrew, and Greek mythology. It is often associated with Lilith, who in later traditions is described as a rebellious feminine figure connected to night spirits and demonic temptation.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">References to similar entities appear in the Talmud and Jewish mystical writings. During the medieval period, Christian scholars described succubi as night spirits that seduce men in dreams and drain their vitality.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">A Succubus is generally described as a supernatural or demonic feminine entity, often composed of dark energy, shadow, or spiritual substance. In some interpretations, she is considered the female counterpart of the Incubus.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Commonly depicted as a highly beautiful and seductive woman with long dark hair and piercing eyes. In folklore and art, she may also appear with wings, a tail, or glowing red eyes. Her beauty is described as unnatural and hypnotic, designed to attract and deceive.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Succubi are believed to enter dreams and interact with human subconsciousness. They can manipulate emotions, create illusions, shapeshift according to desire, and drain life force or emotional energy from victims. They are also associated with mental influence and temptation.</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Traditional beliefs suggest they are weakened by holy symbols, prayer, sacred texts, divine light, and purified environments. A strong and disciplined mind is also considered resistant to their influence. Sunlight and silver are often mentioned in folklore as additional deterrents.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">They are typically described as intelligent, patient, and highly manipulative. They often create emotional or romantic illusions to bond with their target while secretly feeding on their energy. In rare legends, they may develop emotional attachment, leading to internal conflict.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Succubi are believed to exist in dream realms, dark spiritual dimensions, or places associated with emotional or moral corruption. Some traditions also link them to abandoned buildings or isolated locations.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">They interact with humans through deception rather than direct aggression. Most accounts describe them forming dream-based romantic or intimate connections to gradually drain energy from their victims.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Their motivations vary across myths but often include gaining energy, sustaining existence, seeking power, or expressing vengeance. Some legends suggest they attempt to create hybrid offspring with humans.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Common folkloric signs include unusual pressure during sleep, vivid or disturbing dreams, sudden cold sensations, unexplained fear, and faint sensory experiences such as unusual scents or whispers.</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Medieval European accounts describe monks and religious figures claiming encounters with succubi during sleep. Legends connected to Lilith and related night spirits are among the most well-known sources of the myth.</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Protection methods include prayer, religious recitation, sacred symbols, moral discipline, light, and spiritual purity. Maintaining mental control and avoiding fear-based reactions are also emphasized in traditional beliefs.</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Ancient occult texts describe forbidden rituals intended to summon such entities, often involving symbols or sacrifices. These accounts belong strictly to mythology and folklore and are traditionally viewed as dangerous and prohibited.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">The Succubus is often interpreted as a symbol of temptation, desire, illusion, and hidden psychological impulses. In modern psychological interpretation, she represents suppressed desires and the shadow aspects of human emotion.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Comparable figures appear in many cultures, including seductive female jinn in Islamic folklore, Lamia in Greek mythology, Yuki-onna in Japanese tradition, and various spirits associated with temptation across global mythologies.</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Succubi frequently appear in modern media including video games, films, anime, and literature. Examples include Diablo, The Witcher series, Castlevania, and various fantasy and horror adaptations.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Some traditions claim a succubus may weaken or disappear if she forms a genuine emotional attachment. Modern interpretations sometimes associate reported encounters with sleep paralysis phenomena. In several cultural beliefs, similar entities are described as spirits that interact with humans through dreams and emotional states.</div>
+                `
+            },
+            { 
+                name: "Incubus", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Incubus.jpg", 
+                desc: "The male counterpart of the succubus.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Incubus</div>
+                    <div class="detail-text">Incubus</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Incubus</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Night Demon, Dream Devil, Male Seducer Spirit, or the male counterpart of the Succubus. The Latin word “Incubus” means “one who lies upon.”</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">The Incubus originates from Medieval European folklore, with earlier influences from Babylonian, Hebrew, and Islamic traditions of night spirits. It is considered the male equivalent of the Succubus, a nocturnal entity that seduces women in dreams.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">References to Incubi appear in the Talmud, Christian demonology, and medieval writings. During the Middle Ages, religious scholars and priests described male night spirits believed to visit women during sleep and corrupt them.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">An Incubus is described as a supernatural or demonic male entity formed from dark spiritual energy, shadow, or fire. It manifests in physical or dream-like forms, often existing between the spiritual and physical realms.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Typically appears as a handsome, strong man with dark, penetrating eyes. In folklore and art, he may have black wings, gray skin, or an unnaturally attractive human form. Sometimes he appears as a familiar or desired person in dreams.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Enters dreams of women\nManipulates emotions and desire\nShape-shifting and illusion creation\nMind influence and seduction\nDrains life or emotional energy\nAppears as shadow, smoke, or cold presence</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Weakened by holy prayers, sacred symbols, divine light, sunrise, and strong faith. Silver, holy water, and spiritual purity are also believed to repel him.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Calm, intelligent, seductive, and manipulative. He often creates emotional or romantic illusions to gain control over his target, sometimes pretending to love while feeding on their energy. In rare myths, he may develop genuine emotional attachment.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Associated with dreams, dark dimensions, cursed places, abandoned houses, and the boundary between sleep and wakefulness.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Targets vulnerable or lonely women, forming deceptive emotional or intimate connections. Some legends claim he can impregnate humans with demonic offspring.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Seeks energy, power, revenge, or reproduction through hybrid offspring. In some myths, he exists to corrupt or dominate human beings spiritually and emotionally.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Chest pressure during sleep\nSudden cold sensations\nMoving shadows or unseen presence\nErotic or disturbing dreams\nSleep paralysis experiences</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Medieval accounts describe women claiming nocturnal visits from male spirits. Church records and folklore often interpreted these experiences as encounters with demons or the Devil.</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Prayer and sacred texts\nHoly symbols and divine light\nFaith and moral discipline\nSilver and protective charms\nMental resistance against temptation</div>
+                    <div class="detail-header">Rituals or Summoning</div>
+                    <div class="detail-text">Occult texts describe forbidden rituals involving sacrifice, moon phases, or magical invocations. These accounts are purely mythological and traditionally associated with danger or madness.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Represents temptation, suppressed desire, psychological fear, and the shadow aspects of human sexuality and control. Often interpreted as a manifestation of subconscious impulses.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Male Jinn in Islamic folklore\nSatyrs in Greek mythology\nOnryō in Japanese tradition (spiritual parallels in haunting form)\nMara in Norse folklore associated with sleep paralysis</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Appears in films such as Incubus (1982) and various horror adaptations, in games like Diablo and The Witcher series, and in modern fantasy literature as a dark seducer or tragic supernatural figure.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Some legends say he loses power if he forms true emotional attachment.\nModern psychology often links incubus experiences to sleep paralysis phenomena.\nMany traditions suggest Incubus and Succubus are two forms of the same entity, shifting based on the victim’s perception.</div>
+                `
+            },
+            { 
+                name: "Gremlin", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Gremlin.jpg", 
+                desc: "A mischievous creature blamed for mechanical failures.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Gremlin</div>
+                    <div class="detail-text">Gremlin</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Gremlin</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as machine breakers, mechanical spirits, or air demons. During World War II, pilots referred to them as sky traitors.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Gremlins originate from Western folklore, first becoming popular among British Royal Air Force pilots in the early 20th century, especially during World War II.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Gremlins are not mentioned in any religious texts. They became widely known through wartime folklore and later through Roald Dahl’s book The Gremlins (1943).</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Gremlins are described as semi-spiritual or chaotic entities, sometimes part ghost and part machine, associated with destructive or unpredictable energy.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Small creatures around 30–50 cm tall with glowing eyes, sharp ears, gray or greenish skin, and long claws. Some versions resemble monkeys or bats.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Cause mechanical failure, electrical malfunctions, sparks, fires, and engine breakdowns\nTamper with wires, devices, and machinery\nSometimes described as invisible or able to hide within systems</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Weak to bright light and environments without technology\nRepelled by iron and church bells in some traditions</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Mischievous, chaotic, and destructive. They enjoy causing trouble, pranks, and unexpected failures, often portrayed with eerie or playful laughter.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Industrial areas, factories, airplanes, engines, and electronic systems—especially places with vibration and electricity.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Generally hostile toward humans and their technology, though some stories suggest they may stop if treated with respect or kindness.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Associated with chaos, envy of human technology, and the desire to disrupt order and machinery.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden device failure\nClicking or sparking noises\nUnexplained malfunctions\nFast-moving shadows near machines</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">RAF pilot folklore during World War II\nRoald Dahl’s The Gremlins (1943)\nThe Gremlins film series (1984–1990)</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Keeping lights on\nUsing metal or silver objects\nAvoiding old or neglected machinery in dark places</div>
+                    <div class="detail-header">Summoning Myths</div>
+                    <div class="detail-text">Military folklore jokes suggest that excessive complaining about machines “attracts” gremlins, but no real summoning rituals exist.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Gremlins symbolize chaos, technological anxiety, and self-sabotage, often referred to in psychology as the “inner gremlin.”</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Tsukumogami in Japanese folklore (spirits of old objects)\nMechanical trolls in Scandinavian mythology</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Popularized by the Gremlins movie franchise and later appearing in games such as World of Warcraft and Fallout.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">The word “gremlin” is believed to come from the Irish word gremian, meaning “to annoy.”\nDuring WWII, RAF pilots humorously blamed gremlins for unexplained mechanical failures in aircraft.</div>
+                `
+            },
+            { 
+                name: "Reaper", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Reaper.jpg", 
+                desc: "A cloaked figure associated with death and collecting souls.",
+                full: `
+                    <div class="detail-header">Complete Introduction of the Grim Reaper</div>
+                    <div class="detail-text">Grim Reaper</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Grim Reaper</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Azrael (in Islam and Judaism), Angel of Death (in Christianity), Thanatos (Greek mythology), Shinigami (Japanese culture), and Santa Muerte (Mexican folklore).</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">The concept of the Grim Reaper originates from medieval Western European folklore, but similar figures exist in many global religions and mythologies as personifications of death.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">In Islamic tradition, the Angel of Death (Azrael) is responsible for taking souls, though not named directly in the Qur’an. In Christianity, Judaism, and medieval European texts, death is often depicted as a personified entity known as the Grim Reaper.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">A non-physical spiritual entity associated with divine order and the transition between life and death. Often described as existing between realms as a manifestation of death itself.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Commonly depicted as a tall figure in a black hooded cloak carrying a large scythe. In some depictions, it appears as a skeleton with glowing eyes or as a faceless shadow.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Collects human souls at the moment of death\nSees the exact time of death for every being\nMoves between the realms of life and the afterlife\nCan pause or slow time during soul collection\nGuides or escorts souls to their next destination</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Traditionally has no weaknesses. However, in some folklore, faith, prayer, and divine light are believed to bring peace or protection in its presence.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Silent, neutral, and emotionless. The Grim Reaper is not evil or good but serves as an impartial force carrying out the natural law of death.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Exists at the boundary between life and death or within the spiritual realm. It has no permanent physical location.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Appears at the moment of death. Its presence may be frightening or peaceful depending on cultural interpretation, but it does not act with personal intent.</div>
+                    <div class="detail-header">Goals and Motivation</div>
+                    <div class="detail-text">Maintains balance in the cycle of life and death by collecting souls and preserving universal order.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden coldness\nDeep silence before death\nFlickering shadows\nClock ticking or scythe-like sounds\nSense of heaviness or finality</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Medieval tales often depict the Grim Reaper appearing to people of all social classes, emphasizing that death is universal and unavoidable.</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Faith, prayer, repentance, and good deeds are believed in religious traditions to bring peace to the soul or delay death according to divine will.</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some medieval legends describe attempts by occult practitioners to summon Death for knowledge or immortality, always ending in tragedy. These accounts are purely mythical.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Represents inevitability, transformation, the end of life cycles, and the transition into a new existence.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Azrael (Islamic tradition)\nThanatos (Greek mythology)\nShinigami (Japanese folklore)\nAnubis (Egyptian mythology)\nSanta Muerte (Mexican folklore)</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Appears in films, literature, anime, and games such as The Seventh Seal, Death Note, Supernatural, Darksiders, and The Sims franchise.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">In some cultures, Death is depicted wearing white instead of black.\nSome myths claim the Grim Reaper is the first soul that ever died.\nModern interpretations sometimes portray Death as lonely but duty-bound rather than cruel.</div>
+                `
+            },
+            { 
+                name: "Ghoul", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Ghoul.webp", 
+                desc: "A graveyard-dwelling creature that feeds on the dead.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Ghoul</div>
+                    <div class="detail-text">Ghoul</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Ghoul</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Ghul, Ghulah (female form), and Cemetery Demon in Western references.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">The Ghoul originates from Arabian and Islamic folklore and later entered Persian and Western mythologies as a graveyard-dwelling supernatural being.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Ghoul is mentioned in early Arabic and Islamic folklore as a type of jinn associated with deserts and abandoned places. References appear in classical works such as Kitab al-Bidaya wa’l-Nihaya and Al-Fihrist.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">A ghoul is described as a corrupted, flesh-eating spirit often considered a hybrid between jinn and monstrous undead entities. It is associated with death, decay, and spiritual corruption.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Typically depicted as a humanoid creature with deformed features, gray or greenish skin, glowing red eyes, sharp teeth, long claws, and a strong odor of decay. In modern fiction, it is often portrayed as zombie-like.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Shape-shifting into human forms\nSupernatural speed and agility\nAbility to hide in darkness\nGrave digging and corpse manipulation\nDeceptive mimicry of humans</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Weak to sunlight, iron, and sacred verses such as Ayat al-Kursi. Religious protection and spiritual purity are believed to repel it.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Cunning, ruthless, deceptive, and driven by hunger. It is primarily motivated by feeding on human flesh and death-related energy.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Found in graveyards, deserts, ruins, and cursed or abandoned places associated with death and decay.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Generally hostile toward humans, preying on travelers, corpses, or the weak. Some folklore suggests rare cases of restraint or isolation from their violent nature.</div>
+                    <div class="detail-header">Goals and Motivation</div>
+                    <div class="detail-text">Driven by insatiable hunger for flesh and sometimes by the desire to gain strength or power through consuming human remains or life energy.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Foul odor of decay\nScratching or digging sounds underground\nCold air and shadows near graves\nUnexplained disturbances in burial sites</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Appears in One Thousand and One Nights, where characters encounter and escape ghouls using faith, intelligence, or divine protection.</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Recitation of Qur’an-ic verses\nUse of iron objects or sacred items\nAvoiding graveyards at night\nSpiritual remembrance and faith</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Ancient folklore sometimes describes forbidden rituals involving sacrifices or dark chants, but these accounts are purely mythical and culturally symbolic.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Represents greed, moral decay, corruption, and the consequences of spiritual corruption or loss of humanity.</div>
+                    <div class="detail-header">Similar Creatures</div>
+                    <div class="detail-text">Zombies in Western fiction\nWendigo in Native American mythology\nSimilar death spirits in Iranian folklore</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Widely featured in horror films, literature, and games such as The Witcher, Fallout, and Dungeons & Dragons as undead or flesh-eating monsters.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">The word “ghoul” entered English literature through William Beckford’s novel Vathek (1786). Its Arabic root relates to meanings of seizing, destroying, or overwhelming.</div>
+                `
+            },
+            { 
+                name: "Nosferatu", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Nosferatu.jpg", 
+                desc: "An ancient and monstrous form of vampire.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Nosferatu</div>
+                    <div class="detail-text">Nosferatu</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Nosferatu</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Vampyre, Undead Lord, or The Pale Count in Western folklore.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Nosferatu originates from Eastern European folklore, especially Romania, Hungary, and Bulgaria, as one of the earliest forms of the vampire myth.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Although not directly mentioned in religious texts, Nosferatu appears in medieval European folklore and was popularized globally by the silent film Nosferatu: A Symphony of Horror (1922), an adaptation inspired by Bram Stoker’s Dracula.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">A cursed undead being described as half-spirit and half-corpse, sustained by feeding on human blood and bound to eternal night.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">A gaunt, skeletal figure with pale gray skin, hollow eyes, long claws, sharp fangs, and an unsettling, inhuman presence. Often depicted as bald and corpse-like with elongated fingers.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Hypnotic gaze\nSuperhuman strength\nTransformation into bats or shadows\nImmortality through blood consumption\nSpreading decay and death in surrounding life</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Destroyed by sunlight\nRepelled by crosses, garlic, and holy water\nWeakened by sacred symbols and divine presence</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Cold, silent, isolated, and tragic. Unlike romanticized vampires, Nosferatu is often portrayed as a creature of suffering, hunger, and eternal loneliness.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Dark castles, underground crypts, coffins, and abandoned ruins, always hidden from sunlight and human civilization.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">A predatory being that feeds on humans by draining their blood, often transforming victims into similar undead creatures.</div>
+                    <div class="detail-header">Goals and Motivation</div>
+                    <div class="detail-text">Driven by endless hunger for blood, survival in eternal darkness, and in some interpretations, a cursed longing for redemption or lost humanity.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden cold air\nWithering plants\nBat-like shadows\nUnexplained darkness\nFeelings of dread or suffocation</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Nosferatu: A Symphony of Horror (1922) remains the most iconic portrayal, where the character symbolizes plague, death, and unstoppable doom entering human society.</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Crosses, holy water, garlic, mirrors, and sunlight are traditionally believed to repel or destroy him.</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some folklore mentions moonless-night rituals involving blood sacrifices, though these are purely mythological and not based on religious doctrine.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Represents death, isolation, immortality as a curse, and fear of disease and decay.</div>
+                    <div class="detail-header">Similar Creatures</div>
+                    <div class="detail-text">Dracula (literature and film)\nStrigoi (Romanian folklore)\nLamia (Greek mythology)</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">One of the earliest horror icons in cinema, influencing Dracula adaptations, vampire mythology, and modern media such as Blade, Castlevania, and The Witcher.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">The term “Nosferatu” is often linked to an old Romanian word meaning “undead” or “plague bearer.” The 1922 film faced legal controversy due to its similarity to Dracula and nearly all copies were ordered destroyed.</div>
+                `
+            },
+            { 
+                name: "Rakshasa", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Rakshasa.jpg", 
+                desc: "A powerful flesh-eating demon from Hindu mythology.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Rakshasa</div>
+                    <div class="detail-text">Rakshasa</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Rakshasa</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Rakshas, Raksasa, Raksha, and Rakxe in local dialects. In some traditions they are confused with Asuras because both are enemies of the Devas.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Rakshasas originate from Hindu and Sanskrit mythology. They are described as dark beings in opposition to divine forces.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">They are mentioned in the Ramayana, Mahabharata, and Puranas. In the Ramayana, Ravana, the king of Lanka, is the most famous Rakshasa.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Rakshasas are considered beings of dark energy, sometimes said to be born from Brahma’s anger or corrupted spiritual forces. Some traditions describe them as creatures of fire and shadow.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">They are usually described as humanoid demons with fangs, red eyes, dark skin, and claws. They can shapeshift into beautiful humans or animals to deceive people.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Shapeshifting and illusion\nBlack magic and mind control\nFlight or disappearance at night\nFeeding on human flesh and blood\nSummoning spirits and casting curses</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">They are said to fear holy fire, Vedic mantras, the sacred sound Om, and sunlight. Their strength weakens at sunrise.</div>
+                    <div class="detail-header">Personality</div>
+                    <div class="detail-text">Rakshasas are generally arrogant, cunning, and destructive. Some are intelligent rulers like Ravana, but many are driven by greed and revenge.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">They are associated with Lanka, dark forests, deserts, caves, and the underworld known as Patala Loka.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">They are mostly enemies of humans, often hunting, deceiving, or corrupting them. However, some stories describe rare alliances or marriages with humans.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Their goals include revenge against the gods, the pursuit of power, and survival through fear, sacrifice, and destruction.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden cold air, the smell of burning flesh or blood, moving shadows, and eerie night sounds are commonly associated with their presence.</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">The most famous story is Ravana kidnapping Sita in the Ramayana. In the Mahabharata, the Rakshasa Baka is known for devouring humans.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Reciting Vedic mantras\nLighting sacred fire\nUsing holy ash or sandalwood\nStaying in bright and clean environments</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Ancient texts and folklore describe forbidden rituals involving blood sacrifice and dark mantras, though these practices are considered extremely dangerous.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Rakshasas represent greed, anger, lust, and the darker nature of human beings. They symbolize inner spiritual struggle and corruption.</div>
+                    <div class="detail-header">Similar Creatures</div>
+                    <div class="detail-text">Evil Jinn in Islamic tradition\nDemons in Christianity\nOni in Japanese folklore\nDivs in Persian mythology</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Rakshasas appear in films, literature, and games such as Dungeons and Dragons and various mythology inspired works. In modern India, the term is also used metaphorically for cruel people.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Some Rakshasas are said to enter human dreams and influence the mind. Their power is believed to increase during full moon nights. In some Buddhist traditions, masks representing Rakshasas are used for protection against evil.</div>
+                `
+            },
+            { 
+                name: "Pontianak", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Pontianak.jpg", 
+                desc: "A female ghost from Malaysian folklore.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Pontianak</div>
+                    <div class="detail-text">Pontianak</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Pontianak</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Kuntilanak, Matianak, and Langsuir in Malay and Indonesian folklore. Sometimes referred to as the White Lady of the Night.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Pontianak originates from Southeast Asian folklore, especially in Malay, Indonesian, and Bruneian cultures, blending Islamic, Hindu-Malay, and local animist beliefs about spirits of the dead.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">She does not appear in formal religious texts but exists in oral traditions dating back to around the 14th century. She is commonly described as the spirit of a woman who died during childbirth or suffered an unjust death.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Pontianak is a female ghost or spirit formed from death, sorrow, and unresolved emotion, believed to exist between the world of the living and the dead.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">She appears as a beautiful woman with long black hair, pale white skin, and a white dress. Her presence is often preceded by the scent of jasmine, which later turns into the smell of blood and decay. When angered, her face becomes monstrous with sharp fangs and terrifying features.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Night flight and invisibility\nVoice imitation to deceive humans\nControl over wind and darkness\nKilling through claws or piercing screams\nShapeshifting into animals such as cats or owls</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">She is believed to fear iron nails, Quranic verses, prayers, and sunlight. In some legends, driving an iron nail into her neck forces her to take human form until it is removed.</div>
+                    <div class="detail-header">Personality</div>
+                    <div class="detail-text">Pontianak is vengeful, sorrowful, and emotionally tormented. She targets unfaithful or abusive men, though she is often described as deeply sad and tragic rather than purely evil.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">She is commonly associated with banana trees, graveyards, rivers, rural areas, and dark forests.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">She mainly targets adult men and avoids children. In some stories, she lures men who resemble her lost lover before killing them.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Her main motivations are revenge, grief, and the search for peace or her lost child.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Jasmine scent turning into blood smell\nDistant crying or laughter\nSudden coldness and silence\nShadows of long hair moving in darkness</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">The city of Pontianak in Borneo is said to be named after her. Legends describe her haunting banana trees and appearing on moonlit nights to attack or punish men.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Reciting Quranic verses such as Ayat al-Kursi\nUsing iron or steel objects\nAvoiding banana trees at night\nKeeping places well lit and maintaining prayer</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Folklore claims she may appear if her name is called three times or if a banana tree is disturbed at night during a full moon, though these are myths with no real basis.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Pontianak symbolizes female suffering, injustice, grief, and revenge. Psychologically, she is often interpreted as the embodiment of suppressed pain and emotional trauma.</div>
+                    <div class="detail-header">Similar Beings</div>
+                    <div class="detail-text">Langsuir in Malaysia\nWewe Gombel in Indonesia\nBanshee in Irish folklore\nOnryo in Japanese mythology</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">She appears in Southeast Asian horror films such as Pontianak Harum Sundal Malam and Kuntilanak, as well as modern games, novels, and horror media.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">The Indonesian city Pontianak is named after her.\nHer cry is interpreted differently depending on distance.\nSome legends say she may spare those who show no fear.</div>
+                `
+            },
+            { 
+                name: "Aswang", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Aswang.jpg", 
+                desc: "A shape-shifting creature from the Philippines.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Aswang</div>
+                    <div class="detail-text">Aswang</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Aswang</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Wakwak, Manananggal, Tik-tik, Balbal, and Ekek. These are different regional forms or types of Aswang in Philippine folklore.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Aswang comes from Filipino mythology and Southeast Asian folklore traditions.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">It appears in ancient Filipino oral traditions and was later recorded in Spanish colonial writings. It is not part of any formal religious scripture.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Aswang is a supernatural being that is part human and part monster, often described as a shape-shifting creature that hides among humans.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">By day, Aswang appears as a normal human. At night, it transforms into a terrifying monster such as a winged vampire or a creature with a long tongue used to feed on blood or unborn babies.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Shape-shifting into animals like dogs, pigs, or bats\nSilent night flight\nBlood sucking using a long tongue-like proboscis\nHiding its identity among humans</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Salt, garlic, vinegar, sunlight, holy objects, and decapitation are believed to repel or destroy it.</div>
+                    <div class="detail-header">Personality</div>
+                    <div class="detail-text">Aswang is deceptive, cunning, and predatory. It often appears kind and beautiful during the day while hiding its true nature.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">It is associated with forests, rural villages, cemeteries, and dark areas near human settlements.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Aswang is considered a predator of humans, especially targeting pregnant women, infants, and the sick.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Its main motivation is survival through feeding on human flesh and blood, particularly unborn children in many legends.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sounds of flapping wings or “tik-tik”\nSudden coldness\nDogs howling\nMissing shadows\nNightmares and disturbing dreams</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">The Manananggal legend describes a woman who separates her upper body to fly at night and feed on sleeping victims.\nThe Tik-tik legend says the sound grows quieter as the creature gets closer.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Garlic and salt around homes\nMirrors to reveal its true form\nPrayer and holy objects\nLoud noises and staying in groups at night</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some folklore suggests that dark magic rituals or cursed feeding practices could transfer or grant Aswang-like abilities, though these are mythical beliefs.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Aswang symbolizes hidden evil, betrayal, and the fear that something beautiful may hide danger.</div>
+                    <div class="detail-header">Similar Creatures</div>
+                    <div class="detail-text">Vampires in Europe\nPontianak in Malaysia\nKrasue in Thailand\nChurel in India</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Aswang appears in Filipino horror films such as Aswang and Shake Rattle & Roll, in the Netflix series Trese, and in various games and horror literature.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">The word Aswang is now commonly used in Filipino culture to refer to any evil spirit or witch.\nDuring the Spanish colonial period, the myth was used to discourage people from going out at night.\nSome rural areas in the Philippines still report alleged sightings of Aswang.</div>
+                `
+            },
+            { 
+                name: "Jorōgumo", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Jor%C5%8Dgumo.jpg", 
+                desc: "A spider-woman spirit from Japanese folklore.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Jorōgumo</div>
+                    <div class="detail-text">Jorōgumo (絡新婦)</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Jorōgumo</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Spider Woman, Binding Bride, and Kumo-Onna (Spider Lady).</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Jorōgumo originates from Japanese mythology and Yōkai folklore, which includes supernatural spirits and creatures of Japan.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">She is mentioned in Edo-period collections of ghost stories such as Tono Monogatari and Ehon Hyaku Monogatari.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Jorōgumo is a Yōkai, a supernatural being that is part spirit and part spider.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">During the day, she appears as a beautiful woman wearing elegant kimonos. At night, she reveals her true form as a giant spider with venomous fangs and long legs, or a hybrid form where spider legs emerge from her body.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Shapeshifting between human and spider form\nCreating strong silk webs to trap humans\nHypnotizing victims through beauty or music\nControlling small spiders as servants</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Fire, sharp blades, ofuda (sacred talismans), and Buddhist prayers are believed to weaken or repel her.</div>
+                    <div class="detail-header">Personality</div>
+                    <div class="detail-text">She is seductive, intelligent, and cruel, often manipulating victims with false affection before killing them.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Jorōgumo is associated with forests, waterfalls, abandoned houses, and remote mountain areas, especially near Jōren Falls in Japan.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">She is a deceptive predator who lures lonely travelers or arrogant men into her traps using beauty and illusion.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Her motivations include survival through feeding, revenge against men in some stories, and in certain versions a curse that forces her to consume humans.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden silence of animals\nGolden silk threads in the air\nFeeling of being watched by unseen eyes</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">The Jōren Falls legend describes a samurai who meets a beautiful woman by a waterfall and is trapped in her invisible webs.\nAnother tale from Kyoto tells of a young man who falls in love with a mysterious woman who later reveals her spider form and kills him.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Carrying protective charms\nAvoiding waterfalls at night\nBurning sacred paper\nReciting Buddhist sutras</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">No official rituals exist, but some folklore suggests that dark onmyoji practices involving lust or blood could attract her.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Jorōgumo symbolizes temptation, deception, and hidden danger, representing the idea that beauty can conceal deadly intent.</div>
+                    <div class="detail-header">Similar Creatures</div>
+                    <div class="detail-text">Lamia in Greek mythology\nArachne in Greek myth\nPontianak in Malay folklore\nSuccubus in Western mythology</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">She appears in anime such as Inuyasha and Nurarihyon no Mago, manga like Jigoku Sensei Nube, and games such as Nioh, Castlevania, and Persona, often as a seductive spider-like monster.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">The kanji means “binding bride” or “entangling woman.”\nIn some stories, she is not purely evil and may fall in love with humans but is forced to kill them due to her curse.\nJōren Falls in Japan still has warnings about the Spider Woman legend.</div>
+                `
+            },
+            { 
+                name: "Vetala", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Vetala.jpg", 
+                desc: "A spirit that inhabits and controls corpses.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Vetala</div>
+                    <div class="detail-text">Vetala</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Vetala</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Baital, Bhital, and Pital in different regions of India. In Sanskrit, Vetāla means a spirit that inhabits corpses.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Vetala originates from ancient Hindu mythology and Indian folklore, closely associated with Lord Shiva and the spirit world.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">It appears in the classical Sanskrit text Baital Pachisi, a collection of 25 stories featuring King Vikramaditya and the Vetala.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Vetala is a non-physical spirit that exists between the worlds of the living and the dead, often inhabiting corpses.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">When possessing a dead body, it appears as a decayed corpse with bluish skin, glowing eyes, sharp teeth, and an unpleasant smell, surrounded by cold air.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Possession of corpses\nProphecy and divination\nShape-shifting\nMind control\nMovement between the worlds of the living and the dead</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Holy mantras dedicated to Lord Shiva\nSacred ash and protective charms\nSunlight and holy fire weaken it</div>
+                    <div class="detail-header">Personality</div>
+                    <div class="detail-text">Vetala is intelligent, mysterious, and sometimes playful. It can engage in philosophical conversations but may also be dangerous or vengeful depending on the story.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">It is commonly found in graveyards, abandoned temples, and dark forests in India, becoming active at night and remaining dormant during the day.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Vetala is usually hostile but in some stories acts as a guide or teacher to wise and spiritual humans.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Its motivations include seeking liberation from its cursed state or revenge. Some legends describe it as the soul of a person who died before fulfilling their destiny.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden coldness\nSmell of decay\nMysterious laughter\nShadows above graves</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">In Vikram and the Vampire, Vetala repeatedly challenges King Vikramaditya with moral and philosophical riddles, escaping each time the king answers correctly.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Chanting Shiva mantras\nUsing sacred ash (Vibhuti)\nAvoiding graveyards at night\nUsing silver or reflective charms</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Ancient tantric traditions describe rituals using dark mantras to summon Vetala, though these practices are considered dangerous and forbidden.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Vetala represents the boundary between life and death, human guilt, hidden knowledge, and the mystery of the afterlife.</div>
+                    <div class="detail-header">Similar Beings</div>
+                    <div class="detail-text">Zombie in Western folklore\nDybbuk in Jewish tradition\nPreta in Buddhist mythology</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Vetala has inspired characters in Indian horror films and fantasy games, and has influenced supernatural beings in works such as The Witcher and Elder Scrolls.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">A corpse not blessed with Shiva mantras is believed to be vulnerable to Vetala possession.\nSome legends say it feeds on the blood of newborn infants.\nStone statues of Vetala can be found guarding ancient temple entrances in India.</div>
+                `
+            },
+            { 
+                name: "Baayayin", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Baayayin.jpg", 
+                desc: "A dark witch-like figure from Philippine folklore.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Baayayin</div>
+                    <div class="detail-text">Baayayin</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Baayayin</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Babaylan Itom (Black Shaman), Mangkukulam ng Anino (Shadow Witch), and Aswang na Babae (Female Demon).</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Baayayin originates from pre-colonial Filipino mythology, especially among Visayan and Tagalog traditions. She was originally a respected female shaman later reinterpreted as a dark spirit after colonial influence.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">She appears in oral folklore and early Spanish colonial writings, where missionaries described her as a sorceress of darkness.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Baayayin is a shadow-based spiritual entity, believed to be the living shadow of a former human shaman.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">During the day she appears as an old, frail woman with gray skin and dark eyes. At night she transforms into a shadowy being with red eyes and long black claws.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Soul theft during sleep\nShadow manipulation\nCausing illness or madness through curses\nShape-shifting\nCommunication with spirits and demons</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Sunlight\nHoly prayers and church bells\nSacred water or ash from the nangka tree\nStrong faith and courage</div>
+                    <div class="detail-header">Personality</div>
+                    <div class="detail-text">Baayayin is vengeful, mysterious, and intelligent. She punishes those who disrespect nature or spirits but may assist those who honor her.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">She is said to live in remote villages, dense forests, and ancient burial grounds where sunlight never reaches.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">She is often hostile but may ally with shamans or spiritual practitioners who respect her presence.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Her motivations include revenge, spiritual balance, and gathering souls to increase her power.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Whispering winds\nSudden extinguishing of lights\nMoving shadows against light\nSmell of smoke or sulfur</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">In one legend, Baayayin avenges a burned forest by summoning spirits of dead children to torment a village until a priestess calms her with an ancient prayer.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Salt circles around homes\nReciting Orasyon prayers\nBurning dried guava leaves\nAvoiding speaking her name at midnight</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Dark shamans were believed to summon her using forbidden chants and sacrifices, though such rituals are said to cost the summoner their soul.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Baayayin represents feminine dark power, nature’s revenge, and the balance between light and shadow.</div>
+                    <div class="detail-header">Similar Beings</div>
+                    <div class="detail-text">La Llorona in Latin American folklore\nPontianak in Malay folklore\nBabaylan (the sacred shamanic counterpart in Philippine tradition)</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">She appears in Filipino horror films, literature, and mobile games, symbolizing spiritual imbalance and nature’s wrath.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">She is most active during moonless nights.\nCalling her name in dreams is said to freeze the soul.\nElders in rural areas still perform protective prayers against her influence.</div>
+                `
+            },
+            { 
+                name: "Hung Hei", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Hung%20Hei.jpg", 
+                desc: "A vengeful spirit from Chinese legends.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Hung Hei (Red Ghost)</div>
+                    <div class="detail-text">Hung Hei (红鬼)</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Hung Hei</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Hong Gui (Red Ghost) and Gui Hong (Bloody Spirit) in different regions of China.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Hung Hei originates from Chinese folklore and is deeply connected to Taoist beliefs and ancestor worship traditions, representing restless and vengeful spirits.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">They are mentioned in ancient Chinese texts such as The Classic of Ghosts and Records of Restless Souls from the Tang and Ming dynasties. They also appear in Ghost Festival traditions.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Hung Hei are spiritual entities formed from souls of people who died unjustly, through betrayal, violence, or unresolved hatred.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">They appear as red or purple shadow-like figures with glowing eyes, bloodstained faces, and an aura of sorrow and rage.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Lowering temperature\nMoving objects\nAppearing in dreams\nCreating hallucinations and sounds\nCausing illness and insomnia\nTraveling through mirrors and shadows</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Sunlight\nSalt\nTaoist yellow talismans\nTemple bells\nPrayers and forgiveness weaken them</div>
+                    <div class="detail-header">Personality</div>
+                    <div class="detail-text">They are vengeful, sorrowful, and filled with rage, but may become peaceful once justice is fulfilled.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">They usually remain in abandoned houses, ruins, hospitals, graveyards, or locations where they died.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Mostly hostile, targeting those connected to their death, but occasionally warning kind-hearted individuals of danger.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Their primary motivation is revenge and the restoration of justice for their unjust death.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden cold air\nFlickering flames\nMetallic or blood-like smell\nUnexplained footsteps\nRed shadows at the edge of vision</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">One Ming dynasty tale describes a murdered woman returning as a Hung Hei to drive her husband insane. Another story tells of a temple spirit that was finally pacified through prayers and rituals.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Hanging mirrors near doors\nBurning red candles during Ghost Month\nOffering prayers and incense\nAvoiding disrespect in abandoned places</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Folklore says they can be summoned using blood offerings or red fire rituals, though such acts are considered extremely dangerous and forbidden.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Hung Hei symbolizes injustice, unresolved karma, and the balance between wrongdoing and cosmic retribution.</div>
+                    <div class="detail-header">Similar Beings</div>
+                    <div class="detail-text">Japanese Onryo\nKorean Cheongui\nWestern Poltergeists and Revenants</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">They appear in Chinese horror films, games like Detention and Paper Dolls, and various Asian supernatural stories.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">They are believed to appear most often between 2 and 3 AM.\nOfferings during Ghost Month are said to calm them.\nMany traditions say they are born from people who died wearing red or full of intense rage.</div>
+                `
+            },
+            { 
+                name: "Oni", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Oni.jpg", 
+                desc: "A horned demon from Japanese mythology.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Oni</div>
+                    <div class="detail-text">Oni (鬼)</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Oni</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Maju (evil beast), Kido (cursed spirit), and Namahage in regional winter festival traditions.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Oni originate from Shinto and Buddhist mythology in Japan. They are believed to be the transformed spirits of humans who committed severe sins such as murder, betrayal, or cruelty.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Oni appear in Buddhist teachings, especially in descriptions of the Six Realms of Existence (Rokudō), where they act as punishers of sinners in hell. They are also featured in Japanese folklore tales such as Momotarō and The Red Ogre Who Cried.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Oni are supernatural beings associated with fire, darkness, and spiritual corruption. They are believed to be formed from rage, hatred, and negative energy, often feeding on human fear.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">Oni are usually depicted as large, muscular humanoid creatures with horns, sharp teeth, and brightly colored skin such as red, blue, green, or black. They often wear tiger-skin garments and carry a spiked iron club called a Kanabō.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Superhuman strength\nShapeshifting\nFire and storm manipulation\nRegeneration\nEnhanced speed and durability\nSoul consumption</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">They are believed to fear Buddhist prayers, temple bells, and soybeans. During the Setsubun festival, people throw beans while shouting “Oni wa soto! Fuku wa uchi!” meaning “Demons out! Luck in!”</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Oni are generally portrayed as cruel, violent, and proud beings. However, some legends describe reformed Oni who repent and protect humans, symbolizing redemption and change.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">They are said to inhabit caves, mountains, hell gates (Jigoku), forests, and abandoned temples, often in remote and dark places.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Oni are mostly hostile toward humans but in some stories they act as punishers of evil or moral figures that teach lessons through fear and justice.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Their motivations include revenge, punishment of sinners, feeding on fear, and fulfilling roles as enforcers of karmic justice in Buddhist cosmology.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sulfur-like smell\nDeep unnatural laughter\nGround shaking\nRed or dark shadows\nSound of chains in the distance</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Momotarō, where a boy born from a peach defeats Oni on an island.\nThe Red Ogre Who Cried, where an Oni sacrifices himself for friendship and humanity.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Buddhist prayers and chants\nTemple bells\nScattering soybeans\nAvoiding dangerous or isolated places at night</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some folklore describes rituals involving blood offerings and chanting Oni names, but such practices are considered forbidden and dangerous in traditional beliefs.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Oni represent human rage, sin, punishment, and inner darkness. They also symbolize the possibility of redemption and transformation even after wrongdoing.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Chinese Yaoguai\nPersian Divs\nIndian Rakshasas\nWestern Demons and Ogres</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Oni appear widely in anime, films, and video games such as Demon Slayer, Nioh, Onimusha, and Mortal Kombat. Oni masks are also used in Japanese festivals as symbols of protection and warding off evil.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Some legends say a child’s crying at night signals the presence of an Oni.\nOni masks are sometimes placed in homes to protect against evil spirits.\nCertain myths describe Oni as fallen celestial beings rather than human spirits.</div>
+                `
+            },
+            { 
+                name: "Baku", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Baku.jpg", 
+                desc: "A creature said to devour nightmares.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Baku</div>
+                    <div class="detail-text">Baku (獏)</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Baku</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Moro-gu in some regions of Japan and Mo (貘) in Chinese mythology. It is commonly called the Dream Eater or Nightmare Devourer.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Baku originates from Japanese mythology with strong roots in ancient Chinese folklore. It is believed to have been inspired by the real Asian tapir and later transformed into a supernatural dream-eating spirit.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Baku appears in Japanese folklore, Buddhist traditions, 14th-century artworks, and Chinese ancient texts such as the Shan Hai Jing (Classic of Mountains and Seas).</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Baku is a spiritual hybrid being that exists between physical and supernatural realms. It is neither fully animal nor fully spirit and is believed to feed on dream energy, especially nightmares.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">Baku is described as a mixture of several animals: the body of a bear or tiger, legs like an elephant, a tail like an ox, and a snout resembling a tapir or pig. In some depictions, it appears as a tapir-like creature.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Consumes nightmares\nAbsorbs negative dream energy\nProtects humans during sleep\nMay devour dreams entirely, including positive ones if overused</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Weak to sunlight\nAvoids temple bells in Buddhist traditions\nBecomes unstable or dangerous if excessively summoned</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Baku is generally benevolent and protective, acting as a guardian of sleep. However, if overused or disrespected, it may become dangerous and consume too much of a person’s mental energy.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Baku is believed to exist in the dream world, a space between human reality and the spiritual realm. It is often associated with sleeping areas and night environments.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Baku protects humans from nightmares but may become harmful if repeatedly invoked or exploited.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Its primary role is to consume negative dream energy, maintaining balance between fear and peaceful sleep.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Feeling of heaviness during sleep\nStrange warm shadow\nElephant-like breathing sensation\nSudden relief after nightmares disappear</div>
+                    <div class="detail-header">Famous Legends</div>
+                    <div class="detail-text">In Edo-period folklore, a man suffering from constant nightmares called upon Baku. The creature devoured his bad dreams, but as the man repeatedly summoned it, Baku eventually consumed his soul as well.</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Placing Baku talismans or drawings near the bed\nReciting its name before sleep\nMaintaining respectful and limited invocation</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some legends say that calling Baku’s name three times after a nightmare may summon it to consume the bad dream. This is purely mythological and not a real practice.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Baku represents mental purification, protection from fear, and the balance between darkness and peace within the human mind.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Sandman in Western folklore\nMo in Chinese mythology\nOther dream-related spirits in Asian traditions</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Baku has influenced anime, manga, and games such as Pokémon, Persona 5, and various Japanese fantasy works. It is widely recognized as a symbol of protection against nightmares.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Baku images were historically printed on pillows in Japan\nMonks believed Baku could bring divine dreams\nIt was used as a protective symbol for children against nightmares</div>
+                `
+            },
+            { 
+                name: "Kishi", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Kishi.jpg", 
+                desc: "A two-faced demon from African folklore.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Kishi</div>
+                    <div class="detail-text">Kishi</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Kishi</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known in some African oral traditions as a two-faced demon, the beautiful deceiver, or the spirit of dual appearance.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Kishi originates from African folklore, especially in regions of Angola and surrounding Central African cultures. It is described as a spirit or demon that embodies deception through beauty and hidden monstrosity.</div>
+                    <div class="detail-header">Historical and Cultural Sources</div>
+                    <div class="detail-text">Kishi appears in traditional African oral storytelling and mythological accounts passed down through generations. It is not tied to a single sacred text but exists within regional folklore and moral cautionary tales about deception and trust.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Kishi is a supernatural being with a dual nature. It represents both attraction and danger, combining beauty and horror in a single entity. It is often seen as a spirit of deception and predatory disguise.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Kishi is depicted as having two faces:\nA beautiful human face used to attract and charm victims\nA hidden monstrous face, often described as demonic or animalistic, located at the back of the head\nIn some stories, it is also described with a humanoid body that shifts between elegance and horror depending on its intent.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Shape-shifting into a beautiful human form\nHypnotic charm and attraction\nDeception and manipulation of trust\nSupernatural strength in its true form\nSudden transformation into its monstrous face during attack</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Kishi is believed to be weakened when its true form is revealed. Awareness, caution, and inability to deceive its victim remove its advantage. In folklore, truth and recognition are its greatest defeats.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Kishi is cunning, deceptive, and predatory. It uses charm and beauty to lure victims before revealing its monstrous nature. It symbolizes betrayal hidden behind trust and attraction.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Kishi is said to live among humans, hiding in villages, towns, or isolated areas. It blends into society using its human appearance, making it difficult to detect.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Kishi interacts with humans primarily as a predator. It builds trust through its attractive form and then reveals its true nature when the victim is vulnerable.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Its main motivation is to deceive, hunt, and consume or destroy unsuspecting humans. Symbolically, it represents the danger of hidden evil behind beauty.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Unusual charm or attraction toward a stranger\nA sense of hidden danger beneath beauty\nSudden change in facial expression or voice\nFeeling of unease despite outward perfection</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">In African folklore, Kishi is often used in cautionary tales where travelers or villagers are warned not to trust appearances. Some stories describe hunters or wise individuals who discover the second face before becoming victims.</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Caution and awareness\nTrusting intuition over appearance\nCommunity wisdom and warning traditions\nAvoiding blind trust in strangers</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">There are no established or sacred summoning rituals. In folklore, Kishi appears naturally rather than being summoned, often as a test or punishment of human gullibility.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Kishi symbolizes deception, hidden danger, and the duality of beauty and evil. It teaches that appearances can hide true intentions and that trust must be earned, not assumed.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Oni in Japanese folklore (as a deceptive spirit form)\nSuccubus in Western mythology\nRakshasa in Indian mythology\nCertain shape-shifting demons in global folklore</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Kishi appears in modern horror interpretations, online folklore collections, and creative storytelling. It is sometimes used in horror games and fictional media as a symbol of two-faced evil.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Kishi is often used as a moral lesson about deception in African storytelling traditions.\nSome versions say only children or spiritually aware individuals can see its second face.\nIt represents one of the clearest symbolic “dual identity” demons in folklore.</div>
+                `
+            },
+            { 
+                name: "Slenderman", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Slenderman.jpg", 
+                desc: "A tall, faceless figure from modern internet folklore.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Slenderman</div>
+                    <div class="detail-text">Slenderman</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Slenderman</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as The Tall Man, The Faceless One, The Shadow Gentleman, and The Silent Stalker.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Slenderman originated from modern internet folklore in Western culture. He was first created in 2009 on the Something Awful Forums by Eric Knudsen (Victor Surge) and became one of the most famous creepypasta legends.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Slenderman has no ancient or religious origins. However, his concept is influenced by older myths such as the Boogeyman, the Tall Man of the Woods, and various shadow-being legends across cultures.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Slenderman is a fear-based entity that feeds on anxiety, paranoia, and psychological weakness. He is often described as a shadow-like being existing between physical reality and the human mind.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">He is extremely tall, usually between 2 to 4 meters, with a thin and unnatural body structure. He has pale white, featureless skin, no face, and wears a black suit with a tie. His arms are long and sometimes tentacle-like, stretching unnaturally.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Teleportation and shadow movement\nMind control and psychological manipulation\nInducing hallucinations and nightmares\nElectronic interference\nMemory alteration\nCausing fear and mental breakdown</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Bright light\nLack of fear or emotional response from victims\nBeing ignored or denied in belief reduces his influence</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Slenderman is silent, emotionless, intelligent, and highly calculating. He never speaks and moves in a slow, controlled manner. His calm presence hides a deeply hostile and predatory nature.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">He is commonly associated with dark forests, abandoned buildings, foggy areas, and isolated places. Some legends suggest he exists in a separate dark dimension connected to the human world.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">He is considered hostile toward humans, often targeting children or individuals who become obsessed with his existence. Victims are said to disappear or suffer psychological collapse.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">His motives are unclear but are often described as feeding on fear, controlling minds, or representing a force that eliminates weakness. He symbolizes modern psychological and existential fear.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Electronic disturbances\nSudden cold or pressure in the air\nDistorted or shifting shadows\nNightmares involving forests or tall figures\nLow buzzing or silence distortions</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">The 2014 Wisconsin stabbing case, where two girls attacked a friend claiming influence from Slenderman, brought global attention to the myth. Online stories also describe him luring children into forests from which they never return.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Avoiding obsession or fear\nStaying in well-lit environments\nMaintaining emotional control and calmness\nIgnoring belief in his existence in folklore interpretations</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some internet legends describe drawing a circle with an “X” symbol and calling his name in darkness. These are fictional and part of modern storytelling culture.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Slenderman represents collective fear in the digital age, loss of identity, and psychological vulnerability caused by internet culture and modern isolation.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Boogeyman in European folklore\nKuchisake-Onna in Japanese urban legends\nThe Rake in American creepypasta\nDiv or shadow spirits in Persian mythology</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Slenderman appears in video games such as Slender: The Eight Pages and Slender: Arrival, as well as the 2018 film Slender Man. He remains one of the most iconic figures of internet horror culture.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">He was created from only two images but became a global myth\nInspired real-world incidents and psychological studies\nThe “Slenderman Effect” is used to describe mass fear created by online urban legends</div>
+                `
+            },
+            { 
+                name: "Jeff the Killer", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Jeff%20the%20Killer.jpg", 
+                desc: "A smiling killer character from online horror stories.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Jeff the Killer</div>
+                    <div class="detail-text">Jeffrey Woods</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Jeff the Killer</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Jeff the Killer, The Smiling Killer, The White-Faced Murderer, and Sleep Killer.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Jeff the Killer originates from Western internet horror culture known as Creepypasta, which emerged in the early 2000s. The character first appeared online around 2008 as part of a fictional horror story.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Jeff the Killer has no historical or religious background. He is entirely a fictional character created within internet storytelling communities.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">He is typically described as a human who became mentally unstable after trauma and transformation into a violent, murderous entity. In some interpretations, he is also depicted as a supernatural or ghost-like killer spirit.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">He has a pale white face resembling porcelain, a permanent carved smile stretching across his cheeks, black hollow eyes, messy black hair, and often wears a white hoodie while carrying a knife.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Superhuman stealth\nEnhanced speed and agility\nNever sleeps\nSilent movement and sudden appearance\nPsychological terror through presence</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Fire, due to his original backstory involving burning\nBright light or symbolic holy influence in some versions\nEmotional triggers connected to family memories</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Cold, psychotic, and sadistic. He is intelligent but mentally unstable and enjoys instilling fear before killing. His iconic phrase is “Go to sleep.”</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">He is associated with dark environments such as abandoned houses, forests, quiet suburbs, and bedrooms at night.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">He is portrayed as hostile toward humans and often targets individuals at random, sometimes based on emotional triggers or perceived disrespect.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Originally driven by revenge after trauma and bullying, but later stories depict him as killing for pleasure and psychological satisfaction.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden silence\nCold air\nWhispers saying “Go to sleep”\nDistorted reflections or flickering lights</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Jeff the Killer (2008 original story)\nFan stories involving Slenderman encounters\nStories featuring his brother Liu Woods</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Avoid dark and isolated places at night\nIgnoring strange whispers or noises\nKeeping lights on\nSymbolic use of prayers or mental strength in folklore interpretations</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Internet legends claim that saying his name in a mirror three times may summon him, but this is purely fictional and part of creepypasta mythology.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Jeff the Killer represents trauma, psychological breakdown, and the loss of innocence due to pain and revenge turning into madness.</div>
+                    <div class="detail-header">Similar Entities</div>
+                    <div class="detail-text">Slenderman\nSmile Dog\nLaughing Jack\nFreddy Krueger</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">He is one of the most iconic creepypasta characters, inspiring fan art, animations, games, Roblox and Minecraft mods, and countless horror stories online.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">His original image is believed to be an edited real photo\nHis phrase “Go to sleep” became a viral internet meme\nHe has a large global fan community that creates alternative and redemption stories</div>
+                `
+            },
+            { 
+                name: "Siren Head", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Siren%20Head.jpg", 
+                desc: "A giant creature with sirens instead of a head.",
+                full: `
+                    <div class="detail-header">Complete Introduction of Siren Head</div>
+                    <div class="detail-text">Siren Head</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Siren Head</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as The Siren Monster, Sound Demon, Screaming Giant, and The Loud Entity.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Siren Head is a modern Western horror creation developed by Canadian digital artist Trevor Henderson in 2018. It first appeared as part of his online horror illustrations and quickly became an internet cryptid.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Siren Head has no historical or religious origins. It is a fictional modern entity created for internet horror culture.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Siren Head is often described as a hybrid creature made of flesh, bone, and mechanical elements. It behaves like a predatory cryptid that mimics technology, especially sound systems.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Its head consists</div>
+                `
+            },
+            { name: "Samara", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Samara.jpg", desc: "The ghostly girl from The Ring.", full: `<div class="detail-header">Description</div><div class="detail-text">The ghostly girl from The Ring.</div>` },
+            { name: "Candyman", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Candyman.webp", desc: "A vengeful spirit summoned by saying his name.", full: `<div class="detail-header">Description</div><div class="detail-text">A vengeful spirit summoned by saying his name.</div>` },
+            { name: "Black-Eyed Children", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/(Black-Eyed%20Children).jpg", desc: "Mysterious children with completely black eyes.", full: `<div class="detail-header">Description</div><div class="detail-text">Mysterious children with completely black eyes.</div>` },
+            { name: "Hat Man", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Hat%20Man.jpg", desc: "A shadowy figure often reported in dreams and sleep paralysis.", full: `<div class="detail-header">Description</div><div class="detail-text">A shadowy figure often reported in dreams and sleep paralysis.</div>` },
+            { name: "Mother Brain", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Mother%20Brain.jpg", desc: "An evil collective intelligence from science fiction.", full: `<div class="detail-header">Description</div><div class="detail-text">An evil collective intelligence from science fiction.</div>` },
+            { name: "Zombie", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Zombie.jpg", desc: "A reanimated corpse that feeds on human flesh.", full: `<div class="detail-header">Description</div><div class="detail-text">A reanimated corpse that feeds on human flesh.</div>` },
+            { name: "Specter", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Specter.jpg", desc: "A ghostly apparition associated with death.", full: `<div class="detail-header">Description</div><div class="detail-text">A ghostly apparition associated with death.</div>` },
+            { name: "Marid", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Marid.jpg", desc: "A powerful and proud type of jinn from Arab folklore.", full: `<div class="detail-header">Description</div><div class="detail-text">A powerful and proud type of jinn from Arab folklore.</div>` },
+            { name: "Ifrit", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Ifrit.jpg", desc: "A mighty fire spirit from Middle Eastern mythology.", full: `<div class="detail-header">Description</div><div class="detail-text">A mighty fire spirit from Middle Eastern mythology.</div>` },
+            { name: "Qareen", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Qareen.jpg", desc: "A spiritual companion associated with temptation.", full: `<div class="detail-header">Description</div><div class="detail-text">A spiritual companion associated with temptation.</div>` },
+            { name: "Nassnas", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Nassnas.jpg", desc: "A half-human creature from Arab legends.", full: `<div class="detail-header">Description</div><div class="detail-text">A half-human creature from Arab legends.</div>` },
+            { name: "Ghoul al-Layl", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Ghoul%20al-Layl.jpg", desc: "A night-roaming spirit of darkness.", full: `<div class="detail-header">Description</div><div class="detail-text">A night-roaming spirit of darkness.</div>` },
+            { name: "Lost Soul", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Lost%20Soul.jpg", desc: "A restless spirit trapped between worlds.", full: `<div class="detail-header">Description</div><div class="detail-text">A restless spirit trapped between worlds.</div>` },
+            { name: "Bloody Ghost", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Bloody%20Ghost.jpg", desc: "A ghost believed to gain power through blood.", full: `<div class="detail-header">Description</div><div class="detail-text">A ghost believed to gain power through blood.</div>` },
+            { name: "Red Demon", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Red%20Demon.jpg", desc: "A symbol of rage and fire in various traditions.", full: `<div class="detail-header">Description</div><div class="detail-text">A symbol of rage and fire in various traditions.</div>` },
+            { name: "Shadow People", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Shadow%20People.jpg", desc: "Dark human-like shadows reportedly seen at night.", full: `<div class="detail-header">Description</div><div class="detail-text">Dark human-like shadows reportedly seen at night.</div>` },
+            { name: "Iblis", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Iblis.jpg", desc: "The rebellious supernatural being associated with pride and temptation in Islamic tradition.", full: `<div class="detail-header">Description</div><div class="detail-text">The rebellious supernatural being associated with pride and temptation in Islamic tradition.</div>` }
         ];
 
         const grid = document.getElementById('grid');
@@ -148,47 +1905,89 @@
         entities.forEach((entity, index) => {
             const card = document.createElement('div');
             card.className = 'entity-card';
+            card.setAttribute('data-index', index);
+            
+            const imgSrc = entity.img !== "URL_HERE" ? entity.img : "https://via.placeholder.com/300x400/111/444?text=IMAGE";
+            
             card.innerHTML = `
-                <div class="img-container"><img src="${entity.img}"></div>
-                <div style="padding:25px"><h2>${entity.name}</h2><p style="color:var(--text-dim)">${entity.desc}</p></div>
-                <div class="mobile-detail" id="mobile-detail-${index}"></div>
+                <div class="img-container">
+                    <img src="${imgSrc}" alt="${entity.name}">
+                </div>
+                <div class="content">
+                    <h2>${entity.name}</h2>
+                    <p>${entity.desc}</p>
+                </div>
+                <!-- بخش مخصوص موبایل برای باز و بسته کردن انیمیشنی پنجره تعاملی -->
+                <div class="mobile-arrow-container">
+                    <svg class="mobile-arrow bounce-down" viewBox="0 0 24 24" id="arrow-${index}">
+                        <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                    </svg>
+                </div>
+                <div class="mobile-panel" id="panel-${index}">
+                    <h2 style="font-family:'Cinzel', serif; color:#fff; text-align:center; border-bottom:1px solid var(--accent); padding-bottom:10px;">${entity.name} Full Dossier</h2>
+                    ${entity.full}
+                    <div style="display:flex; justify-content:center; padding-top:20px;">
+                        <svg class="mobile-arrow bounce-up" viewBox="0 0 24 24" style="width:35px; height:35px;">
+                            <path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"/>
+                        </svg>
+                    </div>
+                </div>
             `;
-            card.onclick = () => handleCardClick(index, card);
+            
+            // مدیریت کلیک‌ها بر اساس ابعاد دستگاه کاربر
+            card.addEventListener('click', function(e) {
+                // بررسی اینکه آیا کاربر روی سیستم دسکتاپ است یا موبایل
+                if (window.innerWidth > 768) {
+                    // رفتار دسکتاپ: باز کردن صفحه جدید فول اسکرین سفارشی
+                    openArchiveDetail(entity);
+                } else {
+                    // رفتار موبایل: باز شدن پنجره کشویی زیر کارت
+                    // اگر کاربر مستقیماً روی بخش‌های دیگر کارت کلیک کرد یا فلش
+                    const panel = document.getElementById(`panel-${index}`);
+                    const arrow = document.getElementById(`arrow-${index}`);
+                    
+                    // بررسی کلیک روی بخش بستن (فلش بالایی)
+                    if (e.target.closest('.bounce-up')) {
+                        panel.style.display = 'none';
+                        arrow.setAttribute('class', 'mobile-arrow bounce-down');
+                        return;
+                    }
+
+                    if (panel.style.display === 'block') {
+                        panel.style.display = 'none';
+                        arrow.setAttribute('class', 'mobile-arrow bounce-down');
+                    } else {
+                        panel.style.display = 'block';
+                        arrow.setAttribute('class', 'mobile-arrow bounce-up');
+                        // تغییر فرمت فلش به بالا هنگام باز بودن پنجره
+                        arrow.innerHTML = `<path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"/>`;
+                    }
+                }
+            });
+
             grid.appendChild(card);
         });
 
-        function handleCardClick(index, card) {
-            if (window.innerWidth <= 768) {
-                const detailDiv = card.querySelector('.mobile-detail');
-                if (detailDiv.style.display === 'block') {
-                    detailDiv.style.display = 'none';
-                } else {
-                    let html = `<h3 style="color:var(--accent); font-family:'Cinzel';">${entities[index].name}</h3>`;
-                    for (const [key, value] of Object.entries(entities[index].details)) {
-                        html += `<p><strong>${key}:</strong> ${value}</p>`;
-                    }
-                    detailDiv.innerHTML = html;
-                    detailDiv.style.display = 'block';
-                }
-            } else {
-                showDetail(index);
-            }
+        // توابع مربوط به باز و بسته کردن صفحه فول اسکرین در رایانه‌ها و لپ‌تاپ‌ها
+        function openArchiveDetail(entity) {
+            const overlay = document.getElementById('desktopOverlay');
+            const contentContainer = document.getElementById('overlayContent');
+            
+            contentContainer.innerHTML = `
+                <div class="overlay-title">${entity.name}</div>
+                ${entity.full}
+            `;
+            
+            overlay.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // قفل کردن اسکرول پس‌زمینه اصلی
         }
 
-        function showDetail(index) {
-            const e = entities[index];
-            let html = `<h1>${e.name}</h1>`;
-            for (const [key, value] of Object.entries(e.details)) {
-                html += `<h3>${key}</h3><p>${value}</p>`;
-            }
-            document.getElementById('detail-content').innerHTML = html;
-            document.getElementById('detail-view').style.display = 'block';
-            window.scrollTo(0,0);
-        }
-
-        function hideDetail() {
-            document.getElementById('detail-view').style.display = 'none';
+        function closeArchiveDetail() {
+            const overlay = document.getElementById('desktopOverlay');
+            overlay.style.display = 'none';
+            document.body.style.overflow = 'auto'; // بازگرداندن اسکرول پس‌زمینه
         }
     </script>
 </body>
+
 </html>
