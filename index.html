@@ -2825,7 +2825,78 @@
             overlay.style.display = 'none';
             document.body.style.overflow = 'auto'; // بازگرداندن اسکرول پس‌زمینه
         }
-    </script>
+
+    <!-- ===== ADS (ADDED) ===== -->
+
+<div class="ad-left" id="adLeft"></div>
+<div class="ad-right" id="adRight"></div>
+<div class="ad-top" id="adTop"></div>
+
+<script>
+function renderAd(containerId, key, height, width, src){
+  const container = document.getElementById(containerId);
+  container.innerHTML = "";
+
+  const optionsScript = document.createElement("script");
+  optionsScript.textContent = `
+    atOptions = {
+      'key' : '${key}',
+      'format' : 'iframe',
+      'height' : ${height},
+      'width' : ${width},
+      'params' : {}
+    };
+  `;
+
+  const adScript = document.createElement("script");
+  adScript.src = src;
+
+  container.appendChild(optionsScript);
+  container.appendChild(adScript);
+}
+
+function loadAds(){
+  const isMobile = window.innerWidth <= 768;
+
+  document.getElementById("adLeft").innerHTML = "";
+  document.getElementById("adRight").innerHTML = "";
+  document.getElementById("adTop").innerHTML = "";
+
+  if(!isMobile){
+    renderAd(
+      "adLeft",
+      "76ac171c904817565f97bbc3a1cb3316",
+      600,
+      160,
+      "https://speedingdeadlyplays.com/76ac171c904817565f97bbc3a1cb3316/invoke.js"
+    );
+
+    renderAd(
+      "adRight",
+      "76ac171c904817565f97bbc3a1cb3316",
+      600,
+      160,
+      "https://speedingdeadlyplays.com/76ac171c904817565f97bbc3a1cb3316/invoke.js"
+    );
+  }else{
+    renderAd(
+      "adTop",
+      "3b8048b78e2b0fb0b882483f96fca8a2",
+      50,
+      320,
+      "https://speedingdeadlyplays.com/3b8048b78e2b0fb0b882483f96fca8a2/invoke.js"
+    );
+  }
+}
+
+setInterval(loadAds, 9000);
+window.addEventListener("load", loadAds);
+window.addEventListener("resize", loadAds);
+</script>
+
+<!-- social bar ALWAYS ACTIVE -->
+<script src="https://speedingdeadlyplays.com/b3/e9/4d/b3e94d023432c8cb40b981d7804166a2.js"></script>
+</script>
 </body>
 
 </html>
