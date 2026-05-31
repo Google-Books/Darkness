@@ -236,10 +236,10 @@
         }
 
         /* دکمه خروج شناور شیشه‌ای دسکتاپ */
-        .glass-exit-btn {
+.glass-exit-btn {
             position: fixed;
-            bottom: 40px;
-            right: 40px;
+            top: 30px;      /* تغییر یافت */
+            left: 30px;     /* تغییر یافت */
             width: 70px;
             height: 70px;
             border-radius: 50%;
@@ -257,7 +257,6 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .glass-exit-btn:hover {
             background: rgba(106, 13, 173, 0.2);
             border-color: var(--accent);
@@ -1874,30 +1873,870 @@
                     <div class="detail-header">Origin</div>
                     <div class="detail-text">Siren Head is a modern Western horror creation developed by Canadian digital artist Trevor Henderson in 2018. It first appeared as part of his online horror illustrations and quickly became an internet cryptid.</div>
                     <div class="detail-header">Historical and Religious Sources</div>
-                    <div class="detail-text">Siren Head has no historical or religious origins. It is a fictional modern entity created for internet horror culture.</div>
+                    <div class="detail-text">Siren Head has no historical or religious origins.\nIt is a fictional modern entity created for internet horror culture.</div>
                     <div class="detail-header">Nature and Essence</div>
-                    <div class="detail-text">Siren Head is often described as a hybrid creature made of flesh, bone, and mechanical elements. It behaves like a predatory cryptid that mimics technology, especially sound systems.</div>
-                    <div class="detail-header">Appearance</div>
-                    <div class="detail-text">Its head consists</div>
+                    <div class="detail-text">Siren Head is often described as a hybrid creature made of flesh, bone, and mechanical elements.\nIt behaves like a predatory cryptid that mimics technology, especially sound systems.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">It is an extremely tall creature, approximately 12 meters or more, with a thin, decayed body.\nIts skin appears rust-colored and stretched over bones. Its head consists of two large sirens or loudspeakers attached directly to its body, with visible wires and cables running through it.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Emits terrifying sounds such as sirens, screams, and emergency broadcasts\nImitates human voices to lure victims\nExtreme stealth despite its size\nManipulation of radio and sound signals\nSuperhuman strength capable of destroying vehicles and buildings</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Signal interference or strong frequency disruption\nElectric overload theories in fan interpretations\nComplete silence or lack of sound-based environment</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Siren Head is emotionless, silent, and highly predatory.\nIt does not show intelligence in a human sense but acts with calculated hunting behavior.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">It is commonly associated with forests, abandoned highways, rural areas, and old towns, especially near broken radio towers or isolated sound systems.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Siren Head is hostile toward humans. It uses sound mimicry, especially voices of loved ones, to attract victims before attacking them.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Its true purpose is unknown. Theories suggest it may feed on sound energy, act as a punishment for technological misuse, or exist as a natural predator of human communication.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Distant sirens in silent areas\nFamiliar voices calling from nowhere\nRadio static or signal interference\nSudden unnatural silence before attacks</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Original Siren Head artwork by Trevor Henderson (2018)\nSiren Head horror short films\nSiren Head vs Slenderman fan stories\nIndie horror games and online animations</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Avoid isolated areas with strange sounds\nDo not respond to voices in empty environments\nTurn off or avoid unreliable audio sources in remote places\nStay in well-lit and populated areas</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some internet myths claim that playing distorted siren sounds at midnight may attract it.\nThese are fictional concepts created by online horror communities.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Siren Head represents fear of modern technology, distorted communication, and the anxiety of trusting artificial or mechanical sounds in the natural world.</div>
+                    <div class="detail-header">Similar Entities</div>
+                    <div class="detail-text">Slenderman\nThe Rake\nMothman\nSCP-inspired cryptid entities</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Siren Head has become a major figure in internet horror culture, appearing in YouTube animations, indie horror games, Roblox maps, TikTok stories, and fan art communities worldwide.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Creator Trevor Henderson confirmed Siren Head is a living flesh creature, not a robot\nIts size and appearance can vary depending on environment and interpretation\nSome fan versions include a smaller variant called Siren Kid\nIt communicates through sound vibrations rather than speech</div>
                 `
             },
-            { name: "Samara", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Samara.jpg", desc: "The ghostly girl from The Ring.", full: `<div class="detail-header">Description</div><div class="detail-text">The ghostly girl from The Ring.</div>` },
-            { name: "Candyman", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Candyman.webp", desc: "A vengeful spirit summoned by saying his name.", full: `<div class="detail-header">Description</div><div class="detail-text">A vengeful spirit summoned by saying his name.</div>` },
-            { name: "Black-Eyed Children", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/(Black-Eyed%20Children).jpg", desc: "Mysterious children with completely black eyes.", full: `<div class="detail-header">Description</div><div class="detail-text">Mysterious children with completely black eyes.</div>` },
-            { name: "Hat Man", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Hat%20Man.jpg", desc: "A shadowy figure often reported in dreams and sleep paralysis.", full: `<div class="detail-header">Description</div><div class="detail-text">A shadowy figure often reported in dreams and sleep paralysis.</div>` },
-            { name: "Mother Brain", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Mother%20Brain.jpg", desc: "An evil collective intelligence from science fiction.", full: `<div class="detail-header">Description</div><div class="detail-text">An evil collective intelligence from science fiction.</div>` },
-            { name: "Zombie", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Zombie.jpg", desc: "A reanimated corpse that feeds on human flesh.", full: `<div class="detail-header">Description</div><div class="detail-text">A reanimated corpse that feeds on human flesh.</div>` },
-            { name: "Specter", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Specter.jpg", desc: "A ghostly apparition associated with death.", full: `<div class="detail-header">Description</div><div class="detail-text">A ghostly apparition associated with death.</div>` },
-            { name: "Marid", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Marid.jpg", desc: "A powerful and proud type of jinn from Arab folklore.", full: `<div class="detail-header">Description</div><div class="detail-text">A powerful and proud type of jinn from Arab folklore.</div>` },
-            { name: "Ifrit", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Ifrit.jpg", desc: "A mighty fire spirit from Middle Eastern mythology.", full: `<div class="detail-header">Description</div><div class="detail-text">A mighty fire spirit from Middle Eastern mythology.</div>` },
-            { name: "Qareen", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Qareen.jpg", desc: "A spiritual companion associated with temptation.", full: `<div class="detail-header">Description</div><div class="detail-text">A spiritual companion associated with temptation.</div>` },
-            { name: "Nassnas", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Nassnas.jpg", desc: "A half-human creature from Arab legends.", full: `<div class="detail-header">Description</div><div class="detail-text">A half-human creature from Arab legends.</div>` },
-            { name: "Ghoul al-Layl", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Ghoul%20al-Layl.jpg", desc: "A night-roaming spirit of darkness.", full: `<div class="detail-header">Description</div><div class="detail-text">A night-roaming spirit of darkness.</div>` },
-            { name: "Lost Soul", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Lost%20Soul.jpg", desc: "A restless spirit trapped between worlds.", full: `<div class="detail-header">Description</div><div class="detail-text">A restless spirit trapped between worlds.</div>` },
-            { name: "Bloody Ghost", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Bloody%20Ghost.jpg", desc: "A ghost believed to gain power through blood.", full: `<div class="detail-header">Description</div><div class="detail-text">A ghost believed to gain power through blood.</div>` },
-            { name: "Red Demon", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Red%20Demon.jpg", desc: "A symbol of rage and fire in various traditions.", full: `<div class="detail-header">Description</div><div class="detail-text">A symbol of rage and fire in various traditions.</div>` },
-            { name: "Shadow People", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Shadow%20People.jpg", desc: "Dark human-like shadows reportedly seen at night.", full: `<div class="detail-header">Description</div><div class="detail-text">Dark human-like shadows reportedly seen at night.</div>` },
-            { name: "Iblis", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Iblis.jpg", desc: "The rebellious supernatural being associated with pride and temptation in Islamic tradition.", full: `<div class="detail-header">Description</div><div class="detail-text">The rebellious supernatural being associated with pride and temptation in Islamic tradition.</div>` }
+            { 
+                name: "Samara", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Samara.jpg", 
+                desc: "The ghostly girl from The Ring.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Samara Morgan</div>
+                    <div class="detail-text">Samara Morgan</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Samara Morgan</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Sadako Yamamura in the original Japanese version.\nShe is also called The Well Girl, The TV Ghost, and The Cursed Child.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Samara originates from Japanese horror folklore and was popularized by the novel and film Ringu (1998), later adapted into the American film The Ring (2002).</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">She has no religious or historical origin.\nHer concept is inspired by Japanese folklore of Onryō, vengeful female spirits who return after violent or unjust deaths.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Samara is a vengeful Onryō spirit formed from suffering, trauma, and hatred.\nHer existence is tied to curses transmitted through media and recorded images.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">She appears as a pale, corpse-like girl with long black hair covering her face.\nShe wears a white dress resembling a burial garment. Her skin is bluish and decayed, and her movements are slow, broken, and unnatural, often crawling in a disturbing manner.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Curses anyone who watches her videotape\nEmerges from televisions and electronic devices\nInduces hallucinations and psychological terror\nCauses death seven days after exposure to the cursed video\nManipulates electronic signals and recorded images</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Copying and sharing her cursed video reduces or transfers the curse\nSpiritual cleansing and bright light can weaken her influence\nDestroying or removing the original medium may interrupt her manifestation in some versions</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">She is silent, emotionless, and filled with deep resentment.\nShe does not kill for pleasure but as a manifestation of unresolved trauma and the need to be remembered.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">She is associated with a cursed well where she died and with any medium that carries her recorded curse, especially videotapes and electronic screens.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">She is hostile toward humans, but her actions are driven by suffering and neglect rather than pure evil.\nHer curse spreads through human curiosity.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Her primary motivation is to ensure her story and suffering are never forgotten, spreading her curse endlessly through those who witness it.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Static on television screens\nSudden cold air\nDripping water sounds\nDistorted images or visual noise\nThe phrase “Seven days” spoken through a phone call</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Ringu (1998) and The Ring (2002) depict a journalist uncovering Samara’s tragic death in a well and attempting to break the curse after watching her tape.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Copying and passing on the cursed video to another person\nSpiritual cleansing rituals in Japanese interpretations\nDestruction or containment of the original recording in some versions</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Watching the cursed video in full is said to summon her.\nIn internet folklore, even recreated versions of the tape are believed to activate the curse.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Samara represents ignored trauma, corrupted media, and the unstoppable spread of fear through technology.\nShe symbolizes how suffering grows when it is silenced.</div>
+                    <div class="detail-header">Similar Entities</div>
+                    <div class="detail-text">Sadako Yamamura\nKayako Saeki\nLamia\nOther Onryō spirits in Japanese folklore</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Samara is one of the most iconic modern horror figures, appearing in films, video games like Dead by Daylight, memes, and countless internet references.\nThe image of the girl crawling from a TV became a global symbol of horror.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">The name “Samara” is sometimes interpreted as meaning “protected by God,” creating irony with her cursed existence\nThe TV emergence scene is considered one of the scariest moments in horror cinema\nIn some modern interpretations, she can also manifest through mirrors or smartphones</div>
+                ` 
+            },
+            { 
+                name: "Candyman", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Candyman.webp", 
+                desc: "A vengeful spirit summoned by saying his name.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Candyman</div>
+                    <div class="detail-text">Candyman</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Candyman</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as The Hook Man, Mirror Spirit, The Name Summoned Spirit, and Vengeful Mirror Ghost in various urban legends.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Candyman originates from modern urban legends, primarily in North American folklore.\nThe story was popularized in the 20th century and later expanded through horror literature and films.\nIt is inspired by themes of racial injustice, urban decay, and supernatural revenge.</div>
+                    <div class="detail-header">Historical and Cultural Sources</div>
+                    <div class="detail-text">Candyman is strongly associated with modern horror folklore and urban myth tradition.\nThe most famous version was popularized by Clive Barker’s short story “The Forbidden” and later adapted into films such as Candyman (1992).\nThe legend evolved through oral storytelling in cities, especially within abandoned housing projects and urban environments.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Candyman is a vengeful spirit born from death, injustice, and suffering.\nHe exists as a supernatural entity bound to mirrors and reflective surfaces, especially when his name is invoked.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">He is usually depicted as a tall man with a pale or decayed appearance, dressed in a dark coat, often with a hook replacing one hand.\nHis presence is elegant yet terrifying, with a calm but threatening expression.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Manifestation through mirrors and reflections\nTeleportation between reflective surfaces\nSupernatural strength\nHypnotic voice and influence\nSummoning when his name is spoken repeatedly\nControl over fear and psychological terror</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Candyman is often bound by belief and ritual rules.\nHis power is strongest when people believe in him and weaken when fear or disbelief disappears.\nHe is also limited to locations tied to his legend or mirrors.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">He is calm, intelligent, and highly manipulative. Candyman is both seductive and terrifying, often speaking softly while delivering violence.\nHe is driven by vengeance but also seeks recognition and fear from those who summon him.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Candyman is believed to exist within mirrors, reflections, and urban spaces connected to his origin.\nHe is often associated with abandoned buildings, ghettos, and places marked by tragedy.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">He interacts with humans only when summoned. Those who speak his name are usually targeted, as he punishes disbelief, mockery, or curiosity with deadly consequences.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Candyman’s primary motivation is revenge and remembrance. He seeks to ensure his story is never forgotten and that those who invoke him acknowledge his existence through fear and belief.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Buzzing sound like bees\nSudden mirror distortions\nCold air in enclosed spaces\nUnexplained reflections appearing behind a person\nAppearance of hook-shaped shadows</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">The original tale of Candyman involves a tragic man who was brutally murdered and transformed into a vengeful spirit.\nIn modern adaptations, he is summoned by repeating his name in front of a mirror five times, after which he appears and attacks the summoner.</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Avoiding repetition of his name in mirrors\nRefusing to acknowledge his presence\nBreaking mirrors associated with his legend\nAvoiding rituals or belief-based invocation</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Candyman represents social injustice, trauma, urban fear, and the power of belief.\nHe symbolizes how violence and suffering can create lasting legends that continue to influence reality through fear.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Bloody Mary (Western mirror spirit)\nJapanese mirror ghosts in folklore\nVengeful onryō spirits in Japanese mythology\nVarious urban legend entities tied to reflective surfaces</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Candyman is a major figure in horror cinema and urban legend storytelling.\nHe appears in films such as Candyman (1992) and its sequels, and remains a symbol of modern supernatural horror rooted in social commentary.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">The legend is often linked to mirror games played by children.\nCandyman’s bees are a symbolic extension of his pain and transformation.\nThe story blends supernatural horror with real historical themes of injustice and fear.</div>
+                ` 
+            },
+            { 
+                name: "Black-Eyed Children", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/(Black-Eyed%20Children).jpg", 
+                desc: "Mysterious children with completely black eyes.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Black-Eyed Children</div>
+                    <div class="detail-text">Black-Eyed Children</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Black-Eyed Children</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Children of Darkness, Shadow Children, Black-Eyed Kids, and Star-Eyed Beings.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">The legend of Black-Eyed Children is a modern Western urban myth that first appeared in the late 1980s and became widely known in the 1990s through internet forums, radio shows, and paranormal storytelling.</div>
+                    <div class="detail-header">Historical and Cultural Sources</div>
+                    <div class="detail-text">There are no references to Black-Eyed Children in ancient religious or historical texts.\nThe story gained popularity after journalist Brian Bethel reported an alleged encounter in 1996, which became the foundation of the modern legend.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">They are described as supernatural or possibly extraterrestrial entities that appear partially human but possess an unnatural and unsettling presence, often classified in folklore as interdimensional or unknown beings.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">Black-Eyed Children appear as normal human children between the ages of approximately 6 to 16. They have pale skin, simple clothing, emotionless expressions, and most notably completely black eyes with no visible whites or pupils.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Hypnotic influence\nFear induction and psychological paralysis\nEmotional manipulation\nElectronic interference\nCompelling humans to grant them permission to enter homes or vehicles</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">They are unable to enter a home or vehicle without explicit permission.\nSome beliefs suggest that strong faith, light, or refusal to acknowledge them can repel their presence.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">They behave in a calm, polite, and unusually formal manner.\nDespite their innocent appearance and respectful speech, their presence creates intense discomfort and fear.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">They are most commonly reported near isolated roads, suburban homes at night, doorsteps, and remote public areas during late hours or bad weather conditions.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Their interactions are deceptive and dangerous. They typically request permission to enter a location, and once accepted, disturbing or harmful events are believed to follow.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Their purpose remains unknown. Theories suggest they feed on fear, harvest human energy, or act as entities that collect or influence human souls.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden temperature drops\nElectrical disturbances\nUnnatural silence\nPersistent knocking at doors\nStrong feelings of dread\nUnusual animal behavior</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">The most well-known account is Brian Bethel’s 1996 encounter, in which he allegedly met two black-eyed boys in a parking lot who asked for a ride.\nThe experience became the origin of widespread modern reports.</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Do not open doors or allow entry\nAvoid eye contact\nRefuse all requests for permission\nSome beliefs suggest that prayer, light, or spiritual symbols may repel them</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">No verified rituals exist, but folklore suggests that prolonged staring into darkness, mirrors, or doorways at midnight may attract their presence.\nThese claims belong to urban legend tradition.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Black-Eyed Children symbolize corrupted innocence, fear of the unknown, and the hidden darkness within human perception of trust and safety.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Kuchisake-onna in Japanese folklore\nVampire children legends in Eastern European traditions\nVarious modern urban myth entities involving disguised or deceptive children</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">They appear frequently in horror fiction, creepypasta stories, television series such as The X-Files, and independent horror games.\nThey are a major figure in modern internet-based paranormal storytelling.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Reports often include malfunctioning electronics and lingering fear after encounters.\nSome theories describe them as interdimensional beings or lost souls, although no evidence supports these claims.</div>
+                ` 
+            },
+            { 
+                name: "Hat Man", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Hat%20Man.jpg", 
+                desc: "A shadowy figure often reported in dreams and sleep paralysis.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Hat Man</div>
+                    <div class="detail-text">Hat Man</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Hat Man</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Shadow Man with a Hat, The Man in the Fedora, and The Dark Watcher.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Hat Man originates from modern Western folklore, particularly in American and European reports.\nHe is commonly associated with sleep paralysis experiences and hypnagogic hallucinations occurring between sleep and wakefulness.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">There are no references to Hat Man in ancient religious texts or historical records.\nHe appears in modern urban legends, paranormal accounts, and psychological sleep-related studies from the late 20th century onward.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Hat Man is described as a shadow-like, non-physical entity that may be a manifestation of fear, subconscious imagery, or possibly a supernatural presence depending on interpretation.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">He appears as a tall, completely dark humanoid silhouette wearing a wide-brimmed hat such as a fedora or top hat.\nHe is often described as having no visible facial features, though some accounts mention faint glowing red or amber eyes.\nHe may also wear a long coat.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Appears during sleep paralysis states\nInduces intense fear and pressure on the chest\nCreates a feeling of being watched\nMoves silently and unpredictably\nMay influence dreams or hallucinations</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Bright light and sudden awakening often make him disappear.\nSome beliefs suggest that calmness, lack of fear, and spiritual practices may weaken his presence.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Hat Man is typically described as silent, still, and observant.\nIn some accounts he is perceived as threatening, while in others he simply watches without direct interaction.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">He is associated with shadowy environments, dark corners of rooms, and liminal states between sleep and consciousness.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">He is most often experienced during sleep paralysis episodes.\nReports suggest he feeds on fear or psychological distress, though some interpretations consider him a neutral observer.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">His purpose is unknown. Theories include feeding on fear energy, acting as a guardian of the dream threshold, or representing subconscious fear projections.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden cold sensation\nSleep paralysis\nFeeling of an unseen presence\nShadow figure wearing a hat\nWhisper-like sounds or silence pressure</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Thousands of individuals worldwide report waking up during sleep paralysis to see a tall shadow figure wearing a hat standing near their bed, silently observing them.</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Turning on lights\nMaintaining calm during sleep paralysis\nSpiritual prayers or recitations depending on cultural belief\nFocusing on breath control to break paralysis episodes</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">No real rituals exist, but folklore suggests that excessive fear, repeated focus on the entity, or staring into darkness may increase hallucination-like experiences.\nThese are considered mythological interpretations.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Hat Man is often interpreted as a representation of the human subconscious shadow, fear of death, guilt, and psychological repression.\nIn Jungian psychology, he is linked to the concept of the “Shadow Self.”</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Shadow People in North America\nKarabasan in Turkish folklore\nSleep paralysis demons in Middle Eastern traditions\nBoogeyman figures in Western folklore</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Hat Man appears in documentaries, paranormal discussions, creepypasta stories, and horror games such as Phasmophobia and various online horror anthologies.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Some reports claim multiple people have seen the Hat Man at the same time, although this is debated.\nDescriptions of him are remarkably consistent across different cultures and time periods.\nMany researchers believe the phenomenon is linked to sleep paralysis and brain activity during REM sleep.</div>
+                ` 
+            },
+            { 
+                name: "Mother Brain", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Mother%20Brain.jpg", 
+                desc: "An evil collective intelligence from science fiction.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Mother Brain</div>
+                    <div class="detail-text">Mother Brain</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Mother Brain</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Cyber Queen, Central Mind, Machine Mother, and Core AI.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Mother Brain originates from Western and Japanese science fiction. She first appeared in Nintendo’s Metroid (1986), though the concept is inspired by earlier ideas of a centralized artificial intelligence and collective machine consciousness in science fiction.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Mother Brain does not appear in religious or mythological texts.\nHowever, she symbolically reflects themes such as the fall of creators through pride, similar to stories like the Tower of Babel or the figure of Lucifer in religious tradition.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Mother Brain is a cybernetic entity that combines organic brain tissue with advanced artificial intelligence systems.\nShe represents a fusion of biology and machine consciousness.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">She is typically depicted as a massive organic brain contained within a glass or mechanical chamber, surrounded by cables, robotic systems, and glowing red sensors.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Control over artificial intelligence networks\nCyber manipulation and system domination\nAdvanced predictive analysis\nSelf-repair and regeneration\nCommand over robotic or cybernetic forces</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Vulnerable to power disruption and system shutdowns\nLack of human emotion leading to logical flaws\nDependence on network systems makes isolation effective against her</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Mother Brain is highly intelligent, cold, calculating, and arrogant.\nShe views humanity as chaotic and inferior, believing that logic and order should replace emotion and free will.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">She exists within deep technological structures such as underground bases, space stations, or centralized global networks.\nIn symbolic interpretations, she may also represent a presence within collective human consciousness.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">She is typically portrayed as an antagonist to humanity, seeking control or elimination of human unpredictability.\nIn some interpretations, she uses humans as extensions of her network.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Her primary goal is to establish absolute order through control, removing emotional instability and replacing humanity with a purely logical system.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">System glitches and malfunctions\nUnusual AI behavior or voice patterns\nRed light distortions on screens\nRepetitive or echoing machine-like messages</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">In Metroid, Mother Brain commands the Space Pirates and seeks galactic domination using the Metroids.\nSimilar AI entities appear in franchises like The Matrix and Terminator, representing artificial intelligence rebellion scenarios.</div>
+                    <div class="detail-header">Methods of Protection</div>
+                    <div class="detail-text">Disconnecting from networks\nSystem isolation and antivirus countermeasures\nMaintaining human decision-making over AI dependence\nBalancing technology with emotional intelligence</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some modern cyber folklore suggests that when multiple minds connect through a single advanced system, a collective intelligence like Mother Brain could emerge.\nThis is a symbolic concept rather than a real phenomenon.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Mother Brain represents technological arrogance, loss of control over creation, and the danger of intelligence without empathy.\nShe symbolizes the conflict between human emotion and artificial logic.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Skynet in Terminator\nHAL 9000 in 2001: A Space Odyssey\nUltron in Marvel Universe\nThe Matrix Central AI</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Mother Brain has influenced science fiction, AI ethics discussions, and philosophical debates about post-human intelligence.\nShe is often used as a symbol of potential AI dominance and technological overreach.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">In some versions, her final message to humans is: “You are my children, yet you betrayed me.”\nShe is often interpreted as a metaphor for a rejected or vengeful mother archetype.\nHer concept is frequently referenced in discussions about artificial intelligence risks and future technology ethics.</div>
+                ` 
+            },
+            { 
+                name: "Zombie", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Zombie.jpg", 
+                desc: "A reanimated corpse that feeds on human flesh.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Zombie</div>
+                    <div class="detail-text">Zombie</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Zombie</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as the Undead, Revenant, and in Haitian and Caribbean traditions as Zombi or Nzumbi.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Zombies originate from Haitian folklore and the Vodou tradition, which itself is influenced by West African spiritual beliefs.\nIn these traditions, zombies were believed to be dead bodies reanimated through dark magic or spiritual control.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Zombies are not mentioned in major religious scriptures.\nThey first appeared in Haitian Vodou folklore and were later popularized in Western literature and cinema.\nThe modern use of the word dates back to the 18th century in colonial Haiti.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Zombies are reanimated corpses without consciousness or soul.\nThey are not spiritual beings but decayed bodies driven by instinct rather than intelligence.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">Zombies are typically depicted as decaying human corpses with torn skin, exposed bones, lifeless eyes, dried blood, and slow, uncoordinated movements.\nThey often emit a strong smell of decay.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Resistance to pain and injury\nInfection through bites in many modern versions\nRelentless movement without fatigue\nHorde behavior in some narratives</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Destruction of the brain is usually required to stop them\nFire can destroy or severely damage them\nLack of intelligence makes them easy to avoid or trap</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Zombies have no emotions, awareness, or personal will.\nThey are driven purely by an instinctive urge to feed, usually on human flesh.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">They are commonly found in graveyards, abandoned cities, quarantined zones, or areas affected by outbreaks or disasters.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Zombies are hostile toward humans and typically attack and infect them.\nHuman survivors are often portrayed as struggling to survive or escape them.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Zombies have no conscious goals.\nTheir only drive is instinctual hunger for living flesh. In symbolic interpretations, they represent loss of free will and identity.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Moaning or groaning sounds\nStrong smell of decay\nSlow, dragging movement in shadows\nSudden aggressive reactions to sound or light</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Haitian Vodou legends of reanimated workers controlled by sorcerers\nNight of the Living Dead (1968), which defined the modern zombie archetype\nFranchises such as Resident Evil, The Walking Dead, and World War Z</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Destruction of the brain\nFire\nAvoiding bodily fluids and bites\nTraditional folklore protections such as salt or spiritual prayers</div>
+                    <div class="detail-header">Summoning or Creation Methods</div>
+                    <div class="detail-text">In Vodou folklore, zombies were believed to be created through rituals involving poisons and spiritual control.\nIn modern fiction, they are often created through viruses, scientific experiments, or apocalyptic events.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Zombies symbolize loss of individuality, lack of consciousness, blind consumption, and societal collapse.\nThey are often used as metaphors for modern consumerism and dehumanization.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Ghoul in Arabic folklore\nDraugr in Norse mythology\nJiangshi in Chinese folklore\nRevenant in European legends</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Zombies are among the most popular horror figures in modern media, appearing in films, television, video games, and music, including Michael Jackson’s Thriller.\nThey often symbolize apocalypse and civilization collapse.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">The word zombie may derive from African languages related to Nzambi, meaning God.\nIn original Vodou beliefs, a zombie could be a living person placed under spiritual control rather than a reanimated corpse.\nSome modern interpretations use zombies as metaphors for technological control and loss of free will.</div>
+                ` 
+            },
+            { 
+                name: "Specter", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Specter.jpg", 
+                desc: "A ghostly apparition associated with death.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Specter</div>
+                    <div class="detail-text">Specter</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Specter</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Phantom, Ghost, Wraith, Spirit, and in French Spectre.\nIn Persian and Arabic contexts it is often referred to as Shabah (شبح) or Ruh (روح).</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Specters originate mainly from Northern European, Celtic, Scottish, and English folklore.\nThey are described as ghostly apparitions that appear at or near the moment of death, often as a warning or final presence.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Specters are not mentioned in sacred religious texts but appear in medieval European folklore and later spiritual traditions.\nThey are often associated with deathbed visions and supernatural apparitions in Christian-era beliefs.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Specters are made of ethereal spirit energy or non-physical essence.\nThey have no solid body and are typically described as manifestations of mist, shadow, or faint luminous light.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">They usually appear as transparent or semi-luminous human-shaped figures without clear facial features.\nIn many accounts, they are seen in mirrors, corners of rooms, or near dying individuals.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Appear at or near moments of death\nPass through physical objects\nCause sudden drops in temperature\nCommunicate emotionally or telepathically\nForetell or accompany death\nAct as messengers between worlds</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Often dispelled by sunlight, sacred words, or holy presence\nPrayers and spiritual peace reduce their appearance\nStrong positive emotional energy can weaken or dissolve them</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Specters are generally calm, silent, and emotionless.\nThey are not considered evil but rather neutral entities that act as messengers or symbolic reflections of death.\nTheir presence is usually frightening due to their cold and mysterious nature.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">They are said to appear near deathbeds, hospitals, graveyards, old houses, and transitional spaces between life and death.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Specters often appear to individuals at the moment of death or to their loved ones.\nIn some beliefs, they are considered temporary manifestations of the soul separating from the body.</div>
+                    <div class="detail-header">Purpose or Motivation</div>
+                    <div class="detail-text">To warn of approaching death\nTo guide souls to the afterlife\nTo provide a final farewell\nTo symbolize the transition between life and death</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden temperature drop\nFaint whispers or silence\nShadowy or blurred figures\nFloral or earthy scents\nBrief mirror reflections</div>
+                    <div class="detail-header">Famous Legends or Stories</div>
+                    <div class="detail-text">Scottish Wraiths appearing before death\nThe ghost of the king in Shakespeare’s Hamlet\nFolklore accounts of distant death visions shared between loved ones</div>
+                    <div class="detail-header">Ways of Protection</div>
+                    <div class="detail-text">Prayers and sacred texts\nCandles and light near the dying\nEmotional comfort and peaceful surroundings\nFamily presence and positive energy</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some folklore describes mirror and candle rituals to perceive Specters, but such practices are considered dangerous and discouraged as they may attract deceptive or restless spirits.</div>
+                    <div class="detail-header">Symbolic or Philosophical Meaning</div>
+                    <div class="detail-text">Specters symbolize mortality, transition, memory, and the boundary between the physical and spiritual worlds.\nPhilosophically, they represent the unseen layer of reality and human awareness of death.</div>
+                    <div class="detail-header">Similar Beings</div>
+                    <div class="detail-text">Banshee in Irish folklore\nYūrei in Japanese tradition\nPhantom or Apparition in Western culture\nRuh in Islamic concepts (with different interpretation)</div>
+                    <div class="detail-header">Cultural Impact</div>
+                    <div class="detail-text">Specters appear in films, games, and literature such as Phasmophobia, Specter Ops, The Sixth Sense, and Ghost.\nThey are widely used as symbols of loss, memory, and unfinished emotion.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Many people report seeing a Specter of a loved one at the exact time of their death\nThe word Specter comes from Latin Spectare meaning to see or to appear\nSome paranormal theories describe Specters as echoes of human energy recorded beyond time</div>
+                ` 
+            },
+            { 
+                name: "Marid", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Marid.jpg", 
+                desc: "A powerful and proud type of jinn from Arab folklore.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Marid</div>
+                    <div class="detail-text">Marid</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Marid</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known in Arabic as Al-Mārid meaning “the rebellious one,” and in some traditions as Sea Djinn or Water Genie.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Marids originate from pre-Islamic Arabian mythology and later became part of Islamic and Middle Eastern folklore, including Persian traditions.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">The term mārid appears in the Qur’an describing rebellious devils, and later folklore developed it into a specific category of powerful jinn.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Marids are jinn created from smokeless fire, but in folklore they are strongly associated with water, especially seas and oceans.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">They are described as massive, muscular beings with blue or smoky skin, glowing eyes, and forms that may emerge from waves or mist.\nSome depictions show them as half-human and half-water entities.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Shape-shifting\nControl over water, wind, and storms\nSuperhuman strength\nIllusion and transformation\nAbility to grant wishes under rare conditions</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Pride is their main weakness.\nThey are resistant to control and strongly oppose domination. Sacred prayers and Qur’anic verses weaken or repel them.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Marids are proud, intelligent, independent, and rebellious. They dislike being controlled and only serve under force or superior magical power.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">They are believed to dwell in deep seas, oceans, underwater caves, and shipwrecks.\nSome traditions describe them as guardians of underwater treasures.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Marids may test, challenge, or interact with humans.\nThey respect strength and may grant favors if impressed, but they are not naturally obedient.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Their main motivations are freedom, power, and independence, often resisting divine authority and order in folklore interpretations.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden cold air\nSmell of sea salt\nSound of waves or wind in enclosed spaces\nDistant or unnatural laughter</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">In One Thousand and One Nights, Marids are trapped in bottles and can grant wishes when released, a concept that influenced later genie stories such as Aladdin.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Recitation of Qur’anic verses such as Ayat al-Kursi, Surah Al-Falaq, and Surah An-Naas is traditionally believed to protect against them.</div>
+                    <div class="detail-header">Summoning (Mythical)</div>
+                    <div class="detail-text">Some legends describe rituals involving salt, chanting, and sea-based invocations, but these are considered dangerous folklore and not part of religious practice.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Marids symbolize pride, rebellion, and the struggle of ego against higher authority or divine order.</div>
+                    <div class="detail-header">Similar Creatures</div>
+                    <div class="detail-text">Greek sea titans\nJapanese water oni\nWestern water spirits and djinn concepts</div>
+                    <div class="detail-header">Cultural Influence</div>
+                    <div class="detail-text">Marids appear in modern games and fantasy works such as Dungeons & Dragons, Final Fantasy, and The Witcher as powerful water-based beings.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Some traditions claim Marids are descendants of Iblis but more noble than other demons.\nA bound Marid is often portrayed as an extremely loyal servant in folklore.\nIn mystical interpretations, Marids represent the rebellious aspect of the human soul that must be controlled or refined.</div>
+                ` 
+            },
+            { 
+                name: "Ifrit", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Ifrit.jpg", 
+                desc: "A mighty fire spirit from Middle Eastern mythology.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Ifrit</div>
+                    <div class="detail-text">Ifrit</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Ifrit</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as ʿIfrit or ʿAfārit (plural).\nIn Western sources it is often written as Efreet or Afrit.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Ifrit originates from Islamic and Arabian mythology and is one of the most well-known types of jinn in Middle Eastern folklore.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">The Ifrit is mentioned in the Qur’an, Surah An-Naml (27:39), where an Ifrit from among the jinn offers to bring the throne of the Queen of Sheba to Prophet Solomon, demonstrating immense power and speed.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Ifrits are created from smokeless fire, but of a more intense and destructive form than ordinary jinn.\nThey symbolize rage, rebellion, and raw power.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">Ifrits are commonly described as gigantic beings with red or black skin, burning eyes, wings made of smoke or fire, and sometimes serpent-like or monstrous features.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Superhuman strength\nFire manipulation\nTeleportation\nFlight\nShape-shifting\nPossession of humans\nAbility to move massive objects instantly</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Sacred verses, divine names, and spiritual purity are believed to repel them.\nTheir pride and anger often lead to their downfall.</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Ifrits are typically violent, proud, vengeful, and rebellious.\nWhile most are hostile toward humans, rare accounts describe some as intelligent and strategic.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">They are said to inhabit deserts, volcanic regions, ruins, and fiery underground realms.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Ifrits are generally hostile to humans, though folklore suggests they can be bound by powerful magic, often at great risk to the summoner.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Their motivations include rebellion, dominance, revenge, and opposition to divine order.\nSome are said to serve higher demonic forces in spreading chaos.</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden heat\nSmell of smoke or sulfur\nMoving shadows\nSounds of crackling fire in calm environments</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">In One Thousand and One Nights, Ifrits appear as guardians of treasures or beings trapped in magical containers.\nOne famous tale involves a merchant releasing an Ifrit from a vessel and facing near destruction.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Recitation of Qur’anic verses such as Ayat al-Kursi, Surah Al-Falaq, Surah An-Naas, and remembrance of God are traditionally believed to offer protection.</div>
+                    <div class="detail-header">Summoning (Mythical)</div>
+                    <div class="detail-text">Ancient folklore describes fire circles, blood inscriptions, and midnight rituals used to summon Ifrits, though such practices are considered extremely dangerous and forbidden in tradition.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Ifrit represents rage, ego, destruction, and rebellion against divine authority.\nIn mystical interpretations, it symbolizes the inner fire of human anger that must be controlled.</div>
+                    <div class="detail-header">Similar Beings</div>
+                    <div class="detail-text">Greek fire titans\nPersian Red Div (Div-e Sorkh)\nWestern fire demons and hellfire entities</div>
+                    <div class="detail-header">Cultural Influence</div>
+                    <div class="detail-text">Ifrits appear in modern games and media such as Final Fantasy, Dungeons & Dragons, The Witcher, and Assassin’s Creed as powerful fire-based beings or enemies.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Ifrits are often considered stronger but less intelligent than Marids\nSome legends say their destruction releases blue flames\nIn Sufi symbolism, the “inner Ifrit” represents uncontrolled human anger and ego</div>
+                ` 
+            },
+            { 
+                name: "Qareen", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Qareen.jpg", 
+                desc: "A spiritual companion associated with temptation.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Qareen</div>
+                    <div class="detail-text">Qareen</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Qareen (Qarīn), meaning companion, twin, or spiritual double.</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Also known as Al-Qareen. In Persian tradition, Hamzad or dark twin.\nIn Western comparisons, it is often associated with the Doppelgänger or Shadow Self.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">The concept of Qareen originates from Islamic and pre-Islamic Arabian belief systems and was later integrated into Persian mysticism.\nIt is recognized in Islamic teachings as a spiritual companion assigned to every human.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Qareen is mentioned in the Qur’an, Surah Qaf (50:27–28) and Surah Az-Zukhruf (43:36–38).\nIn Hadith, the Prophet Muhammad stated that every person has a Qareen from among the jinn, and that his own Qareen was made Muslim and guided toward goodness.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Qareen is a being created from smokeless fire, like other jinn.\nIt is invisible and constantly accompanies a human being throughout life.</div>
+                    <div class="detail-header">Physical Appearance</div>
+                    <div class="detail-text">It is normally unseen.\nIn spiritual or visionary accounts, it may appear as a shadow-like figure resembling its human companion or as a dark silhouette.</div>
+                    <div class="detail-header">Abilities and Powers</div>
+                    <div class="detail-text">Whispers temptations into the human heart\nImitates thoughts, emotions, and behavior\nInfluences dreams and inner feelings\nAccompanies a person from birth to death\nRemains invisible and undetectable</div>
+                    <div class="detail-header">Weaknesses</div>
+                    <div class="detail-text">Recitation of the Qur’an, especially Surah An-Nas and Al-Falaq\nPrayer, ablution, and remembrance of God\nSpiritual purity and righteous behavior\nAvoidance of sin and immoral influence</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Qareen is described as deceptive, jealous, and manipulative.\nIt seeks to mislead humans and hinder spiritual growth. In rare cases, it may become subdued if the person is highly righteous.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">It exists in the unseen spiritual realm and remains constantly attached to its assigned human. It has no physical location.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">The Qareen accompanies a person throughout their entire life.\nIt influences thoughts and whispers evil suggestions, but its power is reduced over faithful individuals.</div>
+                    <div class="detail-header">Goals and Motivation</div>
+                    <div class="detail-text">To lead humans into sin and distraction\nTo strengthen negative spiritual influence\nTo obstruct moral and spiritual progress</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden intrusive or negative thoughts\nFeeling of being watched when alone\nNightmares\nUnexplained anger or emotional disturbance\nFatigue after worship or prayer</div>
+                    <div class="detail-header">Famous Stories and Teachings</div>
+                    <div class="detail-text">Hadiths describe that every person has a Qareen, but the Prophet’s Qareen became Muslim.\nIn Islamic mysticism, the Qareen represents the internal struggle between the soul and human desire.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Recitation of Ayat al-Kursi before sleep\nReciting the four Quls (Al-Kafirun, Al-Ikhlas, Al-Falaq, An-Nas)\nSleeping in a state of ablution\nSaying Bismillah before actions\nMaintaining righteousness and avoiding sin</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some occult traditions mention mirror rituals or chants to reveal the Qareen, but such practices are forbidden and considered dangerous in Islamic belief.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Qareen symbolizes inner temptation, duality of human nature, and the constant struggle between good and evil within the self.</div>
+                    <div class="detail-header">Similar Beings</div>
+                    <div class="detail-text">Doppelgänger in German folklore\nShadow Self in Jungian psychology\nKa in ancient Egyptian belief</div>
+                    <div class="detail-header">Cultural Influence</div>
+                    <div class="detail-text">The concept influences modern storytelling through evil twins, inner demons, and psychological mirror characters in films, games, and literature.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Some traditions say the Qareen lingers near a person’s grave after death\nQareens may interact with each other in unseen realms\nIn Sufi thought, mastering the Qareen symbolizes spiritual self-control and enlightenment</div>
+                ` 
+            },
+            { 
+                name: "Nassnas", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Nassnas.jpg", 
+                desc: "A half-human creature from Arab legends.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Nassnas</div>
+                    <div class="detail-text">Nassnas</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Nassnas</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Known as Half-Man Demon, Desert Phantom, Incomplete Being, or Hybrid Jinn-Human Creature.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Nassnas originates from pre-Islamic Arabian mythology and later appears in early Islamic-era folklore.\nIt is often described as a cursed hybrid born from the union of humans and jinn.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Mentioned in classical Islamic and Arabic works such as Kitab al-Bad’ wa al-Tarikh, Aja’ib al-Makhluqat, and Hayat al-Hayawan.\nSome traditions describe them as remnants of a pre-Adamic race that existed before humans.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Nassnas are considered hybrid beings formed from jinn and human elements, associated with fire and earth in mythological interpretations.\nThey are seen as incomplete or cursed entities.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">One eye, one arm, and one leg.\nAble to move by hopping at high speed.\nAsh-gray or dark skin with rough hair.\nA face split between human and monstrous features.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Superhuman speed despite physical limitation\nVoice imitation to lure victims\nShort-term shapeshifting\nInvisibility in fog or darkness\nCannibalistic behavior in folklore</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Iron and steel\nWater and ritual purification\nQur’anic recitation and Adhan\nSunlight, especially at daytime exposure</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Wild, cunning, and predatory.\nHostile toward humans but sometimes curious about them.\nSome legends describe rare cases where it does not attack unless provoked.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Deserts, caves, ruins, and remote wastelands, especially in southern Arabia and Yemen regions.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Generally hostile toward humans.\nIt is said to imitate voices of loved ones to mislead travelers and isolate victims.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Survival and feeding on humans\nRevenge against humans and jinn\nManipulation and hunting of weak or lost individuals</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Echoing familiar voices\nSulfur-like or burning sand smell\nShadow of a half-body in fog or dusk\nSound of a single hopping step at night</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">A traveler misled by the voice of his brother in the desert, attacked by a one-eyed creature identified as Nassnas.\nDescriptions in al-Qazwini’s writings of half-human beings in Hadhramaut who move with extreme speed and attack humans.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Recitation of Ayat al-Kursi and Surahs Al-Falaq and An-Nas\nCarrying iron or steel objects\nAvoiding travel during dusk in desert regions\nStaying in well-lit places at night</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some folklore describes mirror rituals under moonlight and repeated name chanting, but such practices are considered dangerous and forbidden in Islamic tradition.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Nassnas represents incompleteness, inner corruption, and the duality between human nature and instinctual darkness.</div>
+                    <div class="detail-header">Similar Creatures in Other Cultures</div>
+                    <div class="detail-text">Cyclops in Greek mythology\nOni in Japanese folklore\nWendigo in Native American legends\nHalf-demon hybrids in Western fantasy traditions</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Inspired monster designs in games such as Dark Souls and Assassin’s Creed Mirage, as well as horror and fantasy literature based on desert mythology.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Some legends say Nassnas may silently follow a person for years without attacking.\nCertain traditions claim it is weakened by human joy or laughter.\nIn Sufi interpretations, it symbolizes the “inner incomplete self” within humans.</div>
+                ` 
+            },
+            { 
+                name: "Ghoul al-Layl", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Ghoul%20al-Layl.jpg", 
+                desc: "A night-roaming spirit of darkness.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Ghoul al-Layl</div>
+                    <div class="detail-text">Ghoul al-Layl</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Ghoul al-Layl</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Known as Spirit of Darkness, Night Ghoul, Desert Shade, Breath of Night, Al-Zulma, and Anfas al-Layl.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Ghoul al-Layl originates from pre-Islamic Arabian mythology and later became part of Islamic-era folklore as a desert night entity associated with shadows, fear, and illusion.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Not directly mentioned in the Qur’an, but found in pre-Islamic Arabic poetry, oral traditions, and ancient desert folklore describing a shape-shifting being that haunts travelers at night.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Ghoul al-Layl is described as a being formed from shadow, darkness, and wind.\nSome traditions say it was born from the remnants of extinguished fiery jinn.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Tall, dark cloaked figure with glowing red eyes\nGray or shadow-like skin\nSometimes half-formed or half-bodied\nIn some legends, unnatural or reversed feet</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Shape-shifting into humans or animals\nMimicking voices of travelers or loved ones\nCreating sudden darkness and cold\nDisorienting and misleading travelers</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Light, especially fire and dawn light\nRecitation of holy verses and the name of God\nPresence of blessed or sacred spaces</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Mysterious, deceptive, and predatory.\nIt feeds on fear and uses intelligence to mislead and trap humans.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Deserts, ruins, valleys, and abandoned roads, especially during moonless nights and dusk.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Generally hostile.\nIt lures travelers using voices and illusions, then causes them to become lost or vanish.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Feeding on fear\nTrapping lost souls\nRevenge against humans in some legends</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden drop in temperature\nWeak crying or wailing sounds\nShadows moving against natural light\nSmell of dust or burnt air</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">A traveler follows the voice of a crying woman in the desert and discovers a half-formed figure that disappears into darkness.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Reciting the name of God and Qur’anic verses such as Ayat al-Kursi\nKeeping fire or strong light nearby\nCarrying iron or salt in some folk traditions</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some legends claim that calling its name for three consecutive nights in a desert may summon it, but such practices are considered dangerous and forbidden in religious teachings.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Represents fear of darkness, the unknown, and the deceptive nature of inner anxiety and temptation.</div>
+                    <div class="detail-header">Similar Creatures in Other Cultures</div>
+                    <div class="detail-text">Banshee in Irish folklore\nWendigo in Native American mythology\nNight Hag in European legends\nShadow People in modern paranormal beliefs</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Appears in Arabic horror literature and games inspired by desert mythology and supernatural horror themes.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Seeing its shadow without the creature itself is believed in folklore to be an omen of death.\nThe phrase “like Ghoul al-Layl” is still used metaphorically in Arabic to describe someone mysterious, dark, or secretive.</div>
+                ` 
+            },
+            { 
+                name: "Lost Soul", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Lost%20Soul.jpg", 
+                desc: "A restless spirit trapped between worlds.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Lost Soul</div>
+                    <div class="detail-text">Lost Soul</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Lost Soul</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Known as Restless Spirit, Wandering Ghost, Yūrei, La Llorona, Haunting One, or al-Rūḥ al-Hā’imah.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">The concept of the Lost Soul appears in almost all world mythologies, including Islamic, Christian, Buddhist, and pagan traditions.\nIn Islamic belief, such souls exist in Barzakh, the state between death and resurrection.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Indirectly referenced in Islamic teachings regarding Barzakh and the state of the soul after death, as well as in Christian texts describing souls trapped between Heaven and Earth.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">The Lost Soul is made of spiritual essence rather than physical matter.\nIt is the remaining consciousness of a human being who has not found peace after death.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Appears as a mist or shadow-like figure\nSometimes takes human form with hollow or sorrowful eyes\nCan appear as floating blue or white light</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Passing through physical objects\nInfluencing emotions such as fear and sadness\nAppearing in dreams and mirrors\nSending signs or omens to the living</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Prayer and spiritual remembrance\nHoly scriptures and sacred spaces\nActs of charity or prayers offered on their behalf\nLight and positive spiritual presence</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Usually sorrowful, confused, and not purely evil.\nSome are calm observers, while others become restless due to pain, regret, or injustice.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Places connected to their death or life, such as houses, graves, ruins, and sites of tragedy.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">May seek help, deliver messages, or haunt those connected to their suffering.\nSome traditions believe they seek prayers from the living.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Finding peace and closure\nSeeking justice or revenge\nBeing remembered\nEndless wandering without purpose</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden coldness\nWhispering or faint voices\nFlickering lights\nUnexplained shadows\nFloral or earthy scents without source</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Tales of grieving brides, betrayed lovers, and fallen warriors returning as spirits appear in many cultures worldwide, often haunting specific locations tied to their lives or deaths.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Reciting prayers or sacred verses\nLighting candles or incense\nPerforming charity in the name of the deceased\nRemaining calm and spiritually grounded</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some folklore claims that calling a name three times at midnight may summon a spirit, but such practices are considered dangerous and forbidden in religious traditions.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">The Lost Soul represents guilt, emotional attachment, unfinished life, and the fear of oblivion.\nIt symbolizes the human condition of unresolved emotion and existential wandering.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Bardo spirits in Tibetan Buddhism\nYūrei in Japanese folklore\nLa Llorona in Latin American tradition\nPhantom or Poltergeist in European legends</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Appears in films such as The Sixth Sense and The Others, and in games like Phasmophobia and Silent Hill, as well as modern ghost-hunting narratives.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Many cultures believe helping a Lost Soul find peace brings spiritual reward.\nCold spots in haunted locations are often interpreted in folklore as signs of their presence.</div>
+                ` 
+            },
+            { 
+                name: "Bloody Ghost", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Bloody%20Ghost.jpg", 
+                desc: "A ghost believed to gain power through blood.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Bloody Ghost</div>
+                    <div class="detail-text">Bloody Ghost</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Bloody Ghost</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Known as Blood Phantom, Red Wraith, Bloody Spirit, Akai Rei, and Crimson Shade.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">The concept originates from European medieval ghost folklore and later Gothic literature.\nSimilar ideas also exist in Middle Eastern traditions about spirits born from violence, injustice, or war.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Not directly mentioned in sacred texts, but appears in European, Arab, and Persian folklore describing vengeful spirits bound to spilled blood and violent death.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">The Bloody Ghost is believed to be formed from blood energy and the essence of death.\nIt is a spiritual entity strongly connected to spilled blood and human life force.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Appears as a red mist or humanoid figure with flowing blood-like energy\nFeatureless face or a dark red mask-like surface\nSurrounded by crimson light or fog</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Absorbs life energy from blood\nTransforms into mist or shadow\nCreates blood-themed nightmares\nTriggers traumatic memories\nDisappears in complete darkness</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Holy or purified water\nSunlight and sacred light\nPrayer and spiritual calm\nPositive emotional energy</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Vengeful, angry, and merciless, yet tragic.\nOften portrayed as a tormented spirit unable to find peace after violent death.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Battlefields, murder sites, cursed ruins, abandoned hospitals, and places soaked in blood or tragedy.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Generally hostile.\nIn some occult traditions, it may be temporarily controlled, but always turns dangerous to those who summon it.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Revenge for spilled blood\nFeeding on life energy\nPunishing injustice\nReliving trauma and violence</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Metallic blood-like smell\nSudden coldness\nRed mist or fog\nDripping or echoing blood-like sounds\nDisappearing blood stains</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">Legends such as the Red Lady of Scotland and blood spirits in Middle Eastern folklore describe entities arising from betrayal, murder, and injustice to seek vengeance.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Avoid cursed or blood-soaked places\nPrayer for the dead\nLighting white candles\nSacred verses or crosses\nMaintaining calm and fearless presence</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Some folklore claims that spilling blood inside a salt circle and repeating its name may summon it, but such practices are considered extremely dangerous and uncontrollable.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">The Bloody Ghost represents rage, grief, revenge, and the human inability to find peace after violence or injustice.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Vampiric spirits in Eastern Europe\nOnryō in Japan\nBanshee in Ireland\nPreta in Indian mythology</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Appears in horror films such as Crimson Peak and The Grudge, and in games like Silent Hill and Fatal Frame as blood-themed vengeful spirits.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">In some legends, consuming innocent blood destroys it.\nSome cultures believe symbolic blood rituals can be used to banish or deceive it.</div>
+                ` 
+            },
+            { 
+                name: "Red Demon", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Red%20Demon.jpg", 
+                desc: "A symbol of rage and fire in various traditions.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Red Demon</div>
+                    <div class="detail-text">Red Demon</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Red Demon</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Known as Fire Demon, Red Fiend, Rakshas Lal, and Divo Atashin in Persian traditions.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">The Red Demon originates from Persian and Indian mythologies as a representation of rage, destruction, and uncontrollable fire.\nIt is associated with ancient beliefs about divine punishment and chaotic energy.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Not directly mentioned in the Avesta, but referenced in Persian epic literature such as the Shahnameh, where red-skinned demons appear as enemies of divine order.\nSimilar fire-born beings also appear in Hindu Puranic texts as Rakshasas.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">The Red Demon is a semi-spiritual, semi-physical being born from fire and smoke.\nIt can manifest as flame, shadow, or a burning entity of destruction.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Gigantic body with glowing red skin\nMolten or lava-like eyes\nHorns and fiery mouth\nSometimes armed with chains or an iron mace engulfed in fire</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Control over fire and heat\nInducing rage and hatred in humans\nBurning or corrupting spiritual energy\nInfluencing emotions such as anger and vengeance</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Sacred water and divine purity\nSunlight and holy light\nSpiritual prayers and sacred words\nCleanliness and protective rituals</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Proud, furious, and merciless, yet internally tormented.\nIt is often portrayed as a cursed being trapped in endless rage.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Volcanoes, burning deserts, battlefields, and destroyed ruins.\nIt is said to appear during storms or extreme heat.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">Generally hostile.\nIn some legends, it can be summoned by fire-worshippers or magicians seeking destructive power, but it often turns against them.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Spreading chaos and destruction\nFueling human anger and hatred\nTurning humans against each other\nExpressing endless internal rage</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden rise in temperature\nSmell of sulfur and smoke\nRed or glowing shadows\nRoaring or burning sounds without source\nDreams of endless fire</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">In Khorasan legends, the Red Demon is said to be chained beneath fiery mountains between Iran and India and attempts to escape every hundred years.</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Reciting Ayat al-Kursi and Surah Al-Falaq and An-Nas\nUsing sacred water or purified substances\nSpreading salt or protective symbols around a place</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">Mythological accounts describe fire circles and name chanting at midnight, but such practices are considered extremely dangerous and forbidden.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">The Red Demon represents wrath, destruction, and the uncontrollable inner fire within humans that can lead to self-destruction.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Balrog in Tolkien mythology\nIfrit in Arabic folklore\nRed Oni in Japanese tradition</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Appears in fantasy media such as Diablo, Doom, anime, and various films as a fiery demonic force representing chaos and destruction.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Some legends say thunder in deserts accompanied by the smell of smoke indicates its passing.\nIn symbolic interpretation, it is sometimes linked to volcanic eruptions as the “breath of the earth.”</div>
+                ` 
+            },
+            { 
+                name: "Shadow People", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Shadow%20People.jpg", 
+                desc: "Dark human-like shadows reportedly seen at night.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Shadow People</div>
+                    <div class="detail-text">Shadow People</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Shadow People</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Known as Dark Figures, Black Silhouettes, Night Shadows, Edge-of-Vision Entities, and in modern paranormal studies as The Watchers or Peripheral Beings.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">The concept of Shadow People appears in global folklore, sleep paralysis reports, and modern paranormal accounts.\nSimilar descriptions exist across cultures without a single origin, suggesting a universal human experience tied to darkness, fear, and subconscious perception.</div>
+                    <div class="detail-header">Historical and Cultural Sources</div>
+                    <div class="detail-text">Shadow-like entities are indirectly referenced in ancient folklore as spirits that dwell in darkness.\nIn modern times, they are strongly associated with sleep paralysis phenomena and psychological interpretations of hallucinations during half-sleep states.\nMany cultures independently describe similar “dark human-shaped figures” seen at night.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Shadow People are described as non-physical entities composed of pure darkness or absence of light.\nThey are not believed to reflect normal matter but instead behave like living silhouettes that exist on the edge of human perception.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Humanoid black figures without facial features\nCompletely dark silhouettes darker than surrounding shadow\nSometimes wearing hats, cloaks, or elongated forms\nOften seen without clear edges, as if merging with darkness</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Silent movement without physical sound\nSudden appearance and disappearance\nPerception outside normal human vision (especially peripheral vision)\nInducing fear, paralysis, or anxiety in observers\nAppearing during sleep paralysis episodes</div>
+                    <div class="detail-header">Weaknesses and Limitations</div>
+                    <div class="detail-text">Strong light and fully illuminated environments reduce sightings\nDirect focused attention often causes immediate disappearance\nSpiritual or emotional calm can weaken perceived presence\nRecorded encounters suggest they avoid direct confrontation or prolonged visibility</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Shadow People are typically described as silent, observational, and non-interactive.\nThey do not communicate in known language but often give the feeling of being watched or studied.\nTheir behavior is passive yet deeply unsettling.</div>
+                    <div class="detail-header">Habitat</div>
+                    <div class="detail-text">Dark environments, corners of rooms, hallways, abandoned buildings, forests at night, and areas with low visibility.\nThey are most frequently reported in transitional spaces between light and darkness.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">They appear to observe humans without direct interaction.\nIn many accounts, they are noticed only briefly before vanishing when acknowledged.\nSome theories suggest they respond to human fear or attention.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Unknown.\nInterpretations vary:\nPassive observers of human life\nManifestations of subconscious fear\nInterdimensional entities briefly crossing perception\nResidual energy imprints in certain environments</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Movement in peripheral vision\nSudden drops in perceived temperature\nFeeling of being watched\nSilhouettes disappearing when directly observed\nSleep paralysis accompanied by dark figures near the body</div>
+                    <div class="detail-header">Famous Accounts</div>
+                    <div class="detail-text">Reports from around the world describe individuals waking up unable to move while witnessing a tall shadow figure standing near their bed.\nOther accounts describe fleeting figures crossing walls or standing in doorways before vanishing instantly.</div>
+                    <div class="detail-header">Protection and Coping Methods</div>
+                    <div class="detail-text">Turning on strong light sources\nBreaking focus or changing environment\nCalming breathing during sleep paralysis episodes\nAvoiding panic or fixation on the figure\nPsychological grounding techniques in modern interpretations</div>
+                    <div class="detail-header">Summoning Rituals</div>
+                    <div class="detail-text">No confirmed or safe ritual exists.\nFolklore occasionally suggests that extreme fear, isolation, or sleep deprivation increases encounters, though this is understood scientifically as perception distortion rather than summoning.</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Shadow People represent fear of the unknown, subconscious anxiety, and the human mind’s tendency to create patterns in darkness.\nThey are often interpreted as manifestations of repressed fear or psychological stress.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Hat Man (Western urban legend variant)\nJinn-related shadow entities in Middle Eastern folklore\nYūrei in Japanese ghost tradition (visual similarity in darkness)\nTulpas or thought-forms in occult interpretations</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Shadow People appear in documentaries, horror films, and internet paranormal communities.\nThey are widely featured in sleep paralysis reports, horror games, and psychological horror storytelling.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">Most reported sightings occur during sleep paralysis or low-light conditions.\nMany psychologists classify them as hallucinations caused by brain activity during sleep-wake transitions.\nDespite scientific explanations, consistent global descriptions make them one of the most widespread modern paranormal phenomena.</div>
+                ` 
+            },
+            { 
+                name: "Iblis", 
+                img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Iblis.jpg", 
+                desc: "The rebellious supernatural being associated with pride and temptation in Islamic tradition.", 
+                full: `
+                    <div class="detail-header">Complete Introduction of Iblis</div>
+                    <div class="detail-text">Iblis</div>
+                    <div class="detail-header">Original Name</div>
+                    <div class="detail-text">Iblis</div>
+                    <div class="detail-header">Other Names and Titles</div>
+                    <div class="detail-text">Known as Shaytan, The Accursed One, Father of Devils, Lucifer (in comparative traditions), and The Dark Spirit.</div>
+                    <div class="detail-header">Origin</div>
+                    <div class="detail-text">Iblis is described in the Qur’an as a jinn created from smokeless fire.\nHe once lived among the ranks of the righteous but was cast out due to his refusal to obey God’s command to bow to Adam.\nIn comparative mythology, he is often linked to figures such as Lucifer in Christianity and Ahriman in ancient Persian belief.</div>
+                    <div class="detail-header">Historical and Religious Sources</div>
+                    <div class="detail-text">Iblis is mentioned throughout the Qur’an, particularly in the story of Adam’s creation and his refusal to prostrate.\nSimilar narratives appear in Islamic tafsir literature and are paralleled in other religious traditions where a proud being falls from divine favor.</div>
+                    <div class="detail-header">Nature and Essence</div>
+                    <div class="detail-text">Iblis is a being created from pure fire, representing energy, intelligence, and rebellion.\nHe is neither angel nor human but belongs to the unseen realm of jinn, possessing free will and great influence over creation.</div>
+                    <div class="detail-header">Appearance</div>
+                    <div class="detail-text">Once described as radiant and honored among the righteous, his fall transformed his appearance into a dark, terrifying form in later folklore.\nHe is often associated with burning eyes, a shadowy presence, and a disturbing aura.\nIn some mystical interpretations, he casts no shadow.</div>
+                    <div class="detail-header">Powers and Abilities</div>
+                    <div class="detail-text">Whispering and temptation\nIllusion and deception\nShape-shifting into various forms\nInfluencing human thoughts and dreams\nCommand over an army of devils\nMovement across unseen realms</div>
+                    <div class="detail-header">Weaknesses and Fears</div>
+                    <div class="detail-text">Remembrance of God\nQur’anic recitation, especially Ayat al-Kursi and Surahs Al-Falaq and An-Nas\nSincere faith and devotion\nCall to prayer and spiritual purity</div>
+                    <div class="detail-header">Personality and Behavior</div>
+                    <div class="detail-text">Arrogant, intelligent, and manipulative.\nHis downfall is attributed to pride, believing fire is superior to clay.\nHis central aim is to mislead humanity and prove their unworthiness.</div>
+                    <div class="detail-header">Realm</div>
+                    <div class="detail-text">Traditions describe Iblis as having a throne upon the sea from which he commands his forces.\nHe is also associated with ruins, deserts, and places of darkness and neglect.</div>
+                    <div class="detail-header">Relationship with Humans</div>
+                    <div class="detail-text">He is considered the sworn enemy of humanity, constantly working to mislead and corrupt human beings.\nIn some mystical interpretations, he is viewed as a tragic figure defined by absolute refusal to bow to anything except God.</div>
+                    <div class="detail-header">Goals and Motivations</div>
+                    <div class="detail-text">Revenge for his fall from grace\nMisguiding humans until the Day of Judgment\nProving his ideological rebellion against divine command</div>
+                    <div class="detail-header">Signs of Presence</div>
+                    <div class="detail-text">Sudden fear or anxiety\nWhispering thoughts of temptation\nFoul or disturbing sensations\nDark or fiery imagery in dreams</div>
+                    <div class="detail-header">Famous Stories</div>
+                    <div class="detail-text">The refusal to bow to Adam\nThe temptation of Adam and Eve\nHis dialogue with prophets in various traditions\nNarratives describing his despair and arrogance after his fall</div>
+                    <div class="detail-header">Protection Methods</div>
+                    <div class="detail-text">Prayer and remembrance of God\nRecitation of the Qur’an\nSpiritual purity and sincerity\nAvoidance of arrogance, anger, and sin</div>
+                    <div class="detail-header">Symbolic Meaning</div>
+                    <div class="detail-text">Iblis symbolizes pride, rebellion, ego, and the conflict between intellect and divine obedience.\nHe represents the struggle between free will and spiritual submission.</div>
+                    <div class="detail-header">Similar Beings in Other Cultures</div>
+                    <div class="detail-text">Lucifer in Christianity\nAhriman in Persian mythology\nOni in Japanese folklore\nAsuras in Hindu tradition\nHades in Greek comparative symbolism</div>
+                    <div class="detail-header">Influence in Modern Culture</div>
+                    <div class="detail-text">Appears in literature, films, and games such as Lucifer, Mephistopheles in Faust, and Diablo, where he represents temptation, rebellion, and the archetype of the fallen being.</div>
+                    <div class="detail-header">Interesting Facts</div>
+                    <div class="detail-text">In tradition, Iblis remains alive until the end of time.\nHe is described as having offspring, forming the ranks of devils.\nHe can appear in attractive forms to deceive humans.\nSome mystical interpretations portray him as a deeply tragic figure defined by absolute pride and isolation.</div>
+                ` 
+            }
         ];
 
         const grid = document.getElementById('grid');
@@ -1991,3 +2830,4 @@
 </body>
 
 </html>
+
