@@ -2786,19 +2786,18 @@
                     const arrow = document.getElementById(`arrow-${index}`);
                     
                     // بررسی کلیک روی بخش بستن (فلش بالایی)
-                    if (e.target.closest('.bounce-up')) {
+                   // اگر پنل باز است، آن را ببند (فلش رو به پایین شود)
+                   if (panel.style.display === 'block') {
                         panel.style.display = 'none';
                         arrow.setAttribute('class', 'mobile-arrow bounce-down');
-                        return;
-                    }
-
-                    if (panel.style.display === 'block') {
-                        panel.style.display = 'none';
-                        arrow.setAttribute('class', 'mobile-arrow bounce-down');
-                    } else {
+                        // بازگرداندن شکل فلش به حالت رو به پایین (اولیه)
+                        arrow.innerHTML = `<path d="M7.41,8.59L12,13.17L16.59,8.59L18,10L12,16L6,10L7.41,8.59Z"/>`;
+                    } 
+                    // اگر پنل بسته است، آن را باز کن (فلش رو به بالا شود)
+                    else {
                         panel.style.display = 'block';
                         arrow.setAttribute('class', 'mobile-arrow bounce-up');
-                        // تغییر فرمت فلش به بالا هنگام باز بودن پنجره
+                        // تغییر شکل فلش به حالت رو به بالا
                         arrow.innerHTML = `<path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"/>`;
                     }
                 }
