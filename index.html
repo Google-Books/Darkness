@@ -2843,22 +2843,22 @@
     <script>
     const adConfigs = {
         small: {
-            key: '3b8048b78e2b0fb0b882483f96fca8a2',
+            key: '0bddee7b831b40eb9f466f9ef405b223',
             height: 50,
             width: 320,
-            src: 'https://speedingdeadlyplays.com/3b8048b78e2b0fb0b882483f96fca8a2/invoke.js'
+            src: 'https://speedingdeadlyplays.com/0bddee7b831b40eb9f466f9ef405b223/invoke.js'
         },
         medium: {
-            key: '27bf67bdd07dd3734a6fdff8c7879c99',
+            key: 'abf300050ce20fe46d53f52f43b83afd',
             height: 60,
             width: 468,
-            src: 'https://speedingdeadlyplays.com/27bf67bdd07dd3734a6fdff8c7879c99/invoke.js'
+            src: 'https://speedingdeadlyplays.com/abf300050ce20fe46d53f52f43b83afd/invoke.js'
         },
         large: {
-            key: '30c18b6ace1c2676949453fd6ac33776',
+            key: '4779d362939d7528aa097bef09a9e311',
             height: 90,
             width: 728,
-            src: 'https://speedingdeadlyplays.com/30c18b6ace1c2676949453fd6ac33776/invoke.js'
+            src: 'https://speedingdeadlyplays.com/4779d362939d7528aa097bef09a9e311/invoke.js'
         }
     };
     
