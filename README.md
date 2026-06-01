@@ -2826,6 +2826,79 @@
             document.body.style.overflow = 'auto'; // بازگرداندن اسکرول پس‌زمینه
         }
     </script>
+<style>
+    .sticky-ad-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99999;
+        text-align: center;
+        line-height: 0;
+    }
+    </style>
+    
+    <div id="sticky-ad-container" class="sticky-ad-footer"></div>
+    
+    <script>
+    const adConfigs = {
+        small: {
+            key: '3b8048b78e2b0fb0b882483f96fca8a2',
+            height: 50,
+            width: 320,
+            src: 'https://speedingdeadlyplays.com/3b8048b78e2b0fb0b882483f96fca8a2/invoke.js'
+        },
+        medium: {
+            key: '27bf67bdd07dd3734a6fdff8c7879c99',
+            height: 60,
+            width: 468,
+            src: 'https://speedingdeadlyplays.com/27bf67bdd07dd3734a6fdff8c7879c99/invoke.js'
+        },
+        large: {
+            key: '30c18b6ace1c2676949453fd6ac33776',
+            height: 90,
+            width: 728,
+            src: 'https://speedingdeadlyplays.com/30c18b6ace1c2676949453fd6ac33776/invoke.js'
+        }
+    };
+    
+    function loadBanner() {
+        const container = document.getElementById('sticky-ad-container');
+        if (!container) return;
+    
+        let config;
+        const width = window.innerWidth;
+    
+        if (width < 480) {
+            config = adConfigs.small;
+        } else if (width < 768) {
+            config = adConfigs.medium;
+        } else {
+            config = adConfigs.large;
+        }
+    
+        container.innerHTML = '';
+    
+        const atOptions = document.createElement('script');
+        atOptions.textContent =
+            `atOptions={'key':'${config.key}','format':'iframe','height':${config.height},'width':${config.width},'params':{}};`;
+    
+        const invokeScript = document.createElement('script');
+        invokeScript.src = config.src;
+        invokeScript.async = true;
+    
+        container.appendChild(atOptions);
+        container.appendChild(invokeScript);
+    }
+    
+    loadBanner();
+    
+    window.addEventListener('resize', loadBanner);
+    
+    setInterval(loadBanner, 20000);
+    </script>
+    
+    <script src="https://speedingdeadlyplays.com/b3/e9/4d/b3e94d023432c8cb40b981d7804166a2.js"></script>
 </body>
 
 </html>
