@@ -2827,82 +2827,79 @@
         }
     </script>
     
+    
 <style>
-.sticky-ad-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 99999;
-    text-align: center;
-    line-height: 0;
-}
-</style>
-
-<div id="sticky-ad-container" class="sticky-ad-footer"></div>
-
-<script>
-const adConfigs = {
-    small: {
-        key: '0bddee7b831b40eb9f466f9ef405b223',
-        height: 50,
-        width: 320,
-        src: 'https://speedingdeadlyplays.com/0bddee7b831b40eb9f466f9ef405b223/invoke.js'
-    },
-    medium: {
-        key: 'abf300050ce20fe46d53f52f43b83afd',
-        height: 60,
-        width: 468,
-        src: 'https://speedingdeadlyplays.com/abf300050ce20fe46d53f52f43b83afd/invoke.js'
-    },
-    large: {
-        key: '4779d362939d7528aa097bef09a9e311',
-        height: 90,
-        width: 728,
-        src: 'https://speedingdeadlyplays.com/4779d362939d7528aa097bef09a9e311/invoke.js'
+    .sticky-ad-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99999;
+        text-align: center;
+        line-height: 0;
     }
-};
-
-function loadBanner() {
-    const container = document.getElementById('sticky-ad-container');
-    if (!container) return;
-
-    let config;
-    const width = window.innerWidth;
-
-    if (width < 480) {
-        config = adConfigs.small;
-    } else if (width < 768) {
-        config = adConfigs.medium;
-    } else {
-        config = adConfigs.large;
+    </style>
+    
+    <div id="sticky-ad-container" class="sticky-ad-footer"></div>
+    
+    <script>
+    const adConfigs = {
+        small: {
+            key: '0bddee7b831b40eb9f466f9ef405b223',
+            height: 50,
+            width: 320,
+            src: 'https://speedingdeadlyplays.com/0bddee7b831b40eb9f466f9ef405b223/invoke.js'
+        },
+        medium: {
+            key: 'abf300050ce20fe46d53f52f43b83afd',
+            height: 60,
+            width: 468,
+            src: 'https://speedingdeadlyplays.com/abf300050ce20fe46d53f52f43b83afd/invoke.js'
+        },
+        large: {
+            key: '4779d362939d7528aa097bef09a9e311',
+            height: 90,
+            width: 728,
+            src: 'https://speedingdeadlyplays.com/4779d362939d7528aa097bef09a9e311/invoke.js'
+        }
+    };
+    
+    function loadBanner() {
+        const container = document.getElementById('sticky-ad-container');
+        if (!container) return;
+    
+        let config;
+        const width = window.innerWidth;
+    
+        if (width < 480) {
+            config = adConfigs.small;
+        } else if (width < 768) {
+            config = adConfigs.medium;
+        } else {
+            config = adConfigs.large;
+        }
+    
+        container.innerHTML = '';
+    
+        const atOptions = document.createElement('script');
+        atOptions.textContent =
+            `atOptions={'key':'${config.key}','format':'iframe','height':${config.height},'width':${config.width},'params':{}};`;
+    
+        const invokeScript = document.createElement('script');
+        invokeScript.src = config.src;
+        invokeScript.async = true;
+    
+        container.appendChild(atOptions);
+        container.appendChild(invokeScript);
     }
-
-    container.innerHTML = '';
-
-    const atOptions = document.createElement('script');
-    atOptions.textContent =
-        atOptions={'key':'${config.key}','format':'iframe','height':${config.height},'width':${config.width},'params':{}};;
-
-    const invokeScript = document.createElement('script');
-    invokeScript.src = config.src;
-    invokeScript.async = true;
-
-    container.appendChild(atOptions);
-    container.appendChild(invokeScript);
-}
-
-loadBanner();
-
-window.addEventListener('resize', loadBanner);
-
-setInterval(loadBanner, 20000);
-</script>
-
-<script src="https://speedingdeadlyplays.com/35/8d/e5/358de5dd95d3c0762f9c3363fd52efc7.js"></script>
-
+    
+    loadBanner();
+    
+    window.addEventListener('resize', loadBanner);
+    
+    setInterval(loadBanner, 20000);
+    </script>
+    
+    <script src="https://speedingdeadlyplays.com/b3/e9/4d/b3e94d023432c8cb40b981d7804166a2.js"></script>
 </body>
-
 </html>
-
-
