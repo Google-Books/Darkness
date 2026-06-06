@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -237,10 +236,10 @@
         }
 
         /* دکمه خروج شناور شیشه‌ای دسکتاپ */
-        .glass-exit-btn {
+.glass-exit-btn {
             position: fixed;
-            bottom: 40px;
-            right: 40px;
+            top: 30px;      /* تغییر یافت */
+            left: 30px;     /* تغییر یافت */
             width: 70px;
             height: 70px;
             border-radius: 50%;
@@ -258,7 +257,6 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .glass-exit-btn:hover {
             background: rgba(106, 13, 173, 0.2);
             border-color: var(--accent);
@@ -1861,7 +1859,7 @@
                     <div class="detail-text">His original image is believed to be an edited real photo\nHis phrase “Go to sleep” became a viral internet meme\nHe has a large global fan community that creates alternative and redemption stories</div>
                 `
             },
-{ 
+            { 
                 name: "Siren Head", 
                 img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Siren%20Head.jpg", 
                 desc: "A giant creature with sirens instead of a head.",
@@ -2740,25 +2738,6 @@
                 ` 
             }
         ];
-            },
-            { name: "Samara", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Samara.jpg", desc: "The ghostly girl from The Ring.", full: `<div class="detail-header">Description</div><div class="detail-text">The ghostly girl from The Ring.</div>` },
-            { name: "Candyman", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Candyman.webp", desc: "A vengeful spirit summoned by saying his name.", full: `<div class="detail-header">Description</div><div class="detail-text">A vengeful spirit summoned by saying his name.</div>` },
-            { name: "Black-Eyed Children", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/(Black-Eyed%20Children).jpg", desc: "Mysterious children with completely black eyes.", full: `<div class="detail-header">Description</div><div class="detail-text">Mysterious children with completely black eyes.</div>` },
-            { name: "Hat Man", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Hat%20Man.jpg", desc: "A shadowy figure often reported in dreams and sleep paralysis.", full: `<div class="detail-header">Description</div><div class="detail-text">A shadowy figure often reported in dreams and sleep paralysis.</div>` },
-            { name: "Mother Brain", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Mother%20Brain.jpg", desc: "An evil collective intelligence from science fiction.", full: `<div class="detail-header">Description</div><div class="detail-text">An evil collective intelligence from science fiction.</div>` },
-            { name: "Zombie", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Zombie.jpg", desc: "A reanimated corpse that feeds on human flesh.", full: `<div class="detail-header">Description</div><div class="detail-text">A reanimated corpse that feeds on human flesh.</div>` },
-            { name: "Specter", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Specter.jpg", desc: "A ghostly apparition associated with death.", full: `<div class="detail-header">Description</div><div class="detail-text">A ghostly apparition associated with death.</div>` },
-            { name: "Marid", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Marid.jpg", desc: "A powerful and proud type of jinn from Arab folklore.", full: `<div class="detail-header">Description</div><div class="detail-text">A powerful and proud type of jinn from Arab folklore.</div>` },
-            { name: "Ifrit", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Ifrit.jpg", desc: "A mighty fire spirit from Middle Eastern mythology.", full: `<div class="detail-header">Description</div><div class="detail-text">A mighty fire spirit from Middle Eastern mythology.</div>` },
-            { name: "Qareen", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Qareen.jpg", desc: "A spiritual companion associated with temptation.", full: `<div class="detail-header">Description</div><div class="detail-text">A spiritual companion associated with temptation.</div>` },
-            { name: "Nassnas", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Nassnas.jpg", desc: "A half-human creature from Arab legends.", full: `<div class="detail-header">Description</div><div class="detail-text">A half-human creature from Arab legends.</div>` },
-            { name: "Ghoul al-Layl", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Ghoul%20al-Layl.jpg", desc: "A night-roaming spirit of darkness.", full: `<div class="detail-header">Description</div><div class="detail-text">A night-roaming spirit of darkness.</div>` },
-            { name: "Lost Soul", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Lost%20Soul.jpg", desc: "A restless spirit trapped between worlds.", full: `<div class="detail-header">Description</div><div class="detail-text">A restless spirit trapped between worlds.</div>` },
-            { name: "Bloody Ghost", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Bloody%20Ghost.jpg", desc: "A ghost believed to gain power through blood.", full: `<div class="detail-header">Description</div><div class="detail-text">A ghost believed to gain power through blood.</div>` },
-            { name: "Red Demon", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Red%20Demon.jpg", desc: "A symbol of rage and fire in various traditions.", full: `<div class="detail-header">Description</div><div class="detail-text">A symbol of rage and fire in various traditions.</div>` },
-            { name: "Shadow People", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Shadow%20People.jpg", desc: "Dark human-like shadows reportedly seen at night.", full: `<div class="detail-header">Description</div><div class="detail-text">Dark human-like shadows reportedly seen at night.</div>` },
-            { name: "Iblis", img: "https://trilliardaire.sirv.com/%D8%AC%D9%86/Iblis.jpg", desc: "The rebellious supernatural being associated with pride and temptation in Islamic tradition.", full: `<div class="detail-header">Description</div><div class="detail-text">The rebellious supernatural being associated with pride and temptation in Islamic tradition.</div>` }
-        ];
 
         const grid = document.getElementById('grid');
 
@@ -2807,19 +2786,18 @@
                     const arrow = document.getElementById(`arrow-${index}`);
                     
                     // بررسی کلیک روی بخش بستن (فلش بالایی)
-                    if (e.target.closest('.bounce-up')) {
+                   // اگر پنل باز است، آن را ببند (فلش رو به پایین شود)
+                   if (panel.style.display === 'block') {
                         panel.style.display = 'none';
                         arrow.setAttribute('class', 'mobile-arrow bounce-down');
-                        return;
-                    }
-
-                    if (panel.style.display === 'block') {
-                        panel.style.display = 'none';
-                        arrow.setAttribute('class', 'mobile-arrow bounce-down');
-                    } else {
+                        // بازگرداندن شکل فلش به حالت رو به پایین (اولیه)
+                        arrow.innerHTML = `<path d="M7.41,8.59L12,13.17L16.59,8.59L18,10L12,16L6,10L7.41,8.59Z"/>`;
+                    } 
+                    // اگر پنل بسته است، آن را باز کن (فلش رو به بالا شود)
+                    else {
                         panel.style.display = 'block';
                         arrow.setAttribute('class', 'mobile-arrow bounce-up');
-                        // تغییر فرمت فلش به بالا هنگام باز بودن پنجره
+                        // تغییر شکل فلش به حالت رو به بالا
                         arrow.innerHTML = `<path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"/>`;
                     }
                 }
@@ -2851,3 +2829,4 @@
 </body>
 
 </html>
+
